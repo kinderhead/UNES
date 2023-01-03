@@ -3,7 +3,7 @@ project(UNES VERSION 0.1.0)
 
 set(CMAKE_C_STANDARD 11)
 
-add_library(UNES src/unes.c)
+add_library(UNES src/unes.c src/gfx.c)
 include_directories(UNES include)
 
 find_package(SDL2 REQUIRED)
