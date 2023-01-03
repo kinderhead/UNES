@@ -1,0 +1,25 @@
+name: Docs
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Setup
+      run: sudo apt install -y doxygen libsdl2-dev cmake
+    - name: Checkout
+      uses: actions/checkout@1.0.0
+    - name: Build docs
+      run: cmake . && cd build && make docs && cd docs/html && touch .nojekyll
+    - name: Upload
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: build/docs/html

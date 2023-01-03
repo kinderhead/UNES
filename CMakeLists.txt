@@ -6,8 +6,11 @@ set(CMAKE_C_STANDARD 11)
 add_library(UNES src/unes.c)
 include_directories(UNES include)
 
-find_package(Doxygen)
+find_package(SDL2 REQUIRED)
+include_directories(UNES ${SDL2_INCLUDE_DIRS})
+target_link_libraries(UNES ${SDL2_LIBRARIES})
 
+find_package(Doxygen)
 if(DOXYGEN_FOUND)
     set(DOXYGEN_IN ${CMAKE_CURRENT_SOURCE_DIR}/doxygen/Doxyfile)
     set(DOXYGEN_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile.out)
