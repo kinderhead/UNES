@@ -3,4 +3,6 @@
 
 void init();
 
+void finish();
+
 #endif // __UNES_H__
