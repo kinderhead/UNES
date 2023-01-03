@@ -89,10 +89,11 @@ $(document).ready(function(){initNavTree('unes_8h.html',''); initResizable(); })
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;SDL.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="gfx_8h_source.html">gfx.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for unes.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="unes_8h__incl.svg" width="127" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="unes_8h__incl.svg" width="272" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -100,20 +101,22 @@ Include dependency graph for unes.h:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a02fd73d861ef2e4aabb38c0c9ff82947"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unes_8h.html#a02fd73d861ef2e4aabb38c0c9ff82947">init</a> ()</td></tr>
-<tr class="separator:a02fd73d861ef2e4aabb38c0c9ff82947"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6dfe1abe0d1eb3ddc1ca081de98b5342"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unes_8h.html#a6dfe1abe0d1eb3ddc1ca081de98b5342">finish</a> ()</td></tr>
-<tr class="separator:a6dfe1abe0d1eb3ddc1ca081de98b5342"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad20a2a9e59ac5039c1df8223ad1c43cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unes_8h.html#ad20a2a9e59ac5039c1df8223ad1c43cb">unes_init</a> ()</td></tr>
+<tr class="memdesc:ad20a2a9e59ac5039c1df8223ad1c43cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the window and graphics.  <a href="unes_8h.html#ad20a2a9e59ac5039c1df8223ad1c43cb">More...</a><br /></td></tr>
+<tr class="separator:ad20a2a9e59ac5039c1df8223ad1c43cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e4880b8509322d334c687992b4bc63a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unes_8h.html#a4e4880b8509322d334c687992b4bc63a">unes_finish</a> ()</td></tr>
+<tr class="memdesc:a4e4880b8509322d334c687992b4bc63a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exits and frees all memory.  <a href="unes_8h.html#a4e4880b8509322d334c687992b4bc63a">More...</a><br /></td></tr>
+<tr class="separator:a4e4880b8509322d334c687992b4bc63a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a6dfe1abe0d1eb3ddc1ca081de98b5342"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6dfe1abe0d1eb3ddc1ca081de98b5342">&#9670;&nbsp;</a></span>finish()</h2>
+<a id="a4e4880b8509322d334c687992b4bc63a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e4880b8509322d334c687992b4bc63a">&#9670;&nbsp;</a></span>unes_finish()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void finish </td>
+          <td class="memname">void unes_finish </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -121,22 +124,28 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Exits and frees all memory. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>Must be called before exit </dd></dl>
+
 </div>
 </div>
-<a id="a02fd73d861ef2e4aabb38c0c9ff82947"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02fd73d861ef2e4aabb38c0c9ff82947">&#9670;&nbsp;</a></span>init()</h2>
+<a id="ad20a2a9e59ac5039c1df8223ad1c43cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad20a2a9e59ac5039c1df8223ad1c43cb">&#9670;&nbsp;</a></span>unes_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void init </td>
+          <td class="memname">void unes_init </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initialize the window and graphics. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>Must be called before any other calls </dd></dl>
 
 </div>
 </div>

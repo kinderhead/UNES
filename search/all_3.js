@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['ultranes_3',['UltraNES',['../index.html',1,'']]],
-  ['unes_2eh_4',['unes.h',['../unes_8h.html',1,'']]]
+  ['h_5fflip_5',['h_flip',['../structSprite.html#ad4074b7f4b1beac7277495f68daf6b9d',1,'Sprite']]]
 ];

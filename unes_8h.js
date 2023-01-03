@@ -1,5 +1,5 @@
 var unes_8h =
 [
-    [ "finish", "unes_8h.html#a6dfe1abe0d1eb3ddc1ca081de98b5342", null ],
-    [ "init", "unes_8h.html#a02fd73d861ef2e4aabb38c0c9ff82947", null ]
+    [ "unes_finish", "unes_8h.html#a4e4880b8509322d334c687992b4bc63a", null ],
+    [ "unes_init", "unes_8h.html#ad20a2a9e59ac5039c1df8223ad1c43cb", null ]
 ];
