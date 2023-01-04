@@ -135,4 +135,9 @@ void unes_set_scroll(uint16_t scrollx, uint16_t scrolly);
  */
 Sprite* unes_get_sprite(uint16_t index);
 
+/**
+ * @brief Render a frame. Will call interrupts
+ */
+void unes_render();
+
 #endif // __GFX_H__
