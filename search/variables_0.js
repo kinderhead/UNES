@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['h_5fflip_34',['h_flip',['../structSprite.html#ad4074b7f4b1beac7277495f68daf6b9d',1,'Sprite']]]
+  ['b_56',['b',['../structColor.html#a78ede410fb277ade36fbb157f0235d6f',1,'Color']]]
 ];

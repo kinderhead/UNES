@@ -85,7 +85,8 @@ $(document).ready(function(){initNavTree('gfx_8h.html',''); initResizable(); });
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">gfx.h File Reference</div>  </div>
 </div><!--header-->
@@ -110,11 +111,17 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__UNES__GFX.html">_UNES_GFX</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal graphics struct.  <a href="struct__UNES__GFX.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structColor.html">Color</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple color struct.  <a href="structColor.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTile.html">Tile</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct representing a background tile.  <a href="structTile.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSprite.html">Sprite</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structSprite.html" title="Sprite struct.">Sprite</a> struct.  <a href="structSprite.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__UNES__GFX.html">_UNES_GFX</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal graphics struct.  <a href="struct__UNES__GFX.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -125,10 +132,20 @@ Macros</h2></td></tr>
 <tr class="separator:a38f8ac4e3ce396dea29562564f2e3cc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86923ccb5d8d94a7ff871fc52455fc03"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a86923ccb5d8d94a7ff871fc52455fc03">PALETTE_COUNT</a>&#160;&#160;&#160;4</td></tr>
 <tr class="separator:a86923ccb5d8d94a7ff871fc52455fc03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e79489069386cba57bcd9572a6efb4e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a4e79489069386cba57bcd9572a6efb4e">NAMETABLE_COUNT</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:a4e79489069386cba57bcd9572a6efb4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cd109632a6dcccaa80b43561b1ab700"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a2cd109632a6dcccaa80b43561b1ab700">SCREEN_WIDTH</a>&#160;&#160;&#160;256</td></tr>
 <tr class="separator:a2cd109632a6dcccaa80b43561b1ab700"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6974d08a74da681b3957b2fead2608b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a6974d08a74da681b3957b2fead2608b8">SCREEN_HEIGHT</a>&#160;&#160;&#160;240</td></tr>
 <tr class="separator:a6974d08a74da681b3957b2fead2608b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57ae0799f8fb4987f67b115517ab2bbf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a57ae0799f8fb4987f67b115517ab2bbf">NAMETABLE_WIDTH</a>&#160;&#160;&#160;32</td></tr>
+<tr class="separator:a57ae0799f8fb4987f67b115517ab2bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac232897c074d603bc88042ab76614a79"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#ac232897c074d603bc88042ab76614a79">NAMETABLE_HEIGHT</a>&#160;&#160;&#160;30</td></tr>
+<tr class="separator:ac232897c074d603bc88042ab76614a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af14f60c6abdc9d93713a50d7c2e0c78e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#af14f60c6abdc9d93713a50d7c2e0c78e">TOTAL_BACKGROUND_WIDTH</a>&#160;&#160;&#160;<a class="el" href="gfx_8h.html#a4e79489069386cba57bcd9572a6efb4e">NAMETABLE_COUNT</a>*<a class="el" href="gfx_8h.html#a57ae0799f8fb4987f67b115517ab2bbf">NAMETABLE_WIDTH</a></td></tr>
+<tr class="separator:af14f60c6abdc9d93713a50d7c2e0c78e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf435b075564f589776b07b6765eac68"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#adf435b075564f589776b07b6765eac68">TOTAL_BACKGROUND_HEIGHT</a>&#160;&#160;&#160;<a class="el" href="gfx_8h.html#a4e79489069386cba57bcd9572a6efb4e">NAMETABLE_COUNT</a>*<a class="el" href="gfx_8h.html#ac232897c074d603bc88042ab76614a79">NAMETABLE_HEIGHT</a></td></tr>
+<tr class="separator:adf435b075564f589776b07b6765eac68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -138,6 +155,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a6422dfe00d5fd7c1a9a9c09929f26dab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a6422dfe00d5fd7c1a9a9c09929f26dab">_UNES_GFX_free</a> ()</td></tr>
 <tr class="memdesc:a6422dfe00d5fd7c1a9a9c09929f26dab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal cleanup function.  <a href="gfx_8h.html#a6422dfe00d5fd7c1a9a9c09929f26dab">More...</a><br /></td></tr>
 <tr class="separator:a6422dfe00d5fd7c1a9a9c09929f26dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade9d395a22517dcccdabc8e8f3e589d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#ade9d395a22517dcccdabc8e8f3e589d6">unes_set_scroll</a> (uint16_t scrollx, uint16_t scrolly)</td></tr>
+<tr class="memdesc:ade9d395a22517dcccdabc8e8f3e589d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the screen scroll.  <a href="gfx_8h.html#ade9d395a22517dcccdabc8e8f3e589d6">More...</a><br /></td></tr>
+<tr class="separator:ade9d395a22517dcccdabc8e8f3e589d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e1fd7e6777b3f137010184d043dd7ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSprite.html">Sprite</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a6e1fd7e6777b3f137010184d043dd7ce">unes_get_sprite</a> (uint16_t index)</td></tr>
+<tr class="memdesc:a6e1fd7e6777b3f137010184d043dd7ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the address of a sprite.  <a href="gfx_8h.html#a6e1fd7e6777b3f137010184d043dd7ce">More...</a><br /></td></tr>
+<tr class="separator:a6e1fd7e6777b3f137010184d043dd7ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aaa68f2224cf13507d3ffd22b24d807e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structColor.html">Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#aaa68f2224cf13507d3ffd22b24d807e9">DEFAULT_PALETTE</a> [64]</td></tr>
+<tr class="memdesc:aaa68f2224cf13507d3ffd22b24d807e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default nes palette.  <a href="gfx_8h.html#aaa68f2224cf13507d3ffd22b24d807e9">More...</a><br /></td></tr>
+<tr class="separator:aaa68f2224cf13507d3ffd22b24d807e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a38f8ac4e3ce396dea29562564f2e3cc1"></a>
@@ -148,6 +177,48 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define BACKGROUND_COUNT&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4e79489069386cba57bcd9572a6efb4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e79489069386cba57bcd9572a6efb4e">&#9670;&nbsp;</a></span>NAMETABLE_COUNT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NAMETABLE_COUNT&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac232897c074d603bc88042ab76614a79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac232897c074d603bc88042ab76614a79">&#9670;&nbsp;</a></span>NAMETABLE_HEIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NAMETABLE_HEIGHT&#160;&#160;&#160;30</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a57ae0799f8fb4987f67b115517ab2bbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57ae0799f8fb4987f67b115517ab2bbf">&#9670;&nbsp;</a></span>NAMETABLE_WIDTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NAMETABLE_WIDTH&#160;&#160;&#160;32</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -210,6 +281,34 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="adf435b075564f589776b07b6765eac68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf435b075564f589776b07b6765eac68">&#9670;&nbsp;</a></span>TOTAL_BACKGROUND_HEIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TOTAL_BACKGROUND_HEIGHT&#160;&#160;&#160;<a class="el" href="gfx_8h.html#a4e79489069386cba57bcd9572a6efb4e">NAMETABLE_COUNT</a>*<a class="el" href="gfx_8h.html#ac232897c074d603bc88042ab76614a79">NAMETABLE_HEIGHT</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af14f60c6abdc9d93713a50d7c2e0c78e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af14f60c6abdc9d93713a50d7c2e0c78e">&#9670;&nbsp;</a></span>TOTAL_BACKGROUND_WIDTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TOTAL_BACKGROUND_WIDTH&#160;&#160;&#160;<a class="el" href="gfx_8h.html#a4e79489069386cba57bcd9572a6efb4e">NAMETABLE_COUNT</a>*<a class="el" href="gfx_8h.html#a57ae0799f8fb4987f67b115517ab2bbf">NAMETABLE_WIDTH</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a6422dfe00d5fd7c1a9a9c09929f26dab"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6422dfe00d5fd7c1a9a9c09929f26dab">&#9670;&nbsp;</a></span>_UNES_GFX_free()</h2>
@@ -246,6 +345,96 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Internal init function. </p>
+
+</div>
+</div>
+<a id="a6e1fd7e6777b3f137010184d043dd7ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e1fd7e6777b3f137010184d043dd7ce">&#9670;&nbsp;</a></span>unes_get_sprite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structSprite.html">Sprite</a>* unes_get_sprite </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the address of a sprite. </p>
+<p>The pointer can be reused. It should not be modified during rendering.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td><a class="el" href="structSprite.html" title="Sprite struct.">Sprite</a> index </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Sprite* <a class="el" href="structSprite.html" title="Sprite struct.">Sprite</a> pointer </dd></dl>
+
+</div>
+</div>
+<a id="ade9d395a22517dcccdabc8e8f3e589d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade9d395a22517dcccdabc8e8f3e589d6">&#9670;&nbsp;</a></span>unes_set_scroll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unes_set_scroll </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>scrollx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>scrolly</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the screen scroll. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scrollx</td><td>X position </td></tr>
+    <tr><td class="paramname">scrolly</td><td>Y position </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="aaa68f2224cf13507d3ffd22b24d807e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa68f2224cf13507d3ffd22b24d807e9">&#9670;&nbsp;</a></span>DEFAULT_PALETTE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structColor.html">Color</a> DEFAULT_PALETTE[64]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default nes palette. </p>
 
 </div>
 </div>

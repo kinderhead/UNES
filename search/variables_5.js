@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['window_41',['window',['../struct__UNES__GFX.html#ad00fff0186210ecbe9f4003d11479db9',1,'_UNES_GFX']]]
+  ['oam_61',['oam',['../struct__UNES__GFX.html#a71ebaf810b9a432c8885852b9ac17c4c',1,'_UNES_GFX']]]
 ];

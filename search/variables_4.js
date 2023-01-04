@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['v_5fflip_40',['v_flip',['../structSprite.html#a2d4137fd09ad7e455f220c5cea5c1318',1,'Sprite']]]
+  ['nametables_60',['nametables',['../struct__UNES__GFX.html#ab3165f5d102dc172b3f5dfa27ba34f74',1,'_UNES_GFX']]]
 ];

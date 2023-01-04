@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tex_16',['tex',['../struct__UNES__GFX.html#a8e081d5cb5d2c21168cec10e1b06ee65',1,'_UNES_GFX']]]
+  ['oam_14',['oam',['../struct__UNES__GFX.html#a71ebaf810b9a432c8885852b9ac17c4c',1,'_UNES_GFX']]]
 ];

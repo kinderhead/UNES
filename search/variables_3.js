@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tex_39',['tex',['../struct__UNES__GFX.html#a8e081d5cb5d2c21168cec10e1b06ee65',1,'_UNES_GFX']]]
+  ['h_5fflip_59',['h_flip',['../structSprite.html#ad4074b7f4b1beac7277495f68daf6b9d',1,'Sprite']]]
 ];

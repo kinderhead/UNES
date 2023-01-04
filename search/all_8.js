@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['ultranes_17',['UltraNES',['../index.html',1,'']]],
-  ['unes_2eh_18',['unes.h',['../unes_8h.html',1,'']]],
-  ['unes_5ffinish_19',['unes_finish',['../unes_8h.html#a4e4880b8509322d334c687992b4bc63a',1,'unes.h']]],
-  ['unes_5finit_20',['unes_init',['../unes_8h.html#ad20a2a9e59ac5039c1df8223ad1c43cb',1,'unes.h']]]
+  ['palette_15',['palette',['../structTile.html#a7142710fe03c159252b302cf70e316a5',1,'Tile::palette()'],['../structSprite.html#ab73588adb051d7c9138b615ff4973fff',1,'Sprite::palette()']]],
+  ['palette_5fcount_16',['PALETTE_COUNT',['../gfx_8h.html#a86923ccb5d8d94a7ff871fc52455fc03',1,'gfx.h']]],
+  ['priority_17',['priority',['../structSprite.html#aef3ff5bdc1933476147a92f296c7a9f9',1,'Sprite']]]
 ];

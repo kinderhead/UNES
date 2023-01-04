@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['h_5fflip_5',['h_flip',['../structSprite.html#ad4074b7f4b1beac7277495f68daf6b9d',1,'Sprite']]]
+  ['default_5fpalette_6',['DEFAULT_PALETTE',['../gfx_8h.html#aaa68f2224cf13507d3ffd22b24d807e9',1,'gfx.h']]]
 ];
