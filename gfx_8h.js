@@ -17,6 +17,7 @@ var gfx_8h =
     [ "_UNES_GFX_free", "gfx_8h.html#a6422dfe00d5fd7c1a9a9c09929f26dab", null ],
     [ "_UNES_GFX_init", "gfx_8h.html#a0b88845376417009b68dce4e6d6d5e3f", null ],
     [ "unes_get_sprite", "gfx_8h.html#a6e1fd7e6777b3f137010184d043dd7ce", null ],
+    [ "unes_render", "gfx_8h.html#a6a9d7b1909cc40a896249461f569934e", null ],
     [ "unes_set_scroll", "gfx_8h.html#ade9d395a22517dcccdabc8e8f3e589d6", null ],
     [ "DEFAULT_PALETTE", "gfx_8h.html#aaa68f2224cf13507d3ffd22b24d807e9", null ]
 ];
