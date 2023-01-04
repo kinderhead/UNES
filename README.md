@@ -8,8 +8,10 @@ What if your friendly neighborhood Nintendo Entertainment System was built today
 
 * Pure ANSI C11 library
   * Bring your own program
-* Simple functional abstraction for the graphics
-  * Not as limited as the original. Example: no sprite limit per scanline
+* Simple, but less limited functional abstraction for the graphics
+  * No sprite limit per scanline
+  * Each tile can have individual palette information
+  * Easier to use scrolling and nametable system
 * Interrupts as events
 * Sound (hopefully)
 * SDL2 backend
