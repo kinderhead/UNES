@@ -91,6 +91,11 @@ typedef struct {
 } Sprite;
 
 /**
+ * @brief Function outline for a scanline interrupt function
+ */
+typedef void (*unes_scanline_interrupt)(uint8_t scanline);
+
+/**
  * @brief Internal graphics struct
  */
 typedef struct {
@@ -107,6 +112,9 @@ typedef struct {
 
     uint8_t* tile_data;
     size_t tile_data_size;
+
+    unes_scanline_interrupt scanline_irq;
+    uint8_t scanline_irq_counter;
 } _UNES_GFX;
 
 /**
@@ -136,7 +144,7 @@ void _UNES_GFX_init();
 void _UNES_GFX_free();
 
 /**
- * @brief Set the screen scroll
+ * @brief Sets the screen scroll
  * 
  * @param scrollx X position
  * @param scrolly Y position
@@ -144,12 +152,35 @@ void _UNES_GFX_free();
 void unes_set_scroll(uint16_t scrollx, uint16_t scrolly);
 
 /**
- * @brief Set the location UNES uses to look for tiledata
+ * @brief Sets the location UNES uses to look for tiledata
+ * @remark Be sure to free this memory before exiting. UNES will not free it for you
  * 
  * @param data Data pointer
  * @param size Size
  */
 void unes_set_tile_data(uint8_t* data, size_t size);
+
+/**
+ * @brief Sets the scanline interrupt function
+ * @details It is called when the irq counter reaches zero. It is passed the current scanline number
+ * 
+ * @param irq Interrupt pointer
+ */
+void unes_set_scanline_interrupt(unes_scanline_interrupt irq);
+
+/**
+ * @brief Sets the scanline interrupt counter
+ * 
+ * It counts down at the end of rendering one scanline. If it
+ * hits zero, the interrupt is called and the next scanline is
+ * affected. For example, if the counter is set to 15, then the
+ * interrupt is called before rendering the 16th scanline. The
+ * 16th scanline and beyond can be modified. The counter can be
+ * set again to interrupt again later in the same frame.
+ * 
+ * @param counter 
+ */
+void unes_set_scanline_interrupt_counter(uint8_t counter);
 
 /**
  * @brief Returns a pointer to the specified tile
@@ -160,8 +191,8 @@ void unes_set_tile_data(uint8_t* data, size_t size);
  * unrecommended to do so. You should already have the raw data
  * yourself.
  * 
- * @param index 
- * @return uint8_t* 
+ * @param index Tile index
+ * @return uint8_t* Tile pointer, or NULL if the index is invalid
  */
 uint8_t* unes_get_tile(size_t index);
 
@@ -170,7 +201,7 @@ uint8_t* unes_get_tile(size_t index);
  * @details The pointer can be reused. It should not be modified during rendering.
  * 
  * @param index Sprite index
- * @return Sprite* Sprite pointer
+ * @return Sprite* Sprite pointer, or NULL if the index is invalid
  */
 Sprite* unes_get_sprite(uint16_t index);
 
