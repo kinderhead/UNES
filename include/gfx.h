@@ -2,6 +2,7 @@
 #define __GFX_H__
 
 #include <SDL.h>
+#include <stddef.h>
 #include <stdint.h>
 #include <stdbool.h>
 
@@ -25,6 +26,8 @@
 
 #define TOTAL_BACKGROUND_WIDTH NAMETABLE_COUNT*NAMETABLE_WIDTH
 #define TOTAL_BACKGROUND_HEIGHT NAMETABLE_COUNT*NAMETABLE_HEIGHT
+
+#define SIZEOF_TILE 16
 
 /**
  * @brief Simple color struct
@@ -101,7 +104,21 @@ typedef struct {
 
     Tile nametables[TOTAL_BACKGROUND_WIDTH][TOTAL_BACKGROUND_HEIGHT];
     Sprite oam[SPRITE_COUNT];
+
+    uint8_t* tile_data;
+    size_t tile_data_size;
 } _UNES_GFX;
+
+/**
+ * @brief Palette struct
+ * @details Each member value is an index in the global palette. 
+ */
+typedef struct {
+    uint8_t index0;
+    uint8_t index1;
+    uint8_t index2;
+    uint8_t index3;
+} Palette;
 
 /**
  * @brief Default nes palette
@@ -127,6 +144,28 @@ void _UNES_GFX_free();
 void unes_set_scroll(uint16_t scrollx, uint16_t scrolly);
 
 /**
+ * @brief Set the location UNES uses to look for tiledata
+ * 
+ * @param data Data pointer
+ * @param size Size
+ */
+void unes_set_tile_data(uint8_t* data, size_t size);
+
+/**
+ * @brief Returns a pointer to the specified tile
+ * 
+ * The pointer is a reference to the tile in memory, so it can be
+ * edited in real time. The size will always be SIZEOF_TILE.
+ * Techincally you can modify or view any tile ahead, but it is
+ * unrecommended to do so. You should already have the raw data
+ * yourself.
+ * 
+ * @param index 
+ * @return uint8_t* 
+ */
+uint8_t* unes_get_tile(size_t index);
+
+/**
  * @brief Gets the address of a sprite
  * @details The pointer can be reused. It should not be modified during rendering.
  * 
@@ -139,5 +178,14 @@ Sprite* unes_get_sprite(uint16_t index);
  * @brief Render a frame. Will call interrupts
  */
 void unes_render();
+
+#define CHECK_NULL(var, stmt) do {\
+                                  var = stmt;\
+                                  if (var == NULL) {\
+                                      printf("%s", SDL_GetError());\
+                                      printf("\n");\
+                                      exit(1);\
+                                  }\
+                              } while(0)
 
 #endif // __GFX_H__
