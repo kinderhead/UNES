@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['scrollx_69',['scrollx',['../struct__UNES__GFX.html#a6b35c0f77dbe20a7ad40583e63b88b03',1,'_UNES_GFX']]],
-  ['scrolly_70',['scrolly',['../struct__UNES__GFX.html#a28602d8694919198a8c7610437600528',1,'_UNES_GFX']]]
+  ['r_84',['r',['../structColor.html#aecbc1a4121c21990512e7c10544d6ece',1,'Color']]],
+  ['raw_5fscreen_85',['raw_screen',['../struct__UNES__GFX.html#a8bb0a3239b0e253a858d8bbe29ab0a41',1,'_UNES_GFX']]],
+  ['renderer_86',['renderer',['../struct__UNES__GFX.html#aa33ce4f7ac823a383f11dee1896d72d2',1,'_UNES_GFX']]]
 ];

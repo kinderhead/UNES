@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['screen_5fheight_22',['SCREEN_HEIGHT',['../gfx_8h.html#a6974d08a74da681b3957b2fead2608b8',1,'gfx.h']]],
-  ['screen_5fwidth_23',['SCREEN_WIDTH',['../gfx_8h.html#a2cd109632a6dcccaa80b43561b1ab700',1,'gfx.h']]],
-  ['scrollx_24',['scrollx',['../struct__UNES__GFX.html#a6b35c0f77dbe20a7ad40583e63b88b03',1,'_UNES_GFX']]],
-  ['scrolly_25',['scrolly',['../struct__UNES__GFX.html#a28602d8694919198a8c7610437600528',1,'_UNES_GFX']]],
-  ['sprite_26',['Sprite',['../structSprite.html',1,'']]],
-  ['sprite_5fcount_27',['SPRITE_COUNT',['../gfx_8h.html#a3d2424bb60748d72b26b0d3ab2ac670b',1,'gfx.h']]]
+  ['r_24',['r',['../structColor.html#aecbc1a4121c21990512e7c10544d6ece',1,'Color']]],
+  ['raw_5fscreen_25',['raw_screen',['../struct__UNES__GFX.html#a8bb0a3239b0e253a858d8bbe29ab0a41',1,'_UNES_GFX']]],
+  ['readme_2emd_26',['README.md',['../README_8md.html',1,'']]],
+  ['renderer_27',['renderer',['../struct__UNES__GFX.html#aa33ce4f7ac823a383f11dee1896d72d2',1,'_UNES_GFX']]]
 ];

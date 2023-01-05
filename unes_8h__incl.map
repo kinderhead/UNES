@@ -1,7 +1,8 @@
 <map id="include/unes.h" name="include/unes.h">
-<area shape="rect" id="node1" title=" " alt="" coords="21,5,137,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="22,5,138,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,155,64,181"/>
-<area shape="rect" id="node3" href="$gfx_8h.html" title=" " alt="" coords="90,80,145,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="89,155,159,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="184,155,267,181"/>
+<area shape="rect" id="node3" href="$gfx_8h.html" title=" " alt="" coords="98,80,153,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="88,155,163,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="187,155,258,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="283,155,365,181"/>
 </map>

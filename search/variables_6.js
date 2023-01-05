@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['palette_64',['palette',['../structTile.html#a7142710fe03c159252b302cf70e316a5',1,'Tile::palette()'],['../structSprite.html#ab73588adb051d7c9138b615ff4973fff',1,'Sprite::palette()']]],
-  ['priority_65',['priority',['../structSprite.html#aef3ff5bdc1933476147a92f296c7a9f9',1,'Sprite']]]
+  ['oam_81',['oam',['../struct__UNES__GFX.html#a71ebaf810b9a432c8885852b9ac17c4c',1,'_UNES_GFX']]]
 ];

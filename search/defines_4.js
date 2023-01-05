@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['total_5fbackground_5fheight_85',['TOTAL_BACKGROUND_HEIGHT',['../gfx_8h.html#adf435b075564f589776b07b6765eac68',1,'gfx.h']]],
-  ['total_5fbackground_5fwidth_86',['TOTAL_BACKGROUND_WIDTH',['../gfx_8h.html#af14f60c6abdc9d93713a50d7c2e0c78e',1,'gfx.h']]]
+  ['screen_5fheight_103',['SCREEN_HEIGHT',['../gfx_8h.html#a6974d08a74da681b3957b2fead2608b8',1,'gfx.h']]],
+  ['screen_5fwidth_104',['SCREEN_WIDTH',['../gfx_8h.html#a2cd109632a6dcccaa80b43561b1ab700',1,'gfx.h']]],
+  ['sizeof_5ftile_105',['SIZEOF_TILE',['../gfx_8h.html#a144232a21f4dad7635df65ed4b65ce9b',1,'gfx.h']]],
+  ['sprite_5fcount_106',['SPRITE_COUNT',['../gfx_8h.html#a3d2424bb60748d72b26b0d3ab2ac670b',1,'gfx.h']]]
 ];

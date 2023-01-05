@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['ultranes_33',['UltraNES',['../index.html',1,'']]],
-  ['unes_2eh_34',['unes.h',['../unes_8h.html',1,'']]],
-  ['unes_5ffinish_35',['unes_finish',['../unes_8h.html#a4e4880b8509322d334c687992b4bc63a',1,'unes.h']]],
-  ['unes_5fget_5fsprite_36',['unes_get_sprite',['../gfx_8h.html#a6e1fd7e6777b3f137010184d043dd7ce',1,'gfx.h']]],
-  ['unes_5finit_37',['unes_init',['../unes_8h.html#ad20a2a9e59ac5039c1df8223ad1c43cb',1,'unes.h']]],
-  ['unes_5frender_38',['unes_render',['../gfx_8h.html#a6a9d7b1909cc40a896249461f569934e',1,'gfx.h']]],
-  ['unes_5fset_5fscroll_39',['unes_set_scroll',['../gfx_8h.html#ade9d395a22517dcccdabc8e8f3e589d6',1,'gfx.h']]]
+  ['tex_35',['tex',['../struct__UNES__GFX.html#a8e081d5cb5d2c21168cec10e1b06ee65',1,'_UNES_GFX']]],
+  ['tile_36',['Tile',['../structTile.html',1,'']]],
+  ['tile_37',['tile',['../structTile.html#aba39b9ba682916b679d40f355cfdc0be',1,'Tile']]],
+  ['tile_5fdata_38',['tile_data',['../struct__UNES__GFX.html#a07eb2c62139e4e803796839dcf772407',1,'_UNES_GFX']]],
+  ['tile_5fdata_5fsize_39',['tile_data_size',['../struct__UNES__GFX.html#a1579449e32f91ed976b7dc3c18e38680',1,'_UNES_GFX']]],
+  ['total_5fbackground_5fheight_40',['TOTAL_BACKGROUND_HEIGHT',['../gfx_8h.html#adf435b075564f589776b07b6765eac68',1,'gfx.h']]],
+  ['total_5fbackground_5fwidth_41',['TOTAL_BACKGROUND_WIDTH',['../gfx_8h.html#af14f60c6abdc9d93713a50d7c2e0c78e',1,'gfx.h']]]
 ];

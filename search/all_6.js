@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['nametable_5fcount_10',['NAMETABLE_COUNT',['../gfx_8h.html#a4e79489069386cba57bcd9572a6efb4e',1,'gfx.h']]],
-  ['nametable_5fheight_11',['NAMETABLE_HEIGHT',['../gfx_8h.html#ac232897c074d603bc88042ab76614a79',1,'gfx.h']]],
-  ['nametable_5fwidth_12',['NAMETABLE_WIDTH',['../gfx_8h.html#a57ae0799f8fb4987f67b115517ab2bbf',1,'gfx.h']]],
-  ['nametables_13',['nametables',['../struct__UNES__GFX.html#ab3165f5d102dc172b3f5dfa27ba34f74',1,'_UNES_GFX']]]
+  ['index0_11',['index0',['../structPalette.html#a052c28a245eab6439f7e8f7782afae33',1,'Palette']]],
+  ['index1_12',['index1',['../structPalette.html#aef9324e3002fda63889b1d8169649bdd',1,'Palette']]],
+  ['index2_13',['index2',['../structPalette.html#a0eae3acbdacf8a5f3e28a1cc3c53e0e4',1,'Palette']]],
+  ['index3_14',['index3',['../structPalette.html#ab59f962a5b0f99a0581907f23fcc9ddc',1,'Palette']]]
 ];

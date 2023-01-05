@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['nametable_5fcount_78',['NAMETABLE_COUNT',['../gfx_8h.html#a4e79489069386cba57bcd9572a6efb4e',1,'gfx.h']]],
-  ['nametable_5fheight_79',['NAMETABLE_HEIGHT',['../gfx_8h.html#ac232897c074d603bc88042ab76614a79',1,'gfx.h']]],
-  ['nametable_5fwidth_80',['NAMETABLE_WIDTH',['../gfx_8h.html#a57ae0799f8fb4987f67b115517ab2bbf',1,'gfx.h']]]
+  ['check_5fnull_98',['CHECK_NULL',['../gfx_8h.html#a3326d7de4ec2d0db9e097c086bd53b93',1,'gfx.h']]]
 ];
