@@ -109,8 +109,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aa33ce4f7ac823a383f11dee1896d72d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad00fff0186210ecbe9f4003d11479db9"><td class="memItemLeft" align="right" valign="top">SDL_Window *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__UNES__GFX.html#ad00fff0186210ecbe9f4003d11479db9">window</a></td></tr>
 <tr class="separator:ad00fff0186210ecbe9f4003d11479db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bb0a3239b0e253a858d8bbe29ab0a41"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__UNES__GFX.html#a8bb0a3239b0e253a858d8bbe29ab0a41">raw_screen</a> [<a class="el" href="gfx_8h.html#a2cd109632a6dcccaa80b43561b1ab700">SCREEN_WIDTH</a> *2][<a class="el" href="gfx_8h.html#a6974d08a74da681b3957b2fead2608b8">SCREEN_HEIGHT</a> *2]</td></tr>
-<tr class="separator:a8bb0a3239b0e253a858d8bbe29ab0a41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d1fc907d8b9ffefe66560b29fea11d3"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__UNES__GFX.html#a8d1fc907d8b9ffefe66560b29fea11d3">raw_screen</a> [<a class="el" href="gfx_8h.html#a6974d08a74da681b3957b2fead2608b8">SCREEN_HEIGHT</a>][<a class="el" href="gfx_8h.html#a2cd109632a6dcccaa80b43561b1ab700">SCREEN_WIDTH</a>]</td></tr>
+<tr class="separator:a8d1fc907d8b9ffefe66560b29fea11d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b35c0f77dbe20a7ad40583e63b88b03"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__UNES__GFX.html#a6b35c0f77dbe20a7ad40583e63b88b03">scrollx</a></td></tr>
 <tr class="separator:a6b35c0f77dbe20a7ad40583e63b88b03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28602d8694919198a8c7610437600528"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__UNES__GFX.html#a28602d8694919198a8c7610437600528">scrolly</a></td></tr>
@@ -123,14 +123,48 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a07eb2c62139e4e803796839dcf772407"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1579449e32f91ed976b7dc3c18e38680"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__UNES__GFX.html#a1579449e32f91ed976b7dc3c18e38680">tile_data_size</a></td></tr>
 <tr class="separator:a1579449e32f91ed976b7dc3c18e38680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f42f716cd6e26bc7d410522612c079f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gfx_8h.html#a0d34324a4251eb5f46f509dc95da154c">Palette</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__UNES__GFX.html#a0f42f716cd6e26bc7d410522612c079f">palettes</a> [<a class="el" href="gfx_8h.html#a86923ccb5d8d94a7ff871fc52455fc03">PALETTE_COUNT</a>]</td></tr>
+<tr class="separator:a0f42f716cd6e26bc7d410522612c079f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5978fa5fde36176181003c1fd0e81d60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="gfx_8h.html#a5927b6fb8144399446312ea1ff679032">unes_scanline_interrupt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__UNES__GFX.html#a5978fa5fde36176181003c1fd0e81d60">scanline_irq</a></td></tr>
 <tr class="separator:a5978fa5fde36176181003c1fd0e81d60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace35f3c29303a1a9f77ee6216fab6f1b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__UNES__GFX.html#ace35f3c29303a1a9f77ee6216fab6f1b">scanline_irq_counter</a></td></tr>
 <tr class="separator:ace35f3c29303a1a9f77ee6216fab6f1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cb6341876a977c80aea61b776fbcc28"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__UNES__GFX.html#a3cb6341876a977c80aea61b776fbcc28">fps_start</a></td></tr>
+<tr class="separator:a3cb6341876a977c80aea61b776fbcc28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9ae41a3a41d1d9a4ad7fe4a5834dd01"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__UNES__GFX.html#aa9ae41a3a41d1d9a4ad7fe4a5834dd01">fps_end</a></td></tr>
+<tr class="separator:aa9ae41a3a41d1d9a4ad7fe4a5834dd01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Internal graphics struct. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="aa9ae41a3a41d1d9a4ad7fe4a5834dd01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9ae41a3a41d1d9a4ad7fe4a5834dd01">&#9670;&nbsp;</a></span>fps_end</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t _UNES_GFX::fps_end</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3cb6341876a977c80aea61b776fbcc28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cb6341876a977c80aea61b776fbcc28">&#9670;&nbsp;</a></span>fps_start</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t _UNES_GFX::fps_start</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ab3165f5d102dc172b3f5dfa27ba34f74"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab3165f5d102dc172b3f5dfa27ba34f74">&#9670;&nbsp;</a></span>nametables</h2>
 
@@ -159,14 +193,28 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a8bb0a3239b0e253a858d8bbe29ab0a41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8bb0a3239b0e253a858d8bbe29ab0a41">&#9670;&nbsp;</a></span>raw_screen</h2>
+<a id="a0f42f716cd6e26bc7d410522612c079f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f42f716cd6e26bc7d410522612c079f">&#9670;&nbsp;</a></span>palettes</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t _UNES_GFX::raw_screen[<a class="el" href="gfx_8h.html#a2cd109632a6dcccaa80b43561b1ab700">SCREEN_WIDTH</a> *2][<a class="el" href="gfx_8h.html#a6974d08a74da681b3957b2fead2608b8">SCREEN_HEIGHT</a> *2]</td>
+          <td class="memname"><a class="el" href="gfx_8h.html#a0d34324a4251eb5f46f509dc95da154c">Palette</a> _UNES_GFX::palettes[<a class="el" href="gfx_8h.html#a86923ccb5d8d94a7ff871fc52455fc03">PALETTE_COUNT</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8d1fc907d8b9ffefe66560b29fea11d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d1fc907d8b9ffefe66560b29fea11d3">&#9670;&nbsp;</a></span>raw_screen</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t _UNES_GFX::raw_screen[<a class="el" href="gfx_8h.html#a6974d08a74da681b3957b2fead2608b8">SCREEN_HEIGHT</a>][<a class="el" href="gfx_8h.html#a2cd109632a6dcccaa80b43561b1ab700">SCREEN_WIDTH</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
