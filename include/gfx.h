@@ -10,13 +10,17 @@
 #define SPRITE_COUNT 256
 #define BACKGROUND_COUNT 3
 #define PALETTE_COUNT 16
-#define NAMETABLE_COUNT 16
+#define NAMETABLES_WIDTH 4
+#define NAMETABLES_HEIGHT 4
 #else
 #define SPRITE_COUNT 64
 #define BACKGROUND_COUNT 1
 #define PALETTE_COUNT 4
-#define NAMETABLE_COUNT 4
+#define NAMETABLES_WIDTH 2
+#define NAMETABLES_HEIGHT 2
 #endif // UNESPLUS
+
+#define NAMETABLE_COUNT NAMETABLES_WIDTH*NAMETABLES_HEIGHT
 
 #define SCREEN_WIDTH 256
 #define SCREEN_HEIGHT 240
@@ -24,8 +28,8 @@
 #define NAMETABLE_WIDTH 32
 #define NAMETABLE_HEIGHT 30
 
-#define TOTAL_BACKGROUND_WIDTH NAMETABLE_COUNT*NAMETABLE_WIDTH
-#define TOTAL_BACKGROUND_HEIGHT NAMETABLE_COUNT*NAMETABLE_HEIGHT
+#define TOTAL_BACKGROUND_WIDTH NAMETABLES_WIDTH*NAMETABLE_WIDTH
+#define TOTAL_BACKGROUND_HEIGHT NAMETABLES_HEIGHT*NAMETABLE_HEIGHT
 
 #define SIZEOF_TILE 16
 
@@ -37,6 +41,12 @@ typedef struct {
     uint8_t b;
     uint8_t g;
 } Color;
+
+/**
+ * @brief Palette struct
+ * @details Each member value is an index in the global palette. 
+ */
+typedef uint8_t Palette[4];
 
 /**
  * @brief Struct representing a background tile
@@ -102,7 +112,7 @@ typedef struct {
     SDL_Texture* tex;
     SDL_Renderer* renderer;
     SDL_Window* window;
-    uint8_t raw_screen[SCREEN_WIDTH*2][SCREEN_HEIGHT*2];
+    uint32_t raw_screen[SCREEN_HEIGHT][SCREEN_WIDTH];
     
     uint16_t scrollx;
     uint16_t scrolly;
@@ -113,20 +123,14 @@ typedef struct {
     uint8_t* tile_data;
     size_t tile_data_size;
 
+    Palette palettes[PALETTE_COUNT];
+
     unes_scanline_interrupt scanline_irq;
     uint8_t scanline_irq_counter;
-} _UNES_GFX;
 
-/**
- * @brief Palette struct
- * @details Each member value is an index in the global palette. 
- */
-typedef struct {
-    uint8_t index0;
-    uint8_t index1;
-    uint8_t index2;
-    uint8_t index3;
-} Palette;
+    uint64_t fps_start;
+    uint64_t fps_end;
+} _UNES_GFX;
 
 /**
  * @brief Default nes palette
@@ -161,6 +165,16 @@ void unes_set_scroll(uint16_t scrollx, uint16_t scrolly);
 void unes_set_tile_data(uint8_t* data, size_t size);
 
 /**
+ * @brief Makes
+ * 
+ * @param index 
+ * @param palette 
+ */
+inline void unes_set_palette(uint8_t index, Palette palette) {
+
+}
+
+/**
  * @brief Sets the scanline interrupt function
  * @details It is called when the irq counter reaches zero. It is passed the current scanline number
  * 
@@ -183,7 +197,7 @@ void unes_set_scanline_interrupt(unes_scanline_interrupt irq);
 void unes_set_scanline_interrupt_counter(uint8_t counter);
 
 /**
- * @brief Returns a pointer to the specified tile
+ * @brief Returns a pointer to the specified tile's data
  * 
  * The pointer is a reference to the tile in memory, so it can be
  * edited in real time. The size will always be SIZEOF_TILE.
@@ -194,7 +208,16 @@ void unes_set_scanline_interrupt_counter(uint8_t counter);
  * @param index Tile index
  * @return uint8_t* Tile pointer, or NULL if the index is invalid
  */
-uint8_t* unes_get_tile(size_t index);
+uint8_t* unes_get_tile_data(size_t index);
+
+/**
+ * @brief Gets the tile at position. It can also be modified
+ * 
+ * @param x X coordinate
+ * @param y Y coordinate
+ * @return Tile* Tile pointer, or NULL if the coordinate is invalid
+ */
+Tile* unes_get_bg_tile(uint8_t x, uint8_t y);
 
 /**
  * @brief Gets the address of a sprite
@@ -207,13 +230,14 @@ Sprite* unes_get_sprite(uint16_t index);
 
 /**
  * @brief Render a frame. Will call interrupts
+ * @return bool Returns true if the execution should continue
  */
-void unes_render();
+bool unes_render();
 
 #define CHECK_NULL(var, stmt) do {\
                                   var = stmt;\
                                   if (var == NULL) {\
-                                      printf("%s", SDL_GetError());\
+                                      printf("%s\n", SDL_GetError());\
                                       printf("\n");\
                                       exit(1);\
                                   }\

@@ -8,7 +8,7 @@ include_directories(UNES include)
 
 find_package(SDL2 REQUIRED)
 include_directories(UNES ${SDL2_INCLUDE_DIRS})
-target_link_libraries(UNES ${SDL2_LIBRARIES})
+target_link_libraries(UNES ${SDL2_LIBRARIES} m)
 
 find_package(Doxygen)
 if(DOXYGEN_FOUND)
