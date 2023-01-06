@@ -8,9 +8,8 @@ What if your friendly neighborhood Nintendo Entertainment System was built today
 
 * Pure ANSI C11 library
   * Bring your own program
-* Simple, but less limited functional abstraction for the graphics
+* Simple but less limited graphics api
   * No sprite limit per scanline
-  * Each tile can have individual palette information
   * Easier to use scrolling and nametable system
 * Interrupts as events
 * Sound (hopefully)
@@ -26,5 +25,6 @@ Some changes are:
 * Sprites: 64 -> 256
 * Backgrounds: 1 -> 3
 * Palette count (per layer): 4 -> 16
+* 32 bit universal background color
 
 If the library is compiled with `UNESPLUS`, then `UNESPLUS` must be defined in the final program.

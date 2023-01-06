@@ -113,6 +113,7 @@ typedef struct {
     SDL_Renderer* renderer;
     SDL_Window* window;
     uint32_t raw_screen[SCREEN_HEIGHT][SCREEN_WIDTH];
+    Color universal_bg_color;
     
     uint16_t scrollx;
     uint16_t scrolly;
@@ -131,6 +132,16 @@ typedef struct {
     uint64_t fps_start;
     uint64_t fps_end;
 } _UNES_GFX;
+
+/**
+ * @brief Internal struct for attribute tables
+ */
+typedef struct {
+    uint8_t top_left;
+    uint8_t top_right;
+    uint8_t bottom_left;
+    uint8_t bottom_right;
+} _UNES_ATTR
 
 /**
  * @brief Default nes palette
@@ -165,14 +176,23 @@ void unes_set_scroll(uint16_t scrollx, uint16_t scrolly);
 void unes_set_tile_data(uint8_t* data, size_t size);
 
 /**
- * @brief Makes
+ * @brief Sets a palette at index
  * 
- * @param index 
- * @param palette 
+ * @param index Index
+ * @param palette Palette
  */
 inline void unes_set_palette(uint8_t index, Palette palette) {
-
+    unes_set_palettes(index, &palette, 1);
 }
+
+/**
+ * @brief Sets multiple palettes starting at index. Does nothing if it can't copy the palettes
+ * 
+ * @param start Start index
+ * @param palettes Pointer to palettes
+ * @param num Number of palettes to copy
+ */
+void unes_set_palettes(uint8_t start, Palette* palettes, size_t num);
 
 /**
  * @brief Sets the scanline interrupt function
@@ -220,6 +240,51 @@ uint8_t* unes_get_tile_data(size_t index);
 Tile* unes_get_bg_tile(uint8_t x, uint8_t y);
 
 /**
+ * @brief Sets a tile at a location
+ * 
+ * @param tile Tile
+ * @param x X coordinate
+ * @param y Y coordinate
+ */
+void unes_set_bg_tile(Tile tile, uint8_t x, uint8_t y);
+
+/**
+ * @brief Sets background map the old fashioned way
+ * 
+ * This function is for compatability with existing roms and tools.
+ * Since there is no mirroring and proper nametables, an x and y
+ * offset can be specified to solve some problems. The offsets don't
+ * have to be 32 or 30. If anything goes wrong, a message will be
+ * printed.
+ * 
+ * @param data Data
+ * @param size Size
+ * @param x_offset X offset in bytes
+ * @param y_offset Y offset in bytes
+ * @param row_size Size of a row
+ * 
+ * @see unes_legacy_set_nametable()
+ */
+void unes_legacy_set_map(uint8_t* data, size_t size, uint8_t x_offset, uint8_t y_offset, uint8_t row_size);
+
+/**
+ * @brief Sets a full nametable with attributes the old fashioned way
+ * 
+ * This function is for compatability with existing roms and tools.
+ * It accepts a pointer with size of 1024 which includes the attribute
+ * table. Offsets can be used for more control. The offsets don't have
+ * to be 32 or 30. If anything goes wrong, a message will be printed.
+ * The data's row size is assumed to be 32.
+ * 
+ * @param data Data with size 1024
+ * @param x_offset X offset in bytes
+ * @param y_offset Y offset in bytes
+ * 
+ * @see unes_legacy_set_map()
+ */
+void unes_legacy_set_nametable(uint8_t* data, uint8_t x_offset, uint8_t y_offset);
+
+/**
  * @brief Gets the address of a sprite
  * @details The pointer can be reused. It should not be modified during rendering.
  * 
@@ -229,10 +294,28 @@ Tile* unes_get_bg_tile(uint8_t x, uint8_t y);
 Sprite* unes_get_sprite(uint16_t index);
 
 /**
+ * @brief Sets the universal background color, or #3F00/#3F10 on original hardware
+ * 
+ * @param index Global palette index
+ */
+void unes_set_background_color(uint8_t index);
+
+/**
  * @brief Render a frame. Will call interrupts
+ * 
  * @return bool Returns true if the execution should continue
  */
 bool unes_render();
+
+/// UNESPLUS only functions
+
+/**
+ * @brief Sets the universal background color
+ * @remark Can only be called if using UNESPLUS
+ * 
+ * @param color 
+ */
+void unesplus_set_background_color(Color color);
 
 #define CHECK_NULL(var, stmt) do {\
                                   var = stmt;\

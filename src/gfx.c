@@ -39,6 +39,17 @@ inline static bool _unes_valid_sprite(uint16_t index) {
     return index < SPRITE_COUNT;
 }
 
+inline static _UNES_ATTR _unes_parse_attr(uint8_t attr) {
+    _UNES_ATTR ret =  {
+        (attr >> 0) & 0x3,
+        (attr >> 2) & 0x3,
+        (attr >> 4) & 0x3,
+        (attr >> 6) & 0x3,
+    };
+
+    return ret;
+}
+
 void unes_set_scroll(uint16_t scrollx, uint16_t scrolly) {
     graphics->scrollx = scrollx;
     graphics->scrolly = scrolly;
@@ -47,6 +58,11 @@ void unes_set_scroll(uint16_t scrollx, uint16_t scrolly) {
 void unes_set_tile_data(uint8_t *data, size_t size) {
     graphics->tile_data = data;
     graphics->tile_data_size = size;
+}
+
+void unes_set_palettes(uint8_t start, Palette* palettes, size_t num) {
+    if (num + start >= PALETTE_COUNT) return;
+    memcpy(&graphics->palettes[start], palettes, sizeof(Palette) * num);
 }
 
 void unes_set_scanline_interrupt(unes_scanline_interrupt irq) {
@@ -67,17 +83,73 @@ Tile* unes_get_bg_tile(uint8_t x, uint8_t y) {
     return &graphics->nametables[x][y];
 }
 
-Sprite* unes_get_sprite(uint16_t index) {
+void unes_set_bg_tile(Tile tile, uint8_t x, uint8_t y) {
+    graphics->nametables[x][y] = tile;
+}
+
+void unes_legacy_set_map(uint8_t *data, size_t size, uint8_t x_offset, uint8_t y_offset, uint8_t row_size)
+{
+    int y = y_offset;
+    for (int i = 0; i < size; i++)
+    {
+        if (i%row_size == 0) y++;
+        if (i >= TOTAL_BACKGROUND_WIDTH || y >= TOTAL_BACKGROUND_HEIGHT) printf("Invalid location %d, %d", i, y);
+        graphics->nametables[i][y].tile = data[i];
+    }
+}
+
+void unes_legacy_set_nametable(uint8_t *data, uint8_t x_offset, uint8_t y_offset)
+{
+    unes_legacy_set_map(data, 960, x_offset, y_offset, 32);
+    uint8_t* attributes = &data[960];
+
+    int x = x_offset;
+    int y = y_offset;
+    for (int i = 0; i < 64; i++)
+    {
+        if (i%8 == 0) {
+            x = x_offset;
+            y += 2;
+        } else {
+            x += 2;
+        }
+        if (x >= TOTAL_BACKGROUND_WIDTH || y >= TOTAL_BACKGROUND_HEIGHT) printf("Invalid location %d, %d", x, y);
+
+        _UNES_ATTR attr = _unes_parse_attr(attributes[i]);
+        graphics->nametables[x][y].palette = attr.top_left;
+        graphics->nametables[x + 1][y].palette = attr.top_right;
+        if (y + 1 < TOTAL_BACKGROUND_HEIGHT) {
+            graphics->nametables[x][y + 1].palette = attr.bottom_left;
+            graphics->nametables[x + 1][y + 1].palette = attr.bottom_right;
+        }
+    }
+}
+
+Sprite *unes_get_sprite(uint16_t index)
+{
     if (!_unes_valid_sprite(index)) return NULL;
     return &graphics->oam[index];
 }
 
-bool unes_render() {
+void unes_set_background_color(uint8_t index)
+{
+    #ifndef UNESPLUS
+    printf("UNESPLUS is disabled");
+    return;
+    #endif
+
+    graphics->universal_bg_color = DEFAULT_PALETTE[index];
+}
+
+bool unes_render()
+{
     SDL_RenderClear(graphics->renderer);
     memset(graphics->raw_screen, 0, sizeof(graphics->raw_screen));
 
     for (int y = 0; y < SCREEN_HEIGHT; y++) {
         for (int x = 0; x < SCREEN_WIDTH; x+=8) {
+            Tile* tile = unes_get_bg_tile(x/8, y/8);
+            uint32_t row_segment[8] = {0};
             
         }
 
@@ -119,6 +191,11 @@ bool unes_render() {
     }
 
     return true;
+}
+
+void unesplus_set_background_color(Color color)
+{
+    graphics->universal_bg_color = color;
 }
 
 Color DEFAULT_PALETTE[64] = {{124,124,124},{0,0,252},{0,0,188},{68,40,188},{148,0,132},{168,0,32},{168,16,0},{136,20,0},{80,48,0},{0,120,0},{0,104,0},{0,88,0},{0,64,88},{0,0,0},{0,0,0},{0,0,0},{188,188,188},{0,120,248},{0,88,248},{104,68,252},{216,0,204},{228,0,88},{248,56,0},{228,92,16},{172,124,0},{0,184,0},{0,168,0},{0,168,68},{0,136,136},{0,0,0},{0,0,0},{0,0,0},{248,248,248},{60,188,252},{104,136,252},{152,120,248},{248,120,248},{248,88,152},{248,120,88},{252,160,68},{248,184,0},{184,248,24},{88,216,84},{88,248,152},{0,232,216},{120,120,120},{0,0,0},{0,0,0},{252,252,252},{164,228,252},{184,184,248},{216,184,248},{248,184,248},{248,164,192},{240,208,176},{252,224,168},{248,216,120},{216,248,120},{184,248,184},{184,248,216},{0,252,252},{248,216,248},{0,0,0},{0,0,0}};
