@@ -14,5 +14,6 @@ var struct__UNES__GFX =
     [ "tex", "struct__UNES__GFX.html#a8e081d5cb5d2c21168cec10e1b06ee65", null ],
     [ "tile_data", "struct__UNES__GFX.html#a07eb2c62139e4e803796839dcf772407", null ],
     [ "tile_data_size", "struct__UNES__GFX.html#a1579449e32f91ed976b7dc3c18e38680", null ],
+    [ "universal_bg_color", "struct__UNES__GFX.html#a16f6a6ad692609813737f7b0740ae3d7", null ],
     [ "window", "struct__UNES__GFX.html#ad00fff0186210ecbe9f4003d11479db9", null ]
 ];

@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['scanline_5firq_97',['scanline_irq',['../struct__UNES__GFX.html#a5978fa5fde36176181003c1fd0e81d60',1,'_UNES_GFX']]],
-  ['scanline_5firq_5fcounter_98',['scanline_irq_counter',['../struct__UNES__GFX.html#ace35f3c29303a1a9f77ee6216fab6f1b',1,'_UNES_GFX']]],
-  ['scrollx_99',['scrollx',['../struct__UNES__GFX.html#a6b35c0f77dbe20a7ad40583e63b88b03',1,'_UNES_GFX']]],
-  ['scrolly_100',['scrolly',['../struct__UNES__GFX.html#a28602d8694919198a8c7610437600528',1,'_UNES_GFX']]]
+  ['tex_120',['tex',['../struct__UNES__GFX.html#a8e081d5cb5d2c21168cec10e1b06ee65',1,'_UNES_GFX']]],
+  ['tile_121',['tile',['../structTile.html#aba39b9ba682916b679d40f355cfdc0be',1,'Tile']]],
+  ['tile_5fdata_122',['tile_data',['../struct__UNES__GFX.html#a07eb2c62139e4e803796839dcf772407',1,'_UNES_GFX']]],
+  ['tile_5fdata_5fsize_123',['tile_data_size',['../struct__UNES__GFX.html#a1579449e32f91ed976b7dc3c18e38680',1,'_UNES_GFX']]],
+  ['top_5fleft_124',['top_left',['../struct__UNES__ATTR.html#a5525e50d57a6a7b69d8a7276d298cb5f',1,'_UNES_ATTR']]],
+  ['top_5fright_125',['top_right',['../struct__UNES__ATTR.html#ac93ca7a17d92c7586ab96e1fc4557643',1,'_UNES_ATTR']]]
 ];

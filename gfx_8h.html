@@ -86,8 +86,7 @@ $(document).ready(function(){initNavTree('gfx_8h.html',''); initResizable(); });
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">gfx.h File Reference</div>  </div>
 </div><!--header-->
@@ -124,6 +123,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__UNES__GFX.html">_UNES_GFX</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal graphics struct.  <a href="struct__UNES__GFX.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__UNES__ATTR.html">_UNES_ATTR</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal struct for attribute tables.  <a href="struct__UNES__ATTR.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -181,8 +183,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:a84ae029b79591f0a8f837ae0554e42d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the location UNES uses to look for tiledata.  <a href="gfx_8h.html#a84ae029b79591f0a8f837ae0554e42d9">More...</a><br /></td></tr>
 <tr class="separator:a84ae029b79591f0a8f837ae0554e42d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ce18d6a4abfce7789b498871631316d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a4ce18d6a4abfce7789b498871631316d">unes_set_palette</a> (uint8_t index, <a class="el" href="gfx_8h.html#a0d34324a4251eb5f46f509dc95da154c">Palette</a> palette)</td></tr>
-<tr class="memdesc:a4ce18d6a4abfce7789b498871631316d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes.  <a href="gfx_8h.html#a4ce18d6a4abfce7789b498871631316d">More...</a><br /></td></tr>
+<tr class="memdesc:a4ce18d6a4abfce7789b498871631316d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a palette at index.  <a href="gfx_8h.html#a4ce18d6a4abfce7789b498871631316d">More...</a><br /></td></tr>
 <tr class="separator:a4ce18d6a4abfce7789b498871631316d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a407cdd2f360f58e64fa18d8bc0e6236e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a407cdd2f360f58e64fa18d8bc0e6236e">unes_set_palettes</a> (uint8_t start, <a class="el" href="gfx_8h.html#a0d34324a4251eb5f46f509dc95da154c">Palette</a> *palettes, size_t num)</td></tr>
+<tr class="memdesc:a407cdd2f360f58e64fa18d8bc0e6236e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets multiple palettes starting at index. Does nothing if it can't copy the palettes.  <a href="gfx_8h.html#a407cdd2f360f58e64fa18d8bc0e6236e">More...</a><br /></td></tr>
+<tr class="separator:a407cdd2f360f58e64fa18d8bc0e6236e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecb7682d62068660576bce87f8e8c2ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#aecb7682d62068660576bce87f8e8c2ff">unes_set_scanline_interrupt</a> (<a class="el" href="gfx_8h.html#a5927b6fb8144399446312ea1ff679032">unes_scanline_interrupt</a> irq)</td></tr>
 <tr class="memdesc:aecb7682d62068660576bce87f8e8c2ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the scanline interrupt function.  <a href="gfx_8h.html#aecb7682d62068660576bce87f8e8c2ff">More...</a><br /></td></tr>
 <tr class="separator:aecb7682d62068660576bce87f8e8c2ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -195,18 +200,27 @@ Functions</h2></td></tr>
 <tr class="memitem:ae482b7eed90a9cc4d8f84bd53d1d1afc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTile.html">Tile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#ae482b7eed90a9cc4d8f84bd53d1d1afc">unes_get_bg_tile</a> (uint8_t x, uint8_t y)</td></tr>
 <tr class="memdesc:ae482b7eed90a9cc4d8f84bd53d1d1afc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the tile at position. It can also be modified.  <a href="gfx_8h.html#ae482b7eed90a9cc4d8f84bd53d1d1afc">More...</a><br /></td></tr>
 <tr class="separator:ae482b7eed90a9cc4d8f84bd53d1d1afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb618f850aeb8a4e2691df80f08e30fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#aeb618f850aeb8a4e2691df80f08e30fe">unes_set_bg_tile</a> (<a class="el" href="structTile.html">Tile</a> tile, uint8_t x, uint8_t y)</td></tr>
+<tr class="memdesc:aeb618f850aeb8a4e2691df80f08e30fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a tile at a location.  <a href="gfx_8h.html#aeb618f850aeb8a4e2691df80f08e30fe">More...</a><br /></td></tr>
+<tr class="separator:aeb618f850aeb8a4e2691df80f08e30fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a329e0240914e4fc092ac27176f4d1ade"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a329e0240914e4fc092ac27176f4d1ade">unes_legacy_set_map</a> (uint8_t *data, size_t size, uint8_t x_offset, uint8_t y_offset, uint8_t row_size)</td></tr>
+<tr class="memdesc:a329e0240914e4fc092ac27176f4d1ade"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets background map the old fashioned way.  <a href="gfx_8h.html#a329e0240914e4fc092ac27176f4d1ade">More...</a><br /></td></tr>
+<tr class="separator:a329e0240914e4fc092ac27176f4d1ade"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e6f14124f36ee640441bda9e2f0df1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a1e6f14124f36ee640441bda9e2f0df1f">unes_legacy_set_nametable</a> (uint8_t *data, uint8_t x_offset, uint8_t y_offset)</td></tr>
+<tr class="memdesc:a1e6f14124f36ee640441bda9e2f0df1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a full nametable with attributes the old fashioned way.  <a href="gfx_8h.html#a1e6f14124f36ee640441bda9e2f0df1f">More...</a><br /></td></tr>
+<tr class="separator:a1e6f14124f36ee640441bda9e2f0df1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e1fd7e6777b3f137010184d043dd7ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSprite.html">Sprite</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a6e1fd7e6777b3f137010184d043dd7ce">unes_get_sprite</a> (uint16_t index)</td></tr>
 <tr class="memdesc:a6e1fd7e6777b3f137010184d043dd7ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the address of a sprite.  <a href="gfx_8h.html#a6e1fd7e6777b3f137010184d043dd7ce">More...</a><br /></td></tr>
 <tr class="separator:a6e1fd7e6777b3f137010184d043dd7ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04041c987e4a98286d7abd329821e199"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a04041c987e4a98286d7abd329821e199">unes_set_background_color</a> (uint8_t index)</td></tr>
+<tr class="memdesc:a04041c987e4a98286d7abd329821e199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the universal background color, or #3F00/#3F10 on original hardware.  <a href="gfx_8h.html#a04041c987e4a98286d7abd329821e199">More...</a><br /></td></tr>
+<tr class="separator:a04041c987e4a98286d7abd329821e199"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17093043ee1be13176d886800c024a37"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a17093043ee1be13176d886800c024a37">unes_render</a> ()</td></tr>
 <tr class="memdesc:a17093043ee1be13176d886800c024a37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render a frame. Will call interrupts.  <a href="gfx_8h.html#a17093043ee1be13176d886800c024a37">More...</a><br /></td></tr>
 <tr class="separator:a17093043ee1be13176d886800c024a37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:aaa68f2224cf13507d3ffd22b24d807e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structColor.html">Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#aaa68f2224cf13507d3ffd22b24d807e9">DEFAULT_PALETTE</a> [64]</td></tr>
-<tr class="memdesc:aaa68f2224cf13507d3ffd22b24d807e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default nes palette.  <a href="gfx_8h.html#aaa68f2224cf13507d3ffd22b24d807e9">More...</a><br /></td></tr>
-<tr class="separator:aaa68f2224cf13507d3ffd22b24d807e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95a8c3ad35569275ba8f1a0fa476e173"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a95a8c3ad35569275ba8f1a0fa476e173">unesplus_set_background_color</a> (<a class="el" href="structColor.html">Color</a> color)</td></tr>
+<tr class="memdesc:a95a8c3ad35569275ba8f1a0fa476e173"><td class="mdescLeft">&#160;</td><td class="mdescRight">UNESPLUS only functions.  <a href="gfx_8h.html#a95a8c3ad35569275ba8f1a0fa476e173">More...</a><br /></td></tr>
+<tr class="separator:a95a8c3ad35569275ba8f1a0fa476e173"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a38f8ac4e3ce396dea29562564f2e3cc1"></a>
@@ -594,6 +608,112 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a329e0240914e4fc092ac27176f4d1ade"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a329e0240914e4fc092ac27176f4d1ade">&#9670;&nbsp;</a></span>unes_legacy_set_map()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unes_legacy_set_map </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>x_offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>y_offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>row_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets background map the old fashioned way. </p>
+<p>This function is for compatability with existing roms and tools. Since there is no mirroring and proper nametables, an x and y offset can be specified to solve some problems. The offsets don't have to be 32 or 30. If anything goes wrong, a message will be printed.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Data </td></tr>
+    <tr><td class="paramname">size</td><td>Size </td></tr>
+    <tr><td class="paramname">x_offset</td><td>X offset in bytes </td></tr>
+    <tr><td class="paramname">y_offset</td><td>Y offset in bytes </td></tr>
+    <tr><td class="paramname">row_size</td><td>Size of a row</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="gfx_8h.html#a1e6f14124f36ee640441bda9e2f0df1f" title="Sets a full nametable with attributes the old fashioned way.">unes_legacy_set_nametable()</a> </dd></dl>
+
+</div>
+</div>
+<a id="a1e6f14124f36ee640441bda9e2f0df1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e6f14124f36ee640441bda9e2f0df1f">&#9670;&nbsp;</a></span>unes_legacy_set_nametable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unes_legacy_set_nametable </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>x_offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>y_offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets a full nametable with attributes the old fashioned way. </p>
+<p>This function is for compatability with existing roms and tools. It accepts a pointer with size of 1024 which includes the attribute table. Offsets can be used for more control. The offsets don't have to be 32 or 30. If anything goes wrong, a message will be printed. The data's row size is assumed to be 32.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Data with size 1024 </td></tr>
+    <tr><td class="paramname">x_offset</td><td>X offset in bytes </td></tr>
+    <tr><td class="paramname">y_offset</td><td>Y offset in bytes</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="gfx_8h.html#a329e0240914e4fc092ac27176f4d1ade" title="Sets background map the old fashioned way.">unes_legacy_set_map()</a> </dd></dl>
+
+</div>
+</div>
 <a id="a17093043ee1be13176d886800c024a37"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a17093043ee1be13176d886800c024a37">&#9670;&nbsp;</a></span>unes_render()</h2>
 
@@ -611,6 +731,76 @@ Variables</h2></td></tr>
 
 <p>Render a frame. Will call interrupts. </p>
 <dl class="section return"><dt>Returns</dt><dd>bool Returns true if the execution should continue </dd></dl>
+
+</div>
+</div>
+<a id="a04041c987e4a98286d7abd329821e199"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04041c987e4a98286d7abd329821e199">&#9670;&nbsp;</a></span>unes_set_background_color()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unes_set_background_color </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the universal background color, or #3F00/#3F10 on original hardware. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Global palette index </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aeb618f850aeb8a4e2691df80f08e30fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb618f850aeb8a4e2691df80f08e30fe">&#9670;&nbsp;</a></span>unes_set_bg_tile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unes_set_bg_tile </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTile.html">Tile</a>&#160;</td>
+          <td class="paramname"><em>tile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets a tile at a location. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tile</td><td><a class="el" href="structTile.html" title="Struct representing a background tile.">Tile</a> </td></tr>
+    <tr><td class="paramname">x</td><td>X coordinate </td></tr>
+    <tr><td class="paramname">y</td><td>Y coordinate </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -648,11 +838,55 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Makes. </p>
+<p>Sets a palette at index. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td></td></tr>
-    <tr><td class="paramname">palette</td><td></td></tr>
+    <tr><td class="paramname">index</td><td>Index </td></tr>
+    <tr><td class="paramname">palette</td><td>Palette </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a407cdd2f360f58e64fa18d8bc0e6236e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a407cdd2f360f58e64fa18d8bc0e6236e">&#9670;&nbsp;</a></span>unes_set_palettes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unes_set_palettes </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="gfx_8h.html#a0d34324a4251eb5f46f509dc95da154c">Palette</a> *&#160;</td>
+          <td class="paramname"><em>palettes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>num</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets multiple palettes starting at index. Does nothing if it can't copy the palettes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>Start index </td></tr>
+    <tr><td class="paramname">palettes</td><td>Pointer to palettes </td></tr>
+    <tr><td class="paramname">num</td><td>Number of palettes to copy </td></tr>
   </table>
   </dd>
 </dl>
@@ -788,28 +1022,30 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="aaa68f2224cf13507d3ffd22b24d807e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa68f2224cf13507d3ffd22b24d807e9">&#9670;&nbsp;</a></span>DEFAULT_PALETTE</h2>
+<a id="a95a8c3ad35569275ba8f1a0fa476e173"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95a8c3ad35569275ba8f1a0fa476e173">&#9670;&nbsp;</a></span>unesplus_set_background_color()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structColor.html">Color</a> DEFAULT_PALETTE[64]</td>
+          <td class="memname">void unesplus_set_background_color </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structColor.html">Color</a>&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Default nes palette. </p>
+<p>UNESPLUS only functions. </p>
+<p>Sets the universal background color </p><dl class="section remark"><dt>Remarks</dt><dd>Can only be called if using UNESPLUS</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

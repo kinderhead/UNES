@@ -1,4 +1,9 @@
 var searchData=
 [
-  ['h_5fflip_12',['h_flip',['../structSprite.html#ad4074b7f4b1beac7277495f68daf6b9d',1,'Sprite']]]
+  ['nametable_5fcount_15',['NAMETABLE_COUNT',['../gfx_8h.html#a4e79489069386cba57bcd9572a6efb4e',1,'gfx.h']]],
+  ['nametable_5fheight_16',['NAMETABLE_HEIGHT',['../gfx_8h.html#ac232897c074d603bc88042ab76614a79',1,'gfx.h']]],
+  ['nametable_5fwidth_17',['NAMETABLE_WIDTH',['../gfx_8h.html#a57ae0799f8fb4987f67b115517ab2bbf',1,'gfx.h']]],
+  ['nametables_18',['nametables',['../struct__UNES__GFX.html#ab3165f5d102dc172b3f5dfa27ba34f74',1,'_UNES_GFX']]],
+  ['nametables_5fheight_19',['NAMETABLES_HEIGHT',['../gfx_8h.html#a70d0cf65666feda595f510b08e1b4e6a',1,'gfx.h']]],
+  ['nametables_5fwidth_20',['NAMETABLES_WIDTH',['../gfx_8h.html#adae91cdd489117e8096acf02575494a6',1,'gfx.h']]]
 ];

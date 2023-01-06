@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['r_94',['r',['../structColor.html#aecbc1a4121c21990512e7c10544d6ece',1,'Color']]],
-  ['raw_5fscreen_95',['raw_screen',['../struct__UNES__GFX.html#a8d1fc907d8b9ffefe66560b29fea11d3',1,'_UNES_GFX']]],
-  ['renderer_96',['renderer',['../struct__UNES__GFX.html#aa33ce4f7ac823a383f11dee1896d72d2',1,'_UNES_GFX']]]
+  ['scanline_5firq_116',['scanline_irq',['../struct__UNES__GFX.html#a5978fa5fde36176181003c1fd0e81d60',1,'_UNES_GFX']]],
+  ['scanline_5firq_5fcounter_117',['scanline_irq_counter',['../struct__UNES__GFX.html#ace35f3c29303a1a9f77ee6216fab6f1b',1,'_UNES_GFX']]],
+  ['scrollx_118',['scrollx',['../struct__UNES__GFX.html#a6b35c0f77dbe20a7ad40583e63b88b03',1,'_UNES_GFX']]],
+  ['scrolly_119',['scrolly',['../struct__UNES__GFX.html#a28602d8694919198a8c7610437600528',1,'_UNES_GFX']]]
 ];
