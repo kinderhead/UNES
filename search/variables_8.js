@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['scanline_5firq_116',['scanline_irq',['../struct__UNES__GFX.html#a5978fa5fde36176181003c1fd0e81d60',1,'_UNES_GFX']]],
-  ['scanline_5firq_5fcounter_117',['scanline_irq_counter',['../struct__UNES__GFX.html#ace35f3c29303a1a9f77ee6216fab6f1b',1,'_UNES_GFX']]],
-  ['scrollx_118',['scrollx',['../struct__UNES__GFX.html#a6b35c0f77dbe20a7ad40583e63b88b03',1,'_UNES_GFX']]],
-  ['scrolly_119',['scrolly',['../struct__UNES__GFX.html#a28602d8694919198a8c7610437600528',1,'_UNES_GFX']]]
+  ['palette_115',['palette',['../structTile.html#a7142710fe03c159252b302cf70e316a5',1,'Tile::palette()'],['../structSprite.html#ab73588adb051d7c9138b615ff4973fff',1,'Sprite::palette()']]],
+  ['palettes_116',['palettes',['../struct__UNES__GFX.html#abad25294023b5dbf7a1a4cd6a40181b3',1,'_UNES_GFX']]],
+  ['priority_117',['priority',['../structSprite.html#aef3ff5bdc1933476147a92f296c7a9f9',1,'Sprite']]]
 ];

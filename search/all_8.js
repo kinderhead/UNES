@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['palette_22',['palette',['../structTile.html#a7142710fe03c159252b302cf70e316a5',1,'Tile::palette()'],['../structSprite.html#ab73588adb051d7c9138b615ff4973fff',1,'Sprite::palette()']]],
-  ['palette_23',['Palette',['../gfx_8h.html#a0d34324a4251eb5f46f509dc95da154c',1,'gfx.h']]],
-  ['palette_5fcount_24',['PALETTE_COUNT',['../gfx_8h.html#a86923ccb5d8d94a7ff871fc52455fc03',1,'gfx.h']]],
-  ['palettes_25',['palettes',['../struct__UNES__GFX.html#a0f42f716cd6e26bc7d410522612c079f',1,'_UNES_GFX']]],
-  ['priority_26',['priority',['../structSprite.html#aef3ff5bdc1933476147a92f296c7a9f9',1,'Sprite']]]
+  ['nametable_5fcount_17',['NAMETABLE_COUNT',['../gfx_8h.html#a4e79489069386cba57bcd9572a6efb4e',1,'gfx.h']]],
+  ['nametable_5fheight_18',['NAMETABLE_HEIGHT',['../gfx_8h.html#ac232897c074d603bc88042ab76614a79',1,'gfx.h']]],
+  ['nametable_5fwidth_19',['NAMETABLE_WIDTH',['../gfx_8h.html#a57ae0799f8fb4987f67b115517ab2bbf',1,'gfx.h']]],
+  ['nametables_20',['nametables',['../struct__UNES__GFX.html#ab3165f5d102dc172b3f5dfa27ba34f74',1,'_UNES_GFX']]],
+  ['nametables_5fheight_21',['NAMETABLES_HEIGHT',['../gfx_8h.html#a70d0cf65666feda595f510b08e1b4e6a',1,'gfx.h']]],
+  ['nametables_5fwidth_22',['NAMETABLES_WIDTH',['../gfx_8h.html#adae91cdd489117e8096acf02575494a6',1,'gfx.h']]]
 ];

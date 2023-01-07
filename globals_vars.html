@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>UltraNES: UltraNES</title>
+<title>UltraNES: File Members</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,7 +63,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('globals_vars.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -81,54 +81,15 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </iframe>
 </div>
 
-<div class="PageDoc"><div class="header">
-  <div class="headertitle">
-<div class="title">UltraNES </div>  </div>
-</div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a> <b>Note: still WIP</b></p>
-<p>What if your friendly neighborhood Nintendo Entertainment System was built today?</p>
-<p>Documentation: <a href="https://kinderhead.github.io/UNES/">https://kinderhead.github.io/UNES/</a></p>
-<h1><a class="anchor" id="autotoc_md1"></a>
-Features</h1>
-<ul>
-<li>Pure ANSI C11 library<ul>
-<li>At least that's what is defined in CMake, but some C90+ features (inline) don't work properly</li>
-<li>Bring your own program</li>
-</ul>
+&#160;<ul>
+<li>DEFAULT_PALETTE
+: <a class="el" href="gfx_8h.html#aaa68f2224cf13507d3ffd22b24d807e9">gfx.h</a>
 </li>
-<li>Simple but less limited graphics api<ul>
-<li>No sprite limit per scanline</li>
-<li>Easier to use scrolling and nametable system</li>
-</ul>
+<li>IS_UNESPLUS
+: <a class="el" href="unes_8h.html#abdd11bccc62639a3860580fbf5e94cf8">unes.h</a>
 </li>
-<li>Interrupts as events</li>
-<li>Sound (hopefully)</li>
-<li>SDL2 backend</li>
-<li>Keyboard input</li>
-<li>Save data</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md2"></a>
-UNES Plus</h1>
-<p>If <code>UNESPLUS</code> is defined during library compilation, the normal specs for the graphics is increased.</p>
-<p>Some changes are:</p><ul>
-<li>Sprites: 64 -&gt; 256</li>
-<li>Backgrounds: 1 -&gt; 3</li>
-<li>Palette count (per layer): 4 -&gt; 16</li>
-<li>32 bit universal background color</li>
-</ul>
-<p>If the library is compiled with <code>UNESPLUS</code>, then <code>UNESPLUS</code> must be defined in the final program.</p>
-<h1><a class="anchor" id="autotoc_md3"></a>
-Contributing</h1>
-<p>Some things that need to (or should be) done are:</p><ul>
-<li>[ ] Graphics<ul>
-<li>[ ] Optimize rendering algorithm</li>
-</ul>
-</li>
-<li>[ ] Audio</li>
-<li>[ ] Controller input </li>
-</ul>
-</div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

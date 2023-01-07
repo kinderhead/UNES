@@ -24,6 +24,7 @@ var gfx_8h =
     [ "_UNES_GFX_free", "gfx_8h.html#a6422dfe00d5fd7c1a9a9c09929f26dab", null ],
     [ "_UNES_GFX_init", "gfx_8h.html#a0b88845376417009b68dce4e6d6d5e3f", null ],
     [ "unes_get_bg_tile", "gfx_8h.html#ae482b7eed90a9cc4d8f84bd53d1d1afc", null ],
+    [ "unes_get_scroll", "gfx_8h.html#a1aa8c337f05f646bbf0c4973d4cdd4ee", null ],
     [ "unes_get_sprite", "gfx_8h.html#a6e1fd7e6777b3f137010184d043dd7ce", null ],
     [ "unes_get_tile_data", "gfx_8h.html#a8ed5b2c13d3eadaf45c1aed5949a8bee", null ],
     [ "unes_legacy_set_map", "gfx_8h.html#a329e0240914e4fc092ac27176f4d1ade", null ],
@@ -31,11 +32,11 @@ var gfx_8h =
     [ "unes_render", "gfx_8h.html#a17093043ee1be13176d886800c024a37", null ],
     [ "unes_set_background_color", "gfx_8h.html#a04041c987e4a98286d7abd329821e199", null ],
     [ "unes_set_bg_tile", "gfx_8h.html#aeb618f850aeb8a4e2691df80f08e30fe", null ],
-    [ "unes_set_palette", "gfx_8h.html#a4ce18d6a4abfce7789b498871631316d", null ],
-    [ "unes_set_palettes", "gfx_8h.html#a407cdd2f360f58e64fa18d8bc0e6236e", null ],
+    [ "unes_set_palettes", "gfx_8h.html#a6012012ea27a3664f669172931116b54", null ],
     [ "unes_set_scanline_interrupt", "gfx_8h.html#aecb7682d62068660576bce87f8e8c2ff", null ],
     [ "unes_set_scanline_interrupt_counter", "gfx_8h.html#a592682225354f5100efe32e5eeffd2cd", null ],
     [ "unes_set_scroll", "gfx_8h.html#ade9d395a22517dcccdabc8e8f3e589d6", null ],
     [ "unes_set_tile_data", "gfx_8h.html#a84ae029b79591f0a8f837ae0554e42d9", null ],
-    [ "unesplus_set_background_color", "gfx_8h.html#a95a8c3ad35569275ba8f1a0fa476e173", null ]
+    [ "unesplus_set_background_color", "gfx_8h.html#a95a8c3ad35569275ba8f1a0fa476e173", null ],
+    [ "DEFAULT_PALETTE", "gfx_8h.html#aaa68f2224cf13507d3ffd22b24d807e9", null ]
 ];

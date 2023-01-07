@@ -27,6 +27,7 @@ var NAVTREE =
   [ "UltraNES", "index.html", [
     [ "Features", "index.html#autotoc_md1", null ],
     [ "UNES Plus", "index.html#autotoc_md2", null ],
+    [ "Contributing", "index.html#autotoc_md3", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -40,6 +41,7 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]

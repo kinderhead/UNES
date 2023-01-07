@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['y_73',['y',['../structSprite.html#ad1cac8b420fc1c9d4f1d889025551281',1,'Sprite']]]
+  ['whole_5fscreen_73',['whole_screen',['../struct__UNES__GFX.html#a9dc673c1e2ef5ce5ae6bbd6d443e79b0',1,'_UNES_GFX']]],
+  ['window_74',['window',['../struct__UNES__GFX.html#ad00fff0186210ecbe9f4003d11479db9',1,'_UNES_GFX']]]
 ];

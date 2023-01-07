@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['oam_21',['oam',['../struct__UNES__GFX.html#a71ebaf810b9a432c8885852b9ac17c4c',1,'_UNES_GFX']]]
+  ['is_5funesplus_16',['IS_UNESPLUS',['../unes_8h.html#abdd11bccc62639a3860580fbf5e94cf8',1,'unes.h']]]
 ];
