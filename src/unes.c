@@ -9,7 +9,6 @@ bool IS_UNESPLUS = false;
 
 void unes_init()
 {
-    _unes_check_unesplus();
     SDL_Init(SDL_INIT_EVERYTHING);
     _UNES_GFX_init();
 }

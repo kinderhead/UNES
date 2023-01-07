@@ -3,8 +3,14 @@ project(UNES VERSION 0.1.0)
 
 set(C_STANDARD 11)
 
+option(UNESPLUS "Enable UltraNES+" OFF)
+
 add_library(UNES src/unes.c src/gfx.c)
 include_directories(UNES include)
+
+if(UNESPLUS)
+    add_definitions(-DUNESPLUS)
+endif()
 
 find_package(SDL2 REQUIRED)
 include_directories(UNES ${SDL2_INCLUDE_DIRS})

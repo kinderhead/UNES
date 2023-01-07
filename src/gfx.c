@@ -28,7 +28,8 @@ void _UNES_GFX_free()
 }
 
 inline static uint32_t _unes_get_raw_color(int r, int g, int b) {
-    return SDL_MapRGBA(pixel_format, r, g, b, 255);
+    // Don't question it
+    return SDL_MapRGBA(pixel_format, r, b, g, 255);
 }
 
 inline static bool _unes_valid_tile(size_t index) {
@@ -55,7 +56,7 @@ inline static void _unes_render_tile(uint32_t out[8][8], Tile tile) {
     {
         for (int x = 7; x >= 0; x--)
         {
-            if (tile.palette >= PALETTE_COUNT) printf("Invalid palette %d", (int)tile.palette);
+            if (tile.palette >= PALETTE_COUNT) {printf("Invalid palette %d", (int)tile.palette); continue;}
             
             uint8_t index = ((raw_tile[y]>>x)&1) | (((raw_tile[y+8]>>x)&1)<<1);
             Color color;
@@ -114,6 +115,27 @@ void unes_set_bg_tile(Tile tile, uint8_t x, uint8_t y) {
     graphics->nametables[x][y] = tile;
 }
 
+void unes_set_bg_tile_index(uint16_t index, uint8_t x, uint8_t y)
+{
+    graphics->nametables[x][y].tile = index;
+}
+
+void unes_set_bg_tile_palette(uint8_t index, uint8_t x, uint8_t y)
+{
+    graphics->nametables[x][y].palette = index;
+}
+
+void unes_fill_bg(Tile tile)
+{
+    for (int x = 0; x < TOTAL_BACKGROUND_WIDTH; x++)
+    {
+        for (int y = 0; y < TOTAL_BACKGROUND_HEIGHT; y++)
+        {
+            graphics->nametables[x][y] = tile;
+        }
+    }
+}
+
 void unes_legacy_set_map(uint8_t *data, size_t size, uint8_t x_offset, uint8_t y_offset, uint8_t row_size)
 {
     int y = y_offset;
@@ -160,11 +182,6 @@ Sprite *unes_get_sprite(uint16_t index)
 
 void unes_set_background_color(uint8_t index)
 {
-    #ifndef UNESPLUS
-    printf("UNESPLUS is disabled");
-    return;
-    #endif
-
     graphics->universal_bg_color = DEFAULT_PALETTE[index];
 }
 
@@ -172,7 +189,7 @@ bool unes_render()
 {
     // This is painfully unoptimized :(
     // Possibly could add a cache system
-    
+
     SDL_RenderClear(graphics->renderer);
     memset(graphics->raw_screen, 0, sizeof(graphics->raw_screen));
 
@@ -227,7 +244,7 @@ bool unes_render()
     if (16.66666 - elapsed > 0) {
         SDL_Delay(floor(16.66666 - elapsed));
     } else {
-        printf("WARNING: Lagging, FPS: %.2f\n", (1.0/elapsed));
+        printf("WARNING: Lagging, FPS: %.2f\n", 1.0/(elapsed/1000));
     }
 
     graphics->fps_start = SDL_GetPerformanceCounter();
@@ -245,6 +262,11 @@ bool unes_render()
 
 void unesplus_set_background_color(Color color)
 {
+    #ifndef UNESPLUS
+    printf("UNESPLUS is disabled\n");
+    return;
+    #endif
+
     graphics->universal_bg_color = color;
 }
 

@@ -4,3 +4,5 @@ _static/
 _templates/
 .cache/
 .vscode/
+*.nes
+*.chr

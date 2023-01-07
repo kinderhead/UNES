@@ -187,6 +187,7 @@ void unes_set_tile_data(uint8_t* data, size_t size);
 
 /**
  * @brief Sets multiple palettes starting at index. Does nothing if it can't copy the palettes
+ * @note Palettes 0-3 are for the background and 4-7 are for sprites
  * 
  * @param start Start index
  * @param palettes Pointer to palettes
@@ -196,6 +197,7 @@ void unes_set_palettes(uint8_t start, uint8_t* palettes, size_t num);
 
 /**
  * @brief Sets a palette at index
+ * @note Palettes 0-3 are for the background and 4-7 are for sprites
  * 
  * @param index Index
  * @param palette Palette
@@ -257,6 +259,41 @@ Tile* unes_get_bg_tile(uint8_t x, uint8_t y);
  * @param y Y coordinate
  */
 void unes_set_bg_tile(Tile tile, uint8_t x, uint8_t y);
+
+/**
+ * @brief Sets the tile index at a location
+ * 
+ * @param index Tile index
+ * @param x X coordinate
+ * @param y Y coordinate
+ */
+void unes_set_bg_tile_index(uint16_t index, uint8_t x, uint8_t y);
+
+/**
+ * @brief Sets the palette index at a location
+ * 
+ * @param index Palette index
+ * @param x X coordinate
+ * @param y Y coordinate
+ */
+void unes_set_bg_tile_palette(uint8_t index, uint8_t x, uint8_t y);
+
+/**
+ * @brief Fill the whole screen with a tile
+ * 
+ * @param tile Tile
+ */
+void unes_fill_bg(Tile tile);
+
+/**
+ * @brief Fill the whole screen with a tile
+ * 
+ * @param index Index
+ * @param palette Palette
+ */
+static inline void unes_fill_bg_alt(uint16_t index, uint8_t palette) {
+    unes_fill_bg((Tile){index, palette});
+}
 
 /**
  * @brief Sets background map the old fashioned way
