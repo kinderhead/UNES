@@ -53,7 +53,7 @@ typedef uint8_t Palette[4];
  */
 typedef struct {
     /**
-     * @brief Tile index
+     * @brief Tile index. It's uint16_t for UNESPLUS support
      */
     uint16_t tile;
 
@@ -113,6 +113,7 @@ typedef struct {
     SDL_Renderer* renderer;
     SDL_Window* window;
     uint32_t raw_screen[SCREEN_HEIGHT][SCREEN_WIDTH];
+    uint32_t whole_screen[TOTAL_BACKGROUND_HEIGHT*8][TOTAL_BACKGROUND_WIDTH*8];
     Color universal_bg_color;
     
     uint16_t scrollx;
@@ -124,7 +125,7 @@ typedef struct {
     uint8_t* tile_data;
     size_t tile_data_size;
 
-    Palette palettes[PALETTE_COUNT];
+    Palette palettes[PALETTE_COUNT*2];
 
     unes_scanline_interrupt scanline_irq;
     uint8_t scanline_irq_counter;
@@ -141,7 +142,7 @@ typedef struct {
     uint8_t top_right;
     uint8_t bottom_left;
     uint8_t bottom_right;
-} _UNES_ATTR
+} _UNES_ATTR;
 
 /**
  * @brief Default nes palette
@@ -167,6 +168,15 @@ void _UNES_GFX_free();
 void unes_set_scroll(uint16_t scrollx, uint16_t scrolly);
 
 /**
+ * @brief Gets the screen scroll.
+ * @details Use this if you increment scroll to prevent overflow because UNES keeps the roll within bounds
+ * 
+ * @param scrollx Out: X position
+ * @param scrolly Out: Y position
+ */
+void unes_get_scroll(uint16_t* scrollx, uint16_t* scrolly);
+
+/**
  * @brief Sets the location UNES uses to look for tiledata
  * @remark Be sure to free this memory before exiting. UNES will not free it for you
  * 
@@ -176,23 +186,23 @@ void unes_set_scroll(uint16_t scrollx, uint16_t scrolly);
 void unes_set_tile_data(uint8_t* data, size_t size);
 
 /**
- * @brief Sets a palette at index
- * 
- * @param index Index
- * @param palette Palette
- */
-inline void unes_set_palette(uint8_t index, Palette palette) {
-    unes_set_palettes(index, &palette, 1);
-}
-
-/**
  * @brief Sets multiple palettes starting at index. Does nothing if it can't copy the palettes
  * 
  * @param start Start index
  * @param palettes Pointer to palettes
  * @param num Number of palettes to copy
  */
-void unes_set_palettes(uint8_t start, Palette* palettes, size_t num);
+void unes_set_palettes(uint8_t start, uint8_t* palettes, size_t num);
+
+/**
+ * @brief Sets a palette at index
+ * 
+ * @param index Index
+ * @param palette Palette
+ */
+static inline void unes_set_palette(uint8_t index, Palette palette) {
+    unes_set_palettes(index, &palette[0], 1);
+}
 
 /**
  * @brief Sets the scanline interrupt function

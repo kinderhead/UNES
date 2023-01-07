@@ -46,21 +46,48 @@ inline static _UNES_ATTR _unes_parse_attr(uint8_t attr) {
         (attr >> 4) & 0x3,
         (attr >> 6) & 0x3,
     };
-
     return ret;
 }
 
-void unes_set_scroll(uint16_t scrollx, uint16_t scrolly) {
-    graphics->scrollx = scrollx;
-    graphics->scrolly = scrolly;
+inline static void _unes_render_tile(uint32_t out[8][8], Tile tile) {
+    uint8_t* raw_tile = unes_get_tile_data(tile.tile);
+    for (int y = 0; y < 8; y++)
+    {
+        for (int x = 7; x >= 0; x--)
+        {
+            if (tile.palette >= PALETTE_COUNT) printf("Invalid palette %d", (int)tile.palette);
+            
+            uint8_t index = ((raw_tile[y]>>x)&1) | (((raw_tile[y+8]>>x)&1)<<1);
+            Color color;
+            if (index == 0) {
+                color = graphics->universal_bg_color;
+            } else {
+                color = DEFAULT_PALETTE[graphics->palettes[tile.palette][index]];
+            }
+
+            // So it copies nicely into the final buffer
+            out[y][7-x] = _unes_get_raw_color(color.r, color.g, color.b);
+        }
+    }
 }
 
-void unes_set_tile_data(uint8_t *data, size_t size) {
+void unes_set_scroll(uint16_t scrollx, uint16_t scrolly) {
+    graphics->scrollx = scrollx % (TOTAL_BACKGROUND_WIDTH*8);
+    graphics->scrolly = scrolly % (TOTAL_BACKGROUND_HEIGHT*8);
+}
+
+void unes_get_scroll(uint16_t* scrollx, uint16_t* scrolly)
+{
+    *scrollx = graphics->scrollx;
+    *scrolly = graphics->scrolly;
+}
+
+void unes_set_tile_data(uint8_t* data, size_t size) {
     graphics->tile_data = data;
     graphics->tile_data_size = size;
 }
 
-void unes_set_palettes(uint8_t start, Palette* palettes, size_t num) {
+void unes_set_palettes(uint8_t start, uint8_t* palettes, size_t num) {
     if (num + start >= PALETTE_COUNT) return;
     memcpy(&graphics->palettes[start], palettes, sizeof(Palette) * num);
 }
@@ -143,16 +170,35 @@ void unes_set_background_color(uint8_t index)
 
 bool unes_render()
 {
+    // This is painfully unoptimized :(
+    // Possibly could add a cache system
+    
     SDL_RenderClear(graphics->renderer);
     memset(graphics->raw_screen, 0, sizeof(graphics->raw_screen));
 
-    for (int y = 0; y < SCREEN_HEIGHT; y++) {
-        for (int x = 0; x < SCREEN_WIDTH; x+=8) {
-            Tile* tile = unes_get_bg_tile(x/8, y/8);
-            uint32_t row_segment[8] = {0};
-            
+    for (int y = 0; y < TOTAL_BACKGROUND_HEIGHT*8; y+=8)
+    {
+        for (int x = 0; x < TOTAL_BACKGROUND_WIDTH*8; x+=8)
+        {
+            uint32_t tile[8][8] = {0};
+            _unes_render_tile(tile, graphics->nametables[x/8][y/8]);
+            for (int i = 0; i < 8; i++)
+            {
+                memcpy(&graphics->whole_screen[y+i][x], &tile[i], sizeof(tile[0]));
+            }
         }
+    }
+    
+    for (int y = 0; y < SCREEN_HEIGHT; y++) {
+        if (graphics->scrollx >= (TOTAL_BACKGROUND_WIDTH*8)-SCREEN_WIDTH && graphics->scrolly >= (TOTAL_BACKGROUND_HEIGHT*8)-SCREEN_HEIGHT) {
+            
+        } else if (graphics->scrollx >= (TOTAL_BACKGROUND_WIDTH*8)-SCREEN_WIDTH) {
+            
+        } else if (graphics->scrolly >= (TOTAL_BACKGROUND_HEIGHT*8)-SCREEN_HEIGHT) {
 
+        } else {
+            memcpy(&graphics->raw_screen[y][0], &graphics->whole_screen[y+graphics->scrolly][graphics->scrollx], sizeof(graphics->raw_screen[0]));
+        }
         if (graphics->scanline_irq_counter != 0) {
             if (graphics->scanline_irq_counter-- == 0) {
                 (*graphics->scanline_irq)(y);
@@ -178,7 +224,11 @@ bool unes_render()
     graphics->fps_end = SDL_GetPerformanceCounter();
 
     double elapsed = (graphics->fps_end - graphics->fps_start) / (double) SDL_GetPerformanceFrequency() * 1000;
-    SDL_Delay(floor(16.66666 - elapsed));
+    if (16.66666 - elapsed > 0) {
+        SDL_Delay(floor(16.66666 - elapsed));
+    } else {
+        printf("WARNING: Lagging, FPS: %.2f\n", (1.0/elapsed));
+    }
 
     graphics->fps_start = SDL_GetPerformanceCounter();
 
@@ -198,4 +248,16 @@ void unesplus_set_background_color(Color color)
     graphics->universal_bg_color = color;
 }
 
-Color DEFAULT_PALETTE[64] = {{124,124,124},{0,0,252},{0,0,188},{68,40,188},{148,0,132},{168,0,32},{168,16,0},{136,20,0},{80,48,0},{0,120,0},{0,104,0},{0,88,0},{0,64,88},{0,0,0},{0,0,0},{0,0,0},{188,188,188},{0,120,248},{0,88,248},{104,68,252},{216,0,204},{228,0,88},{248,56,0},{228,92,16},{172,124,0},{0,184,0},{0,168,0},{0,168,68},{0,136,136},{0,0,0},{0,0,0},{0,0,0},{248,248,248},{60,188,252},{104,136,252},{152,120,248},{248,120,248},{248,88,152},{248,120,88},{252,160,68},{248,184,0},{184,248,24},{88,216,84},{88,248,152},{0,232,216},{120,120,120},{0,0,0},{0,0,0},{252,252,252},{164,228,252},{184,184,248},{216,184,248},{248,184,248},{248,164,192},{240,208,176},{252,224,168},{248,216,120},{216,248,120},{184,248,184},{184,248,216},{0,252,252},{248,216,248},{0,0,0},{0,0,0}};
+Color DEFAULT_PALETTE[64] = {
+    {124,124,124},{0,0,252},{0,0,188},{68,40,188},{148,0,132},{168,0,32},
+    {168,16,0},{136,20,0},{80,48,0},{0,120,0},{0,104,0},{0,88,0},{0,64,88},
+    {0,0,0},{0,0,0},{0,0,0},{188,188,188},{0,120,248},{0,88,248},{104,68,252},
+    {216,0,204},{228,0,88},{248,56,0},{228,92,16},{172,124,0},{0,184,0},
+    {0,168,0},{0,168,68},{0,136,136},{0,0,0},{0,0,0},{0,0,0},{248,248,248},
+    {60,188,252},{104,136,252},{152,120,248},{248,120,248},{248,88,152},
+    {248,120,88},{252,160,68},{248,184,0},{184,248,24},{88,216,84},{88,248,152},
+    {0,232,216},{120,120,120},{0,0,0},{0,0,0},{252,252,252},{164,228,252},
+    {184,184,248},{216,184,248},{248,184,248},{248,164,192},{240,208,176},
+    {252,224,168},{248,216,120},{216,248,120},{184,248,184},{184,248,216},
+    {0,252,252},{248,216,248},{0,0,0},{0,0,0}
+};
