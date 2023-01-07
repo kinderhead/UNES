@@ -1,0 +1,26 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+      "major": 3,
+      "minor": 22,
+      "patch": 0
+    },
+    "configurePresets": [
+      {
+        "name": "unes",
+        "displayName": "UltraNES",
+        "description": "Default UltraNES",
+        "generator": "Ninja",
+        "binaryDir": "${sourceDir}/build/unes",
+        "cacheVariables": {
+          "UNESPLUS": "OFF"
+        }
+      }
+    ],
+    "buildPresets": [
+        {
+            "name": "unes",
+            "configurePreset": "unes"
+        }
+    ]
+}

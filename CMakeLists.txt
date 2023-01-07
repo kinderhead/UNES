@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.22.0)
 project(UNES VERSION 0.1.0)
 
-set(C_STANDARD 11)
+set(CMAKE_C_STANDARD 11)
 
 option(UNESPLUS "Enable UltraNES+" OFF)
 
@@ -10,6 +10,7 @@ include_directories(UNES include)
 
 if(UNESPLUS)
     add_definitions(-DUNESPLUS)
+    set_target_properties(UNES PROPERTIES OUTPUT_NAME "UNESplus")
 endif()
 
 find_package(SDL2 REQUIRED)
