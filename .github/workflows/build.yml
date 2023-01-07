@@ -1,0 +1,29 @@
+name: Build
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        type: ["unes", "unesplus"]
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v3
+    - name: Get CMake
+      uses: lukka/get-cmake@latest
+    - name: Run CMake
+      uses: lukka/run-cmake@v10
+      with:
+        configPreset: ${{ matrix.type }}
+        buildPreset: ${{ matrix.type }}
+    - name: Upload
+      uses: actions/upload-artifact@v3
+      with:
+        name: ${{ matrix.type }}
+        path: build/unes/*UNES.*
