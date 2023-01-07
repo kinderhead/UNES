@@ -15,12 +15,25 @@
         "cacheVariables": {
           "UNESPLUS": "OFF"
         }
+      },
+      {
+        "name": "unesplus",
+        "inherits": "unes",
+        "displayName": "UltraNES+",
+        "description": "UltraNES+",
+        "cacheVariables": {
+          "UNESPLUS": "ON"
+        }
       }
     ],
     "buildPresets": [
         {
             "name": "unes",
             "configurePreset": "unes"
+        },
+        {
+            "name": "unes+",
+            "configurePreset": "unesplus"
         }
     ]
 }

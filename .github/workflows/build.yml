@@ -20,10 +20,10 @@ jobs:
     - name: Run CMake
       uses: lukka/run-cmake@v10
       with:
-        configPreset: ${{ matrix.type }}
+        configurePreset: ${{ matrix.type }}
         buildPreset: ${{ matrix.type }}
     - name: Upload
       uses: actions/upload-artifact@v3
       with:
         name: ${{ matrix.type }}
-        path: build/unes/*UNES.*
+        path: build/unes/*UNES*
