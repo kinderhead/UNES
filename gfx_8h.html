@@ -204,6 +204,15 @@ Functions</h2></td></tr>
 <tr class="memitem:aeb618f850aeb8a4e2691df80f08e30fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#aeb618f850aeb8a4e2691df80f08e30fe">unes_set_bg_tile</a> (<a class="el" href="structTile.html">Tile</a> tile, uint8_t x, uint8_t y)</td></tr>
 <tr class="memdesc:aeb618f850aeb8a4e2691df80f08e30fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a tile at a location.  <a href="gfx_8h.html#aeb618f850aeb8a4e2691df80f08e30fe">More...</a><br /></td></tr>
 <tr class="separator:aeb618f850aeb8a4e2691df80f08e30fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73c9f854bbf08c2031a0e710243ab1a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a73c9f854bbf08c2031a0e710243ab1a5">unes_set_bg_tile_index</a> (uint16_t index, uint8_t x, uint8_t y)</td></tr>
+<tr class="memdesc:a73c9f854bbf08c2031a0e710243ab1a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the tile index at a location.  <a href="gfx_8h.html#a73c9f854bbf08c2031a0e710243ab1a5">More...</a><br /></td></tr>
+<tr class="separator:a73c9f854bbf08c2031a0e710243ab1a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8d0718b173250407ac8380a81c476eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#af8d0718b173250407ac8380a81c476eb">unes_set_bg_tile_palette</a> (uint8_t index, uint8_t x, uint8_t y)</td></tr>
+<tr class="memdesc:af8d0718b173250407ac8380a81c476eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the palette index at a location.  <a href="gfx_8h.html#af8d0718b173250407ac8380a81c476eb">More...</a><br /></td></tr>
+<tr class="separator:af8d0718b173250407ac8380a81c476eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad278beb30e55a8441a104813aba2c22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#aad278beb30e55a8441a104813aba2c22">unes_fill_bg</a> (<a class="el" href="structTile.html">Tile</a> tile)</td></tr>
+<tr class="memdesc:aad278beb30e55a8441a104813aba2c22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the whole screen with a tile.  <a href="gfx_8h.html#aad278beb30e55a8441a104813aba2c22">More...</a><br /></td></tr>
+<tr class="separator:aad278beb30e55a8441a104813aba2c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a329e0240914e4fc092ac27176f4d1ade"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a329e0240914e4fc092ac27176f4d1ade">unes_legacy_set_map</a> (uint8_t *data, size_t size, uint8_t x_offset, uint8_t y_offset, uint8_t row_size)</td></tr>
 <tr class="memdesc:a329e0240914e4fc092ac27176f4d1ade"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets background map the old fashioned way.  <a href="gfx_8h.html#a329e0240914e4fc092ac27176f4d1ade">More...</a><br /></td></tr>
 <tr class="separator:a329e0240914e4fc092ac27176f4d1ade"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -518,6 +527,32 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Internal init function. </p>
+
+</div>
+</div>
+<a id="aad278beb30e55a8441a104813aba2c22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad278beb30e55a8441a104813aba2c22">&#9670;&nbsp;</a></span>unes_fill_bg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unes_fill_bg </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTile.html">Tile</a>&#160;</td>
+          <td class="paramname"><em>tile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fill the whole screen with a tile. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tile</td><td><a class="el" href="structTile.html" title="Struct representing a background tile.">Tile</a> </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -849,6 +884,94 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a73c9f854bbf08c2031a0e710243ab1a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73c9f854bbf08c2031a0e710243ab1a5">&#9670;&nbsp;</a></span>unes_set_bg_tile_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unes_set_bg_tile_index </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the tile index at a location. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td><a class="el" href="structTile.html" title="Struct representing a background tile.">Tile</a> index </td></tr>
+    <tr><td class="paramname">x</td><td>X coordinate </td></tr>
+    <tr><td class="paramname">y</td><td>Y coordinate </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af8d0718b173250407ac8380a81c476eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8d0718b173250407ac8380a81c476eb">&#9670;&nbsp;</a></span>unes_set_bg_tile_palette()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unes_set_bg_tile_palette </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the palette index at a location. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Palette index </td></tr>
+    <tr><td class="paramname">x</td><td>X coordinate </td></tr>
+    <tr><td class="paramname">y</td><td>Y coordinate </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a6012012ea27a3664f669172931116b54"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6012012ea27a3664f669172931116b54">&#9670;&nbsp;</a></span>unes_set_palettes()</h2>
 
@@ -882,6 +1005,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sets multiple palettes starting at index. Does nothing if it can't copy the palettes. </p>
+<dl class="section note"><dt>Note</dt><dd>Palettes 0-3 are for the background and 4-7 are for sprites</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">start</td><td>Start index </td></tr>

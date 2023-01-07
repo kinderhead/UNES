@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['whole_5fscreen_73',['whole_screen',['../struct__UNES__GFX.html#a9dc673c1e2ef5ce5ae6bbd6d443e79b0',1,'_UNES_GFX']]],
-  ['window_74',['window',['../struct__UNES__GFX.html#ad00fff0186210ecbe9f4003d11479db9',1,'_UNES_GFX']]]
+  ['whole_5fscreen_80',['whole_screen',['../struct__UNES__GFX.html#a9dc673c1e2ef5ce5ae6bbd6d443e79b0',1,'_UNES_GFX']]],
+  ['window_81',['window',['../struct__UNES__GFX.html#ad00fff0186210ecbe9f4003d11479db9',1,'_UNES_GFX']]]
 ];
