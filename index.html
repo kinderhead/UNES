@@ -114,11 +114,12 @@ Features</h2>
 </ul>
 <h2><a class="anchor" id="autotoc_md2"></a>
 Getting Started</h2>
-<p>First, download or compile the library. The current version can be found in Github Actions.</p>
+<p>First, download or compile the library. The newest updates can be found in Github Actions.</p>
 <p>Then create a starting program: </p><div class="fragment"><div class="line">#include &lt;unes.h&gt;</div>
 <div class="line"> </div>
 <div class="line">int main(int argc, char** argv) {</div>
 <div class="line">    unes_init();</div>
+<div class="line">    unes_ppu_enable();</div>
 <div class="line"> </div>
 <div class="line">    // Initialize tile data and palettes</div>
 <div class="line">    // unes_set_tile_data(tile_data, sizeof(tile_data));</div>
@@ -143,7 +144,7 @@ UltraNES+</h2>
 <p>If the library is compiled with <code>UNESPLUS</code>, then <code>UNESPLUS</code> is highly recommended to be defined in the final program by the user. Until a reasonable way to check this during runtime is implemented, you may get undefined behaviors.</p>
 <h2><a class="anchor" id="autotoc_md4"></a>
 Examples</h2>
-<p>To compile the evolving example (under /test), you need the CHR ROM from Super Mario Bros. One way is to legally dump your cart and put the dump into the repo folder. Rename it to <code>smb.nes</code> and run <code><a class="el" href="smb__extractor_8py.html">smb_extractor.py</a></code>. Actual examples will be added once more features are complete.</p>
+<p>To compile the evolving example (under /test), you need the CHR ROM from Super Mario Bros. One way is to legally dump your cart and put the dump into the repo folder. Rename it to <code>smb.nes</code> and run <code>smb_extractor.py</code>. Actual examples will be added once more features are complete.</p>
 <h2><a class="anchor" id="autotoc_md5"></a>
 Contributing</h2>
 <p>Some things that need to (or should be) done are:</p><ul>

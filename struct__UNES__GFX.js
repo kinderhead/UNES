@@ -5,6 +5,7 @@ var struct__UNES__GFX =
     [ "nametables", "struct__UNES__GFX.html#ab3165f5d102dc172b3f5dfa27ba34f74", null ],
     [ "oam", "struct__UNES__GFX.html#a71ebaf810b9a432c8885852b9ac17c4c", null ],
     [ "palettes", "struct__UNES__GFX.html#abad25294023b5dbf7a1a4cd6a40181b3", null ],
+    [ "ppu_enabled", "struct__UNES__GFX.html#aaba8f1f60795a7bba21bbb1b0b12f231", null ],
     [ "raw_screen", "struct__UNES__GFX.html#a8d1fc907d8b9ffefe66560b29fea11d3", null ],
     [ "renderer", "struct__UNES__GFX.html#aa33ce4f7ac823a383f11dee1896d72d2", null ],
     [ "scanline_irq", "struct__UNES__GFX.html#a5978fa5fde36176181003c1fd0e81d60", null ],

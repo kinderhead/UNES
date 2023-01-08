@@ -30,6 +30,8 @@ var gfx_8h =
     [ "unes_get_tile_data", "gfx_8h.html#a8ed5b2c13d3eadaf45c1aed5949a8bee", null ],
     [ "unes_legacy_set_map", "gfx_8h.html#a329e0240914e4fc092ac27176f4d1ade", null ],
     [ "unes_legacy_set_nametable", "gfx_8h.html#a1e6f14124f36ee640441bda9e2f0df1f", null ],
+    [ "unes_ppu_disable", "gfx_8h.html#acb38fe388181f03cce20b3ffdd985a74", null ],
+    [ "unes_ppu_enable", "gfx_8h.html#a3e6b0d38c0964445d1b399e22d6cfe53", null ],
     [ "unes_render", "gfx_8h.html#a17093043ee1be13176d886800c024a37", null ],
     [ "unes_set_background_color", "gfx_8h.html#a04041c987e4a98286d7abd329821e199", null ],
     [ "unes_set_bg_tile", "gfx_8h.html#aeb618f850aeb8a4e2691df80f08e30fe", null ],
