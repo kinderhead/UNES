@@ -1,3 +1,5 @@
+![](https://img.shields.io/github/actions/workflow/status/kinderhead/UNES/build.yml)
+
 # UltraNES
 
 **Note: still WIP**

@@ -8,18 +8,19 @@ on:
 
 jobs:
   job:
-    name: ${{ matrix.os }}-${{ github.workflow }}
+    name: ${{ matrix.os }}-${{ type }}-${{ github.workflow }}
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
         type: ["unes", "unesplus"]
+        config: ["Release", "Debug"]
         include:
           - os: ubuntu-latest
-            name: linux
+            name: Linux
           - os: windows-latest
-            name: windows
+            name: Windows
           - os: macos-latest
-            name: macos
+            name: Macos
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v3
@@ -35,8 +36,14 @@ jobs:
       with:
         configurePreset: ${{ matrix.type }}
         buildPreset: ${{ matrix.type }}
+        buildPresetAdditionalArgs: ['--config ${{ matrix.config }}']
     - name: Upload
       uses: actions/upload-artifact@v3
       with:
-        name: '${{ matrix.type }}-${{ matrix.name }}'
+        name: '${{ matrix.type }}-${{ matrix.name }}-${{ matrix.config }}'
         path: build/unes/*UNES*
+  
+  include:
+    runs-on: ubuntu-latest
+    steps:
+
