@@ -60,9 +60,15 @@ Some changes are:
 
 If the library is compiled with `UNESPLUS`, then `UNESPLUS` is highly recommended to be defined in the final program by the user. Until a reasonable way to check this during runtime is implemented, you may get undefined behaviors.
 
+## Tutorial
+
+A tutorial is being worked on. It can be viewed on the documentation soon.
+
 ## Examples
 
-To compile the evolving example (under /test), you need the CHR ROM from Super Mario Bros. One way is to legally dump your cart and put the dump into the repo folder. Rename it to `smb.nes` and run `smb_extractor.py`. Actual examples will be added once more features are complete.
+To compile the evolving example (under `/test`), you need the CHR ROM from Super Mario Bros. One way is to legally dump your cart and put the dump into the repo folder. Rename it to `smb.nes` and run `smb_extractor.py`. Actual examples will be added once more features are complete.
+
+There are now examples under `/examples`.
 
 ## Contributing
 
