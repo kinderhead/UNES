@@ -29,8 +29,9 @@ var NAVTREE =
       [ "Features", "index.html#autotoc_md1", null ],
       [ "Getting Started", "index.html#autotoc_md2", null ],
       [ "UltraNES+", "index.html#autotoc_md3", null ],
-      [ "Examples", "index.html#autotoc_md4", null ],
-      [ "Contributing", "index.html#autotoc_md5", null ]
+      [ "Tutorial", "index.html#autotoc_md4", null ],
+      [ "Examples", "index.html#autotoc_md5", null ],
+      [ "Contributing", "index.html#autotoc_md6", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -49,8 +50,7 @@ var NAVTREE =
         [ "Typedefs", "globals_type.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
-    ] ],
-    [ "Examples", "examples.html", "examples" ]
+    ] ]
   ] ]
 ];
 
