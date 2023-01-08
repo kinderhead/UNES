@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        type: ["unes", "unesplus"]
+        type: ["UNES", "UNESplus"]
         config: ["Release", "Debug"]
         include:
           - os: ubuntu-latest
@@ -46,4 +46,9 @@ jobs:
   include:
     runs-on: ubuntu-latest
     steps:
-
+    - uses: actions/checkout@v3
+    - name: Upload
+      uses: actions/upload-artifact@v3
+      with:
+        name: Includes
+        path: include/
