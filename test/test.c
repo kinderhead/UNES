@@ -5,7 +5,7 @@
 int main(int argc, char** argv) {
     unes_init();
     
-    uint8_t* tile_data[8192];
+    uint8_t tile_data[8192];
 
     FILE* file = fopen("smb.chr", "rb");
     fread(tile_data, sizeof(uint8_t), 8192, file);
