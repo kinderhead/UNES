@@ -112,6 +112,9 @@ typedef struct {
     SDL_Texture* tex;
     SDL_Renderer* renderer;
     SDL_Window* window;
+
+    bool ppu_enabled;
+
     uint32_t raw_screen[SCREEN_HEIGHT][SCREEN_WIDTH];
     uint32_t whole_screen[TOTAL_BACKGROUND_HEIGHT*8][TOTAL_BACKGROUND_WIDTH*8];
     Color universal_bg_color;
@@ -158,6 +161,16 @@ void _UNES_GFX_init();
  * @brief Internal cleanup function
  */
 void _UNES_GFX_free();
+
+/**
+ * @brief Enable rendering
+ */
+void unes_ppu_enable();
+
+/**
+ * @brief Disable rendering
+ */
+void unes_ppu_disable();
 
 /**
  * @brief Sets the screen scroll

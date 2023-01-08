@@ -6,6 +6,8 @@ static SDL_PixelFormat* pixel_format;
 
 void _UNES_GFX_init() {
     graphics = malloc(sizeof(_UNES_GFX));
+    graphics->tile_data = NULL;
+    graphics->ppu_enabled = false;
     CHECK_NULL(graphics->window, SDL_CreateWindow("UNES", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH * 4, SCREEN_HEIGHT * 4, SDL_WINDOW_SHOWN | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL));
     CHECK_NULL(graphics->renderer, SDL_CreateRenderer(graphics->window, -1, SDL_RENDERER_ACCELERATED));
     CHECK_NULL(graphics->tex, SDL_CreateTexture(graphics->renderer, SDL_PIXELFORMAT_ARGB8888, SDL_TEXTUREACCESS_STREAMING, SCREEN_WIDTH, SCREEN_HEIGHT));
@@ -25,6 +27,16 @@ void _UNES_GFX_free()
     SDL_FreeFormat(pixel_format);
 
     free(graphics);
+}
+
+void unes_ppu_enable()
+{
+    graphics->ppu_enabled = true;
+}
+
+void unes_ppu_disable()
+{
+    graphics->ppu_enabled = false;
 }
 
 inline static uint32_t _unes_get_raw_color(int r, int g, int b) {
@@ -191,49 +203,51 @@ bool unes_render()
     // Possibly could add a cache system
 
     SDL_RenderClear(graphics->renderer);
-    memset(graphics->raw_screen, 0, sizeof(graphics->raw_screen));
+    if (graphics->tile_data == NULL || !graphics->ppu_enabled) {
+        memset(graphics->raw_screen, 0, sizeof(graphics->raw_screen));
 
-    for (int y = 0; y < TOTAL_BACKGROUND_HEIGHT*8; y+=8)
-    {
-        for (int x = 0; x < TOTAL_BACKGROUND_WIDTH*8; x+=8)
+        for (int y = 0; y < TOTAL_BACKGROUND_HEIGHT*8; y+=8)
         {
-            uint32_t tile[8][8] = {0};
-            _unes_render_tile(tile, graphics->nametables[x/8][y/8]);
-            for (int i = 0; i < 8; i++)
+            for (int x = 0; x < TOTAL_BACKGROUND_WIDTH*8; x+=8)
             {
-                memcpy(&graphics->whole_screen[y+i][x], &tile[i], sizeof(tile[0]));
+                uint32_t tile[8][8] = {0};
+                _unes_render_tile(tile, graphics->nametables[x/8][y/8]);
+                for (int i = 0; i < 8; i++)
+                {
+                    memcpy(&graphics->whole_screen[y+i][x], &tile[i], sizeof(tile[0]));
+                }
             }
         }
-    }
-    
-    for (int y = 0; y < SCREEN_HEIGHT; y++) {
-        if (graphics->scrollx >= (TOTAL_BACKGROUND_WIDTH*8)-SCREEN_WIDTH && graphics->scrolly >= (TOTAL_BACKGROUND_HEIGHT*8)-SCREEN_HEIGHT) {
-            
-        } else if (graphics->scrollx >= (TOTAL_BACKGROUND_WIDTH*8)-SCREEN_WIDTH) {
-            
-        } else if (graphics->scrolly >= (TOTAL_BACKGROUND_HEIGHT*8)-SCREEN_HEIGHT) {
+        
+        for (int y = 0; y < SCREEN_HEIGHT; y++) {
+            if (graphics->scrollx >= (TOTAL_BACKGROUND_WIDTH*8)-SCREEN_WIDTH && graphics->scrolly >= (TOTAL_BACKGROUND_HEIGHT*8)-SCREEN_HEIGHT) {
+                
+            } else if (graphics->scrollx >= (TOTAL_BACKGROUND_WIDTH*8)-SCREEN_WIDTH) {
+                
+            } else if (graphics->scrolly >= (TOTAL_BACKGROUND_HEIGHT*8)-SCREEN_HEIGHT) {
 
-        } else {
-            memcpy(&graphics->raw_screen[y][0], &graphics->whole_screen[y+graphics->scrolly][graphics->scrollx], sizeof(graphics->raw_screen[0]));
-        }
-        if (graphics->scanline_irq_counter != 0) {
-            if (graphics->scanline_irq_counter-- == 0) {
-                (*graphics->scanline_irq)(y);
+            } else {
+                memcpy(&graphics->raw_screen[y][0], &graphics->whole_screen[y+graphics->scrolly][graphics->scrollx], sizeof(graphics->raw_screen[0]));
+            }
+            if (graphics->scanline_irq_counter != 0) {
+                if (graphics->scanline_irq_counter-- == 0) {
+                    (*graphics->scanline_irq)(y);
+                }
             }
         }
-    }
 
-    void* pixels = NULL;
-    int pitch = 0;
-    SDL_LockTexture(graphics->tex, NULL, &pixels, &pitch);
-    
-    if (pixels == NULL) {
-        printf("%s\n", SDL_GetError());
-        exit(1);
-    }
+        void* pixels = NULL;
+        int pitch = 0;
+        SDL_LockTexture(graphics->tex, NULL, &pixels, &pitch);
+        
+        if (pixels == NULL) {
+            printf("%s\n", SDL_GetError());
+            exit(1);
+        }
 
-    memcpy(pixels, graphics->raw_screen, sizeof(graphics->raw_screen));
-    SDL_UnlockTexture(graphics->tex);
+        memcpy(pixels, graphics->raw_screen, sizeof(graphics->raw_screen));
+        SDL_UnlockTexture(graphics->tex);
+    }
 
     SDL_RenderCopy(graphics->renderer, graphics->tex, NULL, NULL);
     SDL_RenderPresent(graphics->renderer);

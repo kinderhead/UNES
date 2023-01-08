@@ -4,11 +4,12 @@
 
 int main(int argc, char** argv) {
     unes_init();
+    unes_ppu_enable();
     
     uint8_t tile_data[8192];
 
     FILE* file = fopen("smb.chr", "rb");
-    fread(tile_data, sizeof(uint8_t), 8192, file);
+    fread(&tile_data[0], sizeof(uint8_t), 8192, file);
     fclose(file);
 
     unes_set_tile_data(tile_data, 8192);

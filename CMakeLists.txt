@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.22.0)
 project(UNES VERSION 0.1.0)
 
 set(CMAKE_C_STANDARD 11)
-set(CMAKE_DEBUG_POSTFIX -dbg)
 
 option(UNESPLUS "Enable UltraNES+" OFF)
 
@@ -15,7 +14,7 @@ if(UNESPLUS)
 endif()
 
 find_package(SDL2 REQUIRED)
-include_directories(UNES ${SDL2_INCLUDE_DIRS})
+include_directories(${SDL2_INCLUDE_DIRS})
 target_link_libraries(UNES ${SDL2_LIBRARIES})
 if (UNIX)
     target_link_libraries(UNES m)
@@ -32,6 +31,7 @@ if(DOXYGEN_FOUND)
 endif()
 
 add_subdirectory(test)
+add_subdirectory(examples)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

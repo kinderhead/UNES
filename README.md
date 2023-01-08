@@ -25,7 +25,7 @@ Documentation: https://kinderhead.github.io/UNES/
 
 ## Getting Started
 
-First, download or compile the library. The current version can be found in Github Actions.
+First, download or compile the library. The newest updates can be found in Github Actions.
 
 Then create a starting program:
 ``` c
@@ -33,6 +33,7 @@ Then create a starting program:
 
 int main(int argc, char** argv) {
     unes_init();
+    unes_ppu_enable();
 
     // Initialize tile data and palettes
     // unes_set_tile_data(tile_data, sizeof(tile_data));

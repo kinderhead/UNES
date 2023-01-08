@@ -10,6 +10,7 @@ extern bool IS_UNESPLUS;
 /**
  * @brief Initialize the window and graphics
  * @remark Must be called before any other calls
+ * @example init.c
  */
 void unes_init();
 
