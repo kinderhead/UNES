@@ -25,11 +25,13 @@
 var NAVTREE =
 [
   [ "UltraNES", "index.html", [
-    [ "Features", "index.html#autotoc_md1", null ],
-    [ "Getting Started", "index.html#autotoc_md2", null ],
-    [ "UltraNES+", "index.html#autotoc_md3", null ],
-    [ "Examples", "index.html#autotoc_md4", null ],
-    [ "Contributing", "index.html#autotoc_md5", null ],
+    [ "UltraNES", "index.html#autotoc_md0", [
+      [ "Features", "index.html#autotoc_md1", null ],
+      [ "Getting Started", "index.html#autotoc_md2", null ],
+      [ "UltraNES+", "index.html#autotoc_md3", null ],
+      [ "Examples", "index.html#autotoc_md4", null ],
+      [ "Contributing", "index.html#autotoc_md5", null ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
