@@ -36,7 +36,7 @@ jobs:
       with:
         configurePreset: ${{ matrix.type }}
         buildPreset: ${{ matrix.type }}
-        buildPresetAdditionalArgs: ['--config ${{ matrix.config }}']
+        buildPresetAdditionalArgs: '--config ${{ matrix.config }}'
     - name: Upload
       uses: actions/upload-artifact@v3
       with:
