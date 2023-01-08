@@ -12,15 +12,19 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        type: ["UNES", "UNESplus"]
-        config: ["Release", "Debug"]
+        type: ["unes", "unesplus"]
+        config: ["release", "debug"]
         include:
           - os: ubuntu-latest
-            name: Linux
+            name: linux
           - os: windows-latest
-            name: Windows
+            name: windows
           - os: macos-latest
-            name: Macos
+            name: macos
+          - config: release
+            arg: '[`--config Release`]'
+          - config: debug
+            arg: '[`--config Debug`]'
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v3
@@ -36,7 +40,7 @@ jobs:
       with:
         configurePreset: ${{ matrix.type }}
         buildPreset: ${{ matrix.type }}
-        buildPresetAdditionalArgs: '[`--config ${{ matrix.config }}`]'
+        buildPresetAdditionalArgs: ${{ matrix.arg }}
     - name: Upload
       uses: actions/upload-artifact@v3
       with:

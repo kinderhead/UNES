@@ -7,7 +7,7 @@
     },
     "configurePresets": [
       {
-        "name": "UNES",
+        "name": "unes",
         "displayName": "UltraNES",
         "description": "Default UltraNES",
         "generator": "Ninja",
@@ -21,8 +21,8 @@
         }
       },
       {
-        "name": "UNESplus",
-        "inherits": "UNES",
+        "name": "unesplus",
+        "inherits": "unes",
         "displayName": "UltraNES+",
         "description": "UltraNES+",
         "cacheVariables": {
@@ -32,12 +32,12 @@
     ],
     "buildPresets": [
         {
-            "name": "UNES",
-            "configurePreset": "UNES"
+            "name": "unes",
+            "configurePreset": "unes"
         },
         {
-            "name": "UNESplus",
-            "configurePreset": "UNESplus"
+            "name": "unesplus",
+            "configurePreset": "unesplus"
         }
     ]
 }
