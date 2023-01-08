@@ -8,7 +8,7 @@ on:
 
 jobs:
   job:
-    name: ${{ matrix.os }}-${{ type }}-${{ github.workflow }}
+    name: ${{ matrix.os }}-${{ matrix.type }}-${{ github.workflow }}
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
