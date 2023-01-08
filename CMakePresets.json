@@ -13,7 +13,11 @@
         "generator": "Ninja",
         "binaryDir": "${sourceDir}/build/unes",
         "cacheVariables": {
-          "UNESPLUS": "OFF"
+          "UNESPLUS": "OFF",
+          "CMAKE_TOOLCHAIN_FILE": {
+            "type": "FILEPATH",
+            "value": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+          }
         }
       },
       {
