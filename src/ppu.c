@@ -67,37 +67,38 @@ inline static _UNES_ATTR _unes_parse_attr(uint8_t attr) {
     return ret;
 }
 
-inline static void _unes_render_tile(uint32_t out[8][8], Tile tile) {
+inline static void _unes_render_row(uint32_t* out, Tile tile, uint8_t row) {
     uint8_t* raw_tile = unes_get_tile_data(tile.tile);
-    for (int y = 0; y < 8; y++)
+    for (int x = 7; x >= 0; x--)
     {
-        for (int x = 7; x >= 0; x--)
-        {
-            if (tile.palette >= PALETTE_COUNT) {printf("Invalid palette %d\n", (int)tile.palette); continue;}
-            
-            uint8_t index = ((raw_tile[y]>>x)&1) | (((raw_tile[y+8]>>x)&1)<<1);
-            Color color;
-            if (index == 0) {
-                color = ppu->universal_bg_color;
-            } else {
-                color = DEFAULT_PALETTE[ppu->palettes[tile.palette][index]];
-            }
-
-            // So it copies nicely into the final buffer
-            out[y][7-x] = _unes_get_raw_color(color.r, color.g, color.b);
+        if (tile.palette >= PALETTE_COUNT) {printf("Invalid palette %d\n", (int)tile.palette); continue;}
+        
+        uint8_t index = ((raw_tile[row]>>x)&1) | (((raw_tile[row+8]>>x)&1)<<1);
+        Color color;
+        if (index == 0) {
+            color = ppu->universal_bg_color;
+        } else {
+            color = DEFAULT_PALETTE[ppu->palettes[tile.palette][index]];
         }
+
+        // So it copies nicely into the final buffer
+        out[7-x] = _unes_get_raw_color(color.r, color.g, color.b);
     }
 }
 
-void unes_set_scroll(uint16_t scrollx, uint16_t scrolly) {
+void unes_set_scroll(int scrollx, int scrolly) {
     ppu->scrollx = scrollx % (TOTAL_BACKGROUND_WIDTH*8);
     ppu->scrolly = scrolly % (TOTAL_BACKGROUND_HEIGHT*8);
 }
 
 void unes_get_scroll(uint16_t* scrollx, uint16_t* scrolly)
 {
-    *scrollx = ppu->scrollx;
-    *scrolly = ppu->scrolly;
+    if (scrollx != NULL) {
+        *scrollx = ppu->scrollx;
+    }
+    if (scrolly != NULL) {
+        *scrolly = ppu->scrolly;
+    }
 }
 
 void unes_set_tile_data(uint8_t* data, size_t size) {
@@ -204,36 +205,26 @@ void unes_set_background_color(uint8_t index)
 
 bool unes_render()
 {
-    // This is painfully unoptimized :(
     // Possibly could add a cache system
 
     SDL_RenderClear(ppu->renderer);
     if (ppu->tile_data != NULL && ppu->ppu_enabled) {
         memset(ppu->raw_screen, 0, sizeof(ppu->raw_screen));
-
-        for (int y = 0; y < TOTAL_BACKGROUND_HEIGHT*8; y+=8)
-        {
-            for (int x = 0; x < TOTAL_BACKGROUND_WIDTH*8; x+=8)
-            {
-                uint32_t tile[8][8] = {0};
-                _unes_render_tile(tile, ppu->nametables[x/8][y/8]);
-                for (int i = 0; i < 8; i++)
-                {
-                    memcpy(&ppu->whole_screen[y+i][x], &tile[i], sizeof(tile[0]));
-                }
-            }
-        }
         
+        uint32_t row[SCREEN_WIDTH+8];
+        uint32_t interim_tile[8];
         for (int y = 0; y < SCREEN_HEIGHT; y++) {
-            if (ppu->scrollx >= (TOTAL_BACKGROUND_WIDTH*8)-SCREEN_WIDTH && ppu->scrolly >= (TOTAL_BACKGROUND_HEIGHT*8)-SCREEN_HEIGHT) {
-                
-            } else if (ppu->scrollx >= (TOTAL_BACKGROUND_WIDTH*8)-SCREEN_WIDTH) {
-                
-            } else if (ppu->scrolly >= (TOTAL_BACKGROUND_HEIGHT*8)-SCREEN_HEIGHT) {
+            memset(row, 0, SCREEN_WIDTH+8);
 
-            } else {
-                memcpy(&ppu->raw_screen[y][0], &ppu->whole_screen[y+ppu->scrolly][ppu->scrollx], sizeof(ppu->raw_screen[0]));
+            // The actuall PPU gets 33 tiles per row
+            for (int i = 0; i < 33; i++)
+            {
+                _unes_render_row(&interim_tile[0], ppu->nametables[(i + (ppu->scrollx/8))%TOTAL_BACKGROUND_WIDTH][((y + ppu->scrolly)/8)%TOTAL_BACKGROUND_HEIGHT], (y + ppu->scrolly) % 8);
+                memcpy(&row[i*8], interim_tile, sizeof(interim_tile));
             }
+
+            memcpy(&ppu->raw_screen[y], &row[ppu->scrollx%8], SCREEN_WIDTH*sizeof(uint32_t));
+
             if (ppu->scanline_irq_counter != 0) {
                 if (ppu->scanline_irq_counter-- == 0) {
                     (*ppu->scanline_irq)(y);

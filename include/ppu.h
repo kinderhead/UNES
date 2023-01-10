@@ -29,8 +29,9 @@
 #define NAMETABLE_WIDTH 32
 #define NAMETABLE_HEIGHT 30
 
-#define TOTAL_BACKGROUND_WIDTH NAMETABLES_WIDTH*NAMETABLE_WIDTH
-#define TOTAL_BACKGROUND_HEIGHT NAMETABLES_HEIGHT*NAMETABLE_HEIGHT
+// Obscure bug with modulo for some reason. Must be signed?
+#define TOTAL_BACKGROUND_WIDTH (int)(NAMETABLES_WIDTH*NAMETABLE_WIDTH)
+#define TOTAL_BACKGROUND_HEIGHT (int)(NAMETABLES_HEIGHT*NAMETABLE_HEIGHT)
 
 #define SIZEOF_TILE 16
 
@@ -117,7 +118,6 @@ typedef struct {
     bool ppu_enabled;
 
     uint32_t raw_screen[SCREEN_HEIGHT][SCREEN_WIDTH];
-    uint32_t whole_screen[TOTAL_BACKGROUND_HEIGHT*8][TOTAL_BACKGROUND_WIDTH*8];
     Color universal_bg_color;
     
     uint16_t scrollx;
@@ -174,12 +174,13 @@ void unes_ppu_enable();
 void unes_ppu_disable();
 
 /**
- * @brief Sets the screen scroll
+ * @brief Sets the screen scroll.
+ * @details Accepts signed integers which rap to screen size and are cast to uint16_t.
  * 
  * @param scrollx X position
  * @param scrolly Y position
  */
-void unes_set_scroll(uint16_t scrollx, uint16_t scrolly);
+void unes_set_scroll(int scrollx, int scrolly);
 
 /**
  * @brief Gets the screen scroll.

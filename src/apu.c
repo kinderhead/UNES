@@ -7,10 +7,10 @@ void _UNES_APU_init()
     apu = malloc(sizeof(_UNES_APU));
     memset(apu, 0, sizeof(_UNES_APU));
 
-    apu->spec.freq = SAMPLE_RATE;
+    apu->spec.freq = 44100;
     apu->spec.format = AUDIO_U16;
     apu->spec.channels = 2;
-    apu->spec.samples = AUDIO_BUFFER_SIZE;
+    apu->spec.samples = 512;
     apu->spec.callback = _UNES_APU_run;
 
     SDL_AudioSpec have;
@@ -35,7 +35,7 @@ void _UNES_APU_run(void* userdata, uint8_t* stream, int len)
         uint duty = 0;
 
         // Pulse 1
-        float samples_per_period = (1/apu->square1.freq) / (1/SAMPLE_RATE);
+        float samples_per_period = (1/apu->square1.freq) / (1/apu->spec.freq);
         bool high = true;
 
         for (int i = 0; i < len; i += 2)
@@ -51,8 +51,12 @@ void _UNES_APU_run(void* userdata, uint8_t* stream, int len)
             float duty_cycle = 0;
             switch (apu->square1.cycle)
             {
+            case DUTY_12_5:
+                duty_cycle = apu->spec.freq/(apu->square1.freq*8);
+            case DUTY_25:
+                duty_cycle = apu->spec.freq/(apu->square1.freq*4);
             case DUTY_50:
-                duty_cycle = SAMPLE_RATE/(apu->square1.freq*2);
+                duty_cycle = apu->spec.freq/(apu->square1.freq*2);
                 break;
             
             default:

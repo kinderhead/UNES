@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
 
     unes_set_tile_data(tile_data, 8192);
 
-    unes_fill_bg_alt(256 + 0x24, 0);
+    unes_fill_bg_alt(0, 0);
 
     unes_set_bg_tile_alt(50, 0, 3, 3);
     unes_set_bg_tile_alt(51, 0, 4, 3);
@@ -30,10 +30,18 @@ int main(int argc, char** argv) {
 
     //unes_fill_bg_alt(256 + 0x24, 0);
     
-    float freq = 0;
+    //float freq = 0;
+    int timer = 32;
+    int scroll = 0;
     while (unes_render()) {
-        unes_set_pulse_data(SQUARE1, freq, 3000, DUTY_50);
-        freq += 1;
+        //unes_set_pulse_data(SQUARE1, freq, 3000, DUTY_12_5);
+        //freq++;
+        timer--;
+        if (timer == 0) {
+            timer = 32;
+            scroll++;
+            unes_set_scroll(0, scroll);
+        }
     }
 
     unes_finish();

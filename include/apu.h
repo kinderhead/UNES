@@ -7,9 +7,6 @@
 #include <stdlib.h>
 #include <SDL.h>
 
-#define SAMPLE_RATE 22050
-#define AUDIO_BUFFER_SIZE 512
-
 #define UNES_SQUARE_PERIOD(freq) 111860.8/freq - 1
 #define UNES_TRIANGLE_PERIOD(freq) 55930.4/freq - 1
 
