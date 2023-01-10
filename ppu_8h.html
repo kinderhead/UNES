@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>UltraNES: include/gfx.h File Reference</title>
+<title>UltraNES: include/ppu.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,7 +63,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('gfx_8h.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('ppu_8h.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('gfx_8h.html',''); initResizable(); });
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">gfx.h File Reference</div>  </div>
+<div class="title">ppu.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;SDL.h&gt;</code><br />
@@ -97,19 +97,19 @@ $(document).ready(function(){initNavTree('gfx_8h.html',''); initResizable(); });
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for gfx.h:</div>
+Include dependency graph for ppu.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="gfx_8h__incl.svg" width="371" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="ppu_8h__incl.svg" width="371" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="gfx_8h__dep__incl.svg" width="127" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="ppu_8h__dep__incl.svg" width="127" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
-<p><a href="gfx_8h_source.html">Go to the source code of this file.</a></p>
+<p><a href="ppu_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -131,117 +131,117 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a3d2424bb60748d72b26b0d3ab2ac670b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a3d2424bb60748d72b26b0d3ab2ac670b">SPRITE_COUNT</a>&#160;&#160;&#160;64</td></tr>
+<tr class="memitem:a3d2424bb60748d72b26b0d3ab2ac670b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a3d2424bb60748d72b26b0d3ab2ac670b">SPRITE_COUNT</a>&#160;&#160;&#160;64</td></tr>
 <tr class="separator:a3d2424bb60748d72b26b0d3ab2ac670b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38f8ac4e3ce396dea29562564f2e3cc1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a38f8ac4e3ce396dea29562564f2e3cc1">BACKGROUND_COUNT</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memitem:a38f8ac4e3ce396dea29562564f2e3cc1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a38f8ac4e3ce396dea29562564f2e3cc1">BACKGROUND_COUNT</a>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:a38f8ac4e3ce396dea29562564f2e3cc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86923ccb5d8d94a7ff871fc52455fc03"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a86923ccb5d8d94a7ff871fc52455fc03">PALETTE_COUNT</a>&#160;&#160;&#160;4</td></tr>
+<tr class="memitem:a86923ccb5d8d94a7ff871fc52455fc03"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a86923ccb5d8d94a7ff871fc52455fc03">PALETTE_COUNT</a>&#160;&#160;&#160;4</td></tr>
 <tr class="separator:a86923ccb5d8d94a7ff871fc52455fc03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adae91cdd489117e8096acf02575494a6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#adae91cdd489117e8096acf02575494a6">NAMETABLES_WIDTH</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memitem:adae91cdd489117e8096acf02575494a6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#adae91cdd489117e8096acf02575494a6">NAMETABLES_WIDTH</a>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:adae91cdd489117e8096acf02575494a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70d0cf65666feda595f510b08e1b4e6a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a70d0cf65666feda595f510b08e1b4e6a">NAMETABLES_HEIGHT</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memitem:a70d0cf65666feda595f510b08e1b4e6a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a70d0cf65666feda595f510b08e1b4e6a">NAMETABLES_HEIGHT</a>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:a70d0cf65666feda595f510b08e1b4e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e79489069386cba57bcd9572a6efb4e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a4e79489069386cba57bcd9572a6efb4e">NAMETABLE_COUNT</a>&#160;&#160;&#160;<a class="el" href="gfx_8h.html#adae91cdd489117e8096acf02575494a6">NAMETABLES_WIDTH</a>*<a class="el" href="gfx_8h.html#a70d0cf65666feda595f510b08e1b4e6a">NAMETABLES_HEIGHT</a></td></tr>
+<tr class="memitem:a4e79489069386cba57bcd9572a6efb4e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a4e79489069386cba57bcd9572a6efb4e">NAMETABLE_COUNT</a>&#160;&#160;&#160;<a class="el" href="ppu_8h.html#adae91cdd489117e8096acf02575494a6">NAMETABLES_WIDTH</a>*<a class="el" href="ppu_8h.html#a70d0cf65666feda595f510b08e1b4e6a">NAMETABLES_HEIGHT</a></td></tr>
 <tr class="separator:a4e79489069386cba57bcd9572a6efb4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cd109632a6dcccaa80b43561b1ab700"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a2cd109632a6dcccaa80b43561b1ab700">SCREEN_WIDTH</a>&#160;&#160;&#160;256</td></tr>
+<tr class="memitem:a2cd109632a6dcccaa80b43561b1ab700"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a2cd109632a6dcccaa80b43561b1ab700">SCREEN_WIDTH</a>&#160;&#160;&#160;256</td></tr>
 <tr class="separator:a2cd109632a6dcccaa80b43561b1ab700"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6974d08a74da681b3957b2fead2608b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a6974d08a74da681b3957b2fead2608b8">SCREEN_HEIGHT</a>&#160;&#160;&#160;240</td></tr>
+<tr class="memitem:a6974d08a74da681b3957b2fead2608b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a6974d08a74da681b3957b2fead2608b8">SCREEN_HEIGHT</a>&#160;&#160;&#160;240</td></tr>
 <tr class="separator:a6974d08a74da681b3957b2fead2608b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57ae0799f8fb4987f67b115517ab2bbf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a57ae0799f8fb4987f67b115517ab2bbf">NAMETABLE_WIDTH</a>&#160;&#160;&#160;32</td></tr>
+<tr class="memitem:a57ae0799f8fb4987f67b115517ab2bbf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a57ae0799f8fb4987f67b115517ab2bbf">NAMETABLE_WIDTH</a>&#160;&#160;&#160;32</td></tr>
 <tr class="separator:a57ae0799f8fb4987f67b115517ab2bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac232897c074d603bc88042ab76614a79"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#ac232897c074d603bc88042ab76614a79">NAMETABLE_HEIGHT</a>&#160;&#160;&#160;30</td></tr>
+<tr class="memitem:ac232897c074d603bc88042ab76614a79"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#ac232897c074d603bc88042ab76614a79">NAMETABLE_HEIGHT</a>&#160;&#160;&#160;30</td></tr>
 <tr class="separator:ac232897c074d603bc88042ab76614a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af14f60c6abdc9d93713a50d7c2e0c78e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#af14f60c6abdc9d93713a50d7c2e0c78e">TOTAL_BACKGROUND_WIDTH</a>&#160;&#160;&#160;<a class="el" href="gfx_8h.html#adae91cdd489117e8096acf02575494a6">NAMETABLES_WIDTH</a>*<a class="el" href="gfx_8h.html#a57ae0799f8fb4987f67b115517ab2bbf">NAMETABLE_WIDTH</a></td></tr>
+<tr class="memitem:af14f60c6abdc9d93713a50d7c2e0c78e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#af14f60c6abdc9d93713a50d7c2e0c78e">TOTAL_BACKGROUND_WIDTH</a>&#160;&#160;&#160;<a class="el" href="ppu_8h.html#adae91cdd489117e8096acf02575494a6">NAMETABLES_WIDTH</a>*<a class="el" href="ppu_8h.html#a57ae0799f8fb4987f67b115517ab2bbf">NAMETABLE_WIDTH</a></td></tr>
 <tr class="separator:af14f60c6abdc9d93713a50d7c2e0c78e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf435b075564f589776b07b6765eac68"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#adf435b075564f589776b07b6765eac68">TOTAL_BACKGROUND_HEIGHT</a>&#160;&#160;&#160;<a class="el" href="gfx_8h.html#a70d0cf65666feda595f510b08e1b4e6a">NAMETABLES_HEIGHT</a>*<a class="el" href="gfx_8h.html#ac232897c074d603bc88042ab76614a79">NAMETABLE_HEIGHT</a></td></tr>
+<tr class="memitem:adf435b075564f589776b07b6765eac68"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#adf435b075564f589776b07b6765eac68">TOTAL_BACKGROUND_HEIGHT</a>&#160;&#160;&#160;<a class="el" href="ppu_8h.html#a70d0cf65666feda595f510b08e1b4e6a">NAMETABLES_HEIGHT</a>*<a class="el" href="ppu_8h.html#ac232897c074d603bc88042ab76614a79">NAMETABLE_HEIGHT</a></td></tr>
 <tr class="separator:adf435b075564f589776b07b6765eac68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a144232a21f4dad7635df65ed4b65ce9b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a144232a21f4dad7635df65ed4b65ce9b">SIZEOF_TILE</a>&#160;&#160;&#160;16</td></tr>
+<tr class="memitem:a144232a21f4dad7635df65ed4b65ce9b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a144232a21f4dad7635df65ed4b65ce9b">SIZEOF_TILE</a>&#160;&#160;&#160;16</td></tr>
 <tr class="separator:a144232a21f4dad7635df65ed4b65ce9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3326d7de4ec2d0db9e097c086bd53b93"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a3326d7de4ec2d0db9e097c086bd53b93">CHECK_NULL</a>(var,  stmt)</td></tr>
+<tr class="memitem:a3326d7de4ec2d0db9e097c086bd53b93"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a3326d7de4ec2d0db9e097c086bd53b93">CHECK_NULL</a>(var,  stmt)</td></tr>
 <tr class="separator:a3326d7de4ec2d0db9e097c086bd53b93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a0d34324a4251eb5f46f509dc95da154c"><td class="memItemLeft" align="right" valign="top">typedef uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a0d34324a4251eb5f46f509dc95da154c">Palette</a>[4]</td></tr>
-<tr class="memdesc:a0d34324a4251eb5f46f509dc95da154c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Palette struct.  <a href="gfx_8h.html#a0d34324a4251eb5f46f509dc95da154c">More...</a><br /></td></tr>
+<tr class="memitem:a0d34324a4251eb5f46f509dc95da154c"><td class="memItemLeft" align="right" valign="top">typedef uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a0d34324a4251eb5f46f509dc95da154c">Palette</a>[4]</td></tr>
+<tr class="memdesc:a0d34324a4251eb5f46f509dc95da154c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Palette struct.  <a href="ppu_8h.html#a0d34324a4251eb5f46f509dc95da154c">More...</a><br /></td></tr>
 <tr class="separator:a0d34324a4251eb5f46f509dc95da154c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5927b6fb8144399446312ea1ff679032"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a5927b6fb8144399446312ea1ff679032">unes_scanline_interrupt</a>) (uint8_t scanline)</td></tr>
-<tr class="memdesc:a5927b6fb8144399446312ea1ff679032"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function outline for a scanline interrupt function.  <a href="gfx_8h.html#a5927b6fb8144399446312ea1ff679032">More...</a><br /></td></tr>
+<tr class="memitem:a5927b6fb8144399446312ea1ff679032"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a5927b6fb8144399446312ea1ff679032">unes_scanline_interrupt</a>) (uint8_t scanline)</td></tr>
+<tr class="memdesc:a5927b6fb8144399446312ea1ff679032"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function outline for a scanline interrupt function.  <a href="ppu_8h.html#a5927b6fb8144399446312ea1ff679032">More...</a><br /></td></tr>
 <tr class="separator:a5927b6fb8144399446312ea1ff679032"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0b88845376417009b68dce4e6d6d5e3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a0b88845376417009b68dce4e6d6d5e3f">_UNES_GFX_init</a> ()</td></tr>
-<tr class="memdesc:a0b88845376417009b68dce4e6d6d5e3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal init function.  <a href="gfx_8h.html#a0b88845376417009b68dce4e6d6d5e3f">More...</a><br /></td></tr>
+<tr class="memitem:a0b88845376417009b68dce4e6d6d5e3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a0b88845376417009b68dce4e6d6d5e3f">_UNES_GFX_init</a> ()</td></tr>
+<tr class="memdesc:a0b88845376417009b68dce4e6d6d5e3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal init function.  <a href="ppu_8h.html#a0b88845376417009b68dce4e6d6d5e3f">More...</a><br /></td></tr>
 <tr class="separator:a0b88845376417009b68dce4e6d6d5e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6422dfe00d5fd7c1a9a9c09929f26dab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a6422dfe00d5fd7c1a9a9c09929f26dab">_UNES_GFX_free</a> ()</td></tr>
-<tr class="memdesc:a6422dfe00d5fd7c1a9a9c09929f26dab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal cleanup function.  <a href="gfx_8h.html#a6422dfe00d5fd7c1a9a9c09929f26dab">More...</a><br /></td></tr>
+<tr class="memitem:a6422dfe00d5fd7c1a9a9c09929f26dab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a6422dfe00d5fd7c1a9a9c09929f26dab">_UNES_GFX_free</a> ()</td></tr>
+<tr class="memdesc:a6422dfe00d5fd7c1a9a9c09929f26dab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal cleanup function.  <a href="ppu_8h.html#a6422dfe00d5fd7c1a9a9c09929f26dab">More...</a><br /></td></tr>
 <tr class="separator:a6422dfe00d5fd7c1a9a9c09929f26dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e6b0d38c0964445d1b399e22d6cfe53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a3e6b0d38c0964445d1b399e22d6cfe53">unes_ppu_enable</a> ()</td></tr>
-<tr class="memdesc:a3e6b0d38c0964445d1b399e22d6cfe53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable rendering.  <a href="gfx_8h.html#a3e6b0d38c0964445d1b399e22d6cfe53">More...</a><br /></td></tr>
+<tr class="memitem:a3e6b0d38c0964445d1b399e22d6cfe53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a3e6b0d38c0964445d1b399e22d6cfe53">unes_ppu_enable</a> ()</td></tr>
+<tr class="memdesc:a3e6b0d38c0964445d1b399e22d6cfe53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable rendering.  <a href="ppu_8h.html#a3e6b0d38c0964445d1b399e22d6cfe53">More...</a><br /></td></tr>
 <tr class="separator:a3e6b0d38c0964445d1b399e22d6cfe53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb38fe388181f03cce20b3ffdd985a74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#acb38fe388181f03cce20b3ffdd985a74">unes_ppu_disable</a> ()</td></tr>
-<tr class="memdesc:acb38fe388181f03cce20b3ffdd985a74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable rendering.  <a href="gfx_8h.html#acb38fe388181f03cce20b3ffdd985a74">More...</a><br /></td></tr>
+<tr class="memitem:acb38fe388181f03cce20b3ffdd985a74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#acb38fe388181f03cce20b3ffdd985a74">unes_ppu_disable</a> ()</td></tr>
+<tr class="memdesc:acb38fe388181f03cce20b3ffdd985a74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable rendering.  <a href="ppu_8h.html#acb38fe388181f03cce20b3ffdd985a74">More...</a><br /></td></tr>
 <tr class="separator:acb38fe388181f03cce20b3ffdd985a74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade9d395a22517dcccdabc8e8f3e589d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#ade9d395a22517dcccdabc8e8f3e589d6">unes_set_scroll</a> (uint16_t scrollx, uint16_t scrolly)</td></tr>
-<tr class="memdesc:ade9d395a22517dcccdabc8e8f3e589d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the screen scroll.  <a href="gfx_8h.html#ade9d395a22517dcccdabc8e8f3e589d6">More...</a><br /></td></tr>
+<tr class="memitem:ade9d395a22517dcccdabc8e8f3e589d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#ade9d395a22517dcccdabc8e8f3e589d6">unes_set_scroll</a> (uint16_t scrollx, uint16_t scrolly)</td></tr>
+<tr class="memdesc:ade9d395a22517dcccdabc8e8f3e589d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the screen scroll.  <a href="ppu_8h.html#ade9d395a22517dcccdabc8e8f3e589d6">More...</a><br /></td></tr>
 <tr class="separator:ade9d395a22517dcccdabc8e8f3e589d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1aa8c337f05f646bbf0c4973d4cdd4ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a1aa8c337f05f646bbf0c4973d4cdd4ee">unes_get_scroll</a> (uint16_t *scrollx, uint16_t *scrolly)</td></tr>
-<tr class="memdesc:a1aa8c337f05f646bbf0c4973d4cdd4ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the screen scroll.  <a href="gfx_8h.html#a1aa8c337f05f646bbf0c4973d4cdd4ee">More...</a><br /></td></tr>
+<tr class="memitem:a1aa8c337f05f646bbf0c4973d4cdd4ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a1aa8c337f05f646bbf0c4973d4cdd4ee">unes_get_scroll</a> (uint16_t *scrollx, uint16_t *scrolly)</td></tr>
+<tr class="memdesc:a1aa8c337f05f646bbf0c4973d4cdd4ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the screen scroll.  <a href="ppu_8h.html#a1aa8c337f05f646bbf0c4973d4cdd4ee">More...</a><br /></td></tr>
 <tr class="separator:a1aa8c337f05f646bbf0c4973d4cdd4ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84ae029b79591f0a8f837ae0554e42d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a84ae029b79591f0a8f837ae0554e42d9">unes_set_tile_data</a> (uint8_t *data, size_t size)</td></tr>
-<tr class="memdesc:a84ae029b79591f0a8f837ae0554e42d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the location UNES uses to look for tiledata.  <a href="gfx_8h.html#a84ae029b79591f0a8f837ae0554e42d9">More...</a><br /></td></tr>
+<tr class="memitem:a84ae029b79591f0a8f837ae0554e42d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a84ae029b79591f0a8f837ae0554e42d9">unes_set_tile_data</a> (uint8_t *data, size_t size)</td></tr>
+<tr class="memdesc:a84ae029b79591f0a8f837ae0554e42d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the location UNES uses to look for tiledata.  <a href="ppu_8h.html#a84ae029b79591f0a8f837ae0554e42d9">More...</a><br /></td></tr>
 <tr class="separator:a84ae029b79591f0a8f837ae0554e42d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6012012ea27a3664f669172931116b54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a6012012ea27a3664f669172931116b54">unes_set_palettes</a> (uint8_t start, uint8_t *palettes, size_t num)</td></tr>
-<tr class="memdesc:a6012012ea27a3664f669172931116b54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets multiple palettes starting at index. Does nothing if it can't copy the palettes.  <a href="gfx_8h.html#a6012012ea27a3664f669172931116b54">More...</a><br /></td></tr>
+<tr class="memitem:a6012012ea27a3664f669172931116b54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a6012012ea27a3664f669172931116b54">unes_set_palettes</a> (uint8_t start, uint8_t *palettes, size_t num)</td></tr>
+<tr class="memdesc:a6012012ea27a3664f669172931116b54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets multiple palettes starting at index. Does nothing if it can't copy the palettes.  <a href="ppu_8h.html#a6012012ea27a3664f669172931116b54">More...</a><br /></td></tr>
 <tr class="separator:a6012012ea27a3664f669172931116b54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecb7682d62068660576bce87f8e8c2ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#aecb7682d62068660576bce87f8e8c2ff">unes_set_scanline_interrupt</a> (<a class="el" href="gfx_8h.html#a5927b6fb8144399446312ea1ff679032">unes_scanline_interrupt</a> irq)</td></tr>
-<tr class="memdesc:aecb7682d62068660576bce87f8e8c2ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the scanline interrupt function.  <a href="gfx_8h.html#aecb7682d62068660576bce87f8e8c2ff">More...</a><br /></td></tr>
+<tr class="memitem:aecb7682d62068660576bce87f8e8c2ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#aecb7682d62068660576bce87f8e8c2ff">unes_set_scanline_interrupt</a> (<a class="el" href="ppu_8h.html#a5927b6fb8144399446312ea1ff679032">unes_scanline_interrupt</a> irq)</td></tr>
+<tr class="memdesc:aecb7682d62068660576bce87f8e8c2ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the scanline interrupt function.  <a href="ppu_8h.html#aecb7682d62068660576bce87f8e8c2ff">More...</a><br /></td></tr>
 <tr class="separator:aecb7682d62068660576bce87f8e8c2ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a592682225354f5100efe32e5eeffd2cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a592682225354f5100efe32e5eeffd2cd">unes_set_scanline_interrupt_counter</a> (uint8_t counter)</td></tr>
-<tr class="memdesc:a592682225354f5100efe32e5eeffd2cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the scanline interrupt counter.  <a href="gfx_8h.html#a592682225354f5100efe32e5eeffd2cd">More...</a><br /></td></tr>
+<tr class="memitem:a592682225354f5100efe32e5eeffd2cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a592682225354f5100efe32e5eeffd2cd">unes_set_scanline_interrupt_counter</a> (uint8_t counter)</td></tr>
+<tr class="memdesc:a592682225354f5100efe32e5eeffd2cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the scanline interrupt counter.  <a href="ppu_8h.html#a592682225354f5100efe32e5eeffd2cd">More...</a><br /></td></tr>
 <tr class="separator:a592682225354f5100efe32e5eeffd2cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ed5b2c13d3eadaf45c1aed5949a8bee"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a8ed5b2c13d3eadaf45c1aed5949a8bee">unes_get_tile_data</a> (size_t index)</td></tr>
-<tr class="memdesc:a8ed5b2c13d3eadaf45c1aed5949a8bee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the specified tile's data.  <a href="gfx_8h.html#a8ed5b2c13d3eadaf45c1aed5949a8bee">More...</a><br /></td></tr>
+<tr class="memitem:a8ed5b2c13d3eadaf45c1aed5949a8bee"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a8ed5b2c13d3eadaf45c1aed5949a8bee">unes_get_tile_data</a> (size_t index)</td></tr>
+<tr class="memdesc:a8ed5b2c13d3eadaf45c1aed5949a8bee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the specified tile's data.  <a href="ppu_8h.html#a8ed5b2c13d3eadaf45c1aed5949a8bee">More...</a><br /></td></tr>
 <tr class="separator:a8ed5b2c13d3eadaf45c1aed5949a8bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae482b7eed90a9cc4d8f84bd53d1d1afc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTile.html">Tile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#ae482b7eed90a9cc4d8f84bd53d1d1afc">unes_get_bg_tile</a> (uint8_t x, uint8_t y)</td></tr>
-<tr class="memdesc:ae482b7eed90a9cc4d8f84bd53d1d1afc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the tile at position. It can also be modified.  <a href="gfx_8h.html#ae482b7eed90a9cc4d8f84bd53d1d1afc">More...</a><br /></td></tr>
+<tr class="memitem:ae482b7eed90a9cc4d8f84bd53d1d1afc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTile.html">Tile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#ae482b7eed90a9cc4d8f84bd53d1d1afc">unes_get_bg_tile</a> (uint8_t x, uint8_t y)</td></tr>
+<tr class="memdesc:ae482b7eed90a9cc4d8f84bd53d1d1afc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the tile at position. It can also be modified.  <a href="ppu_8h.html#ae482b7eed90a9cc4d8f84bd53d1d1afc">More...</a><br /></td></tr>
 <tr class="separator:ae482b7eed90a9cc4d8f84bd53d1d1afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb618f850aeb8a4e2691df80f08e30fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#aeb618f850aeb8a4e2691df80f08e30fe">unes_set_bg_tile</a> (<a class="el" href="structTile.html">Tile</a> tile, uint8_t x, uint8_t y)</td></tr>
-<tr class="memdesc:aeb618f850aeb8a4e2691df80f08e30fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a tile at a location.  <a href="gfx_8h.html#aeb618f850aeb8a4e2691df80f08e30fe">More...</a><br /></td></tr>
+<tr class="memitem:aeb618f850aeb8a4e2691df80f08e30fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#aeb618f850aeb8a4e2691df80f08e30fe">unes_set_bg_tile</a> (<a class="el" href="structTile.html">Tile</a> tile, uint8_t x, uint8_t y)</td></tr>
+<tr class="memdesc:aeb618f850aeb8a4e2691df80f08e30fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a tile at a location.  <a href="ppu_8h.html#aeb618f850aeb8a4e2691df80f08e30fe">More...</a><br /></td></tr>
 <tr class="separator:aeb618f850aeb8a4e2691df80f08e30fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73c9f854bbf08c2031a0e710243ab1a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a73c9f854bbf08c2031a0e710243ab1a5">unes_set_bg_tile_index</a> (uint16_t index, uint8_t x, uint8_t y)</td></tr>
-<tr class="memdesc:a73c9f854bbf08c2031a0e710243ab1a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the tile index at a location.  <a href="gfx_8h.html#a73c9f854bbf08c2031a0e710243ab1a5">More...</a><br /></td></tr>
+<tr class="memitem:a73c9f854bbf08c2031a0e710243ab1a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a73c9f854bbf08c2031a0e710243ab1a5">unes_set_bg_tile_index</a> (uint16_t index, uint8_t x, uint8_t y)</td></tr>
+<tr class="memdesc:a73c9f854bbf08c2031a0e710243ab1a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the tile index at a location.  <a href="ppu_8h.html#a73c9f854bbf08c2031a0e710243ab1a5">More...</a><br /></td></tr>
 <tr class="separator:a73c9f854bbf08c2031a0e710243ab1a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8d0718b173250407ac8380a81c476eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#af8d0718b173250407ac8380a81c476eb">unes_set_bg_tile_palette</a> (uint8_t index, uint8_t x, uint8_t y)</td></tr>
-<tr class="memdesc:af8d0718b173250407ac8380a81c476eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the palette index at a location.  <a href="gfx_8h.html#af8d0718b173250407ac8380a81c476eb">More...</a><br /></td></tr>
+<tr class="memitem:af8d0718b173250407ac8380a81c476eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#af8d0718b173250407ac8380a81c476eb">unes_set_bg_tile_palette</a> (uint8_t index, uint8_t x, uint8_t y)</td></tr>
+<tr class="memdesc:af8d0718b173250407ac8380a81c476eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the palette index at a location.  <a href="ppu_8h.html#af8d0718b173250407ac8380a81c476eb">More...</a><br /></td></tr>
 <tr class="separator:af8d0718b173250407ac8380a81c476eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad278beb30e55a8441a104813aba2c22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#aad278beb30e55a8441a104813aba2c22">unes_fill_bg</a> (<a class="el" href="structTile.html">Tile</a> tile)</td></tr>
-<tr class="memdesc:aad278beb30e55a8441a104813aba2c22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the whole screen with a tile.  <a href="gfx_8h.html#aad278beb30e55a8441a104813aba2c22">More...</a><br /></td></tr>
+<tr class="memitem:aad278beb30e55a8441a104813aba2c22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#aad278beb30e55a8441a104813aba2c22">unes_fill_bg</a> (<a class="el" href="structTile.html">Tile</a> tile)</td></tr>
+<tr class="memdesc:aad278beb30e55a8441a104813aba2c22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill the whole screen with a tile.  <a href="ppu_8h.html#aad278beb30e55a8441a104813aba2c22">More...</a><br /></td></tr>
 <tr class="separator:aad278beb30e55a8441a104813aba2c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a329e0240914e4fc092ac27176f4d1ade"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a329e0240914e4fc092ac27176f4d1ade">unes_legacy_set_map</a> (uint8_t *data, size_t size, uint8_t x_offset, uint8_t y_offset, uint8_t row_size)</td></tr>
-<tr class="memdesc:a329e0240914e4fc092ac27176f4d1ade"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets background map the old fashioned way.  <a href="gfx_8h.html#a329e0240914e4fc092ac27176f4d1ade">More...</a><br /></td></tr>
+<tr class="memitem:a329e0240914e4fc092ac27176f4d1ade"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a329e0240914e4fc092ac27176f4d1ade">unes_legacy_set_map</a> (uint8_t *data, size_t size, uint8_t x_offset, uint8_t y_offset, uint8_t row_size)</td></tr>
+<tr class="memdesc:a329e0240914e4fc092ac27176f4d1ade"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets background map the old fashioned way.  <a href="ppu_8h.html#a329e0240914e4fc092ac27176f4d1ade">More...</a><br /></td></tr>
 <tr class="separator:a329e0240914e4fc092ac27176f4d1ade"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e6f14124f36ee640441bda9e2f0df1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a1e6f14124f36ee640441bda9e2f0df1f">unes_legacy_set_nametable</a> (uint8_t *data, uint8_t x_offset, uint8_t y_offset)</td></tr>
-<tr class="memdesc:a1e6f14124f36ee640441bda9e2f0df1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a full nametable with attributes the old fashioned way.  <a href="gfx_8h.html#a1e6f14124f36ee640441bda9e2f0df1f">More...</a><br /></td></tr>
+<tr class="memitem:a1e6f14124f36ee640441bda9e2f0df1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a1e6f14124f36ee640441bda9e2f0df1f">unes_legacy_set_nametable</a> (uint8_t *data, uint8_t x_offset, uint8_t y_offset)</td></tr>
+<tr class="memdesc:a1e6f14124f36ee640441bda9e2f0df1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a full nametable with attributes the old fashioned way.  <a href="ppu_8h.html#a1e6f14124f36ee640441bda9e2f0df1f">More...</a><br /></td></tr>
 <tr class="separator:a1e6f14124f36ee640441bda9e2f0df1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e1fd7e6777b3f137010184d043dd7ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSprite.html">Sprite</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a6e1fd7e6777b3f137010184d043dd7ce">unes_get_sprite</a> (uint16_t index)</td></tr>
-<tr class="memdesc:a6e1fd7e6777b3f137010184d043dd7ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the address of a sprite.  <a href="gfx_8h.html#a6e1fd7e6777b3f137010184d043dd7ce">More...</a><br /></td></tr>
+<tr class="memitem:a6e1fd7e6777b3f137010184d043dd7ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSprite.html">Sprite</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a6e1fd7e6777b3f137010184d043dd7ce">unes_get_sprite</a> (uint16_t index)</td></tr>
+<tr class="memdesc:a6e1fd7e6777b3f137010184d043dd7ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the address of a sprite.  <a href="ppu_8h.html#a6e1fd7e6777b3f137010184d043dd7ce">More...</a><br /></td></tr>
 <tr class="separator:a6e1fd7e6777b3f137010184d043dd7ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04041c987e4a98286d7abd329821e199"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a04041c987e4a98286d7abd329821e199">unes_set_background_color</a> (uint8_t index)</td></tr>
-<tr class="memdesc:a04041c987e4a98286d7abd329821e199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the universal background color, or #3F00/#3F10 on original hardware.  <a href="gfx_8h.html#a04041c987e4a98286d7abd329821e199">More...</a><br /></td></tr>
+<tr class="memitem:a04041c987e4a98286d7abd329821e199"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a04041c987e4a98286d7abd329821e199">unes_set_background_color</a> (uint8_t index)</td></tr>
+<tr class="memdesc:a04041c987e4a98286d7abd329821e199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the universal background color, or #3F00/#3F10 on original hardware.  <a href="ppu_8h.html#a04041c987e4a98286d7abd329821e199">More...</a><br /></td></tr>
 <tr class="separator:a04041c987e4a98286d7abd329821e199"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17093043ee1be13176d886800c024a37"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a17093043ee1be13176d886800c024a37">unes_render</a> ()</td></tr>
-<tr class="memdesc:a17093043ee1be13176d886800c024a37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render a frame. Will call interrupts.  <a href="gfx_8h.html#a17093043ee1be13176d886800c024a37">More...</a><br /></td></tr>
+<tr class="memitem:a17093043ee1be13176d886800c024a37"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a17093043ee1be13176d886800c024a37">unes_render</a> ()</td></tr>
+<tr class="memdesc:a17093043ee1be13176d886800c024a37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render a frame. Will call interrupts.  <a href="ppu_8h.html#a17093043ee1be13176d886800c024a37">More...</a><br /></td></tr>
 <tr class="separator:a17093043ee1be13176d886800c024a37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95a8c3ad35569275ba8f1a0fa476e173"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#a95a8c3ad35569275ba8f1a0fa476e173">unesplus_set_background_color</a> (<a class="el" href="structColor.html">Color</a> color)</td></tr>
-<tr class="memdesc:a95a8c3ad35569275ba8f1a0fa476e173"><td class="mdescLeft">&#160;</td><td class="mdescRight">UNESPLUS only functions.  <a href="gfx_8h.html#a95a8c3ad35569275ba8f1a0fa476e173">More...</a><br /></td></tr>
+<tr class="memitem:a95a8c3ad35569275ba8f1a0fa476e173"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a95a8c3ad35569275ba8f1a0fa476e173">unesplus_set_background_color</a> (<a class="el" href="structColor.html">Color</a> color)</td></tr>
+<tr class="memdesc:a95a8c3ad35569275ba8f1a0fa476e173"><td class="mdescLeft">&#160;</td><td class="mdescRight">UNESPLUS only functions.  <a href="ppu_8h.html#a95a8c3ad35569275ba8f1a0fa476e173">More...</a><br /></td></tr>
 <tr class="separator:a95a8c3ad35569275ba8f1a0fa476e173"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aaa68f2224cf13507d3ffd22b24d807e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structColor.html">Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gfx_8h.html#aaa68f2224cf13507d3ffd22b24d807e9">DEFAULT_PALETTE</a> [64]</td></tr>
-<tr class="memdesc:aaa68f2224cf13507d3ffd22b24d807e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default nes palette.  <a href="gfx_8h.html#aaa68f2224cf13507d3ffd22b24d807e9">More...</a><br /></td></tr>
+<tr class="memitem:aaa68f2224cf13507d3ffd22b24d807e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structColor.html">Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#aaa68f2224cf13507d3ffd22b24d807e9">DEFAULT_PALETTE</a> [64]</td></tr>
+<tr class="memdesc:aaa68f2224cf13507d3ffd22b24d807e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default nes palette.  <a href="ppu_8h.html#aaa68f2224cf13507d3ffd22b24d807e9">More...</a><br /></td></tr>
 <tr class="separator:aaa68f2224cf13507d3ffd22b24d807e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -302,7 +302,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define NAMETABLE_COUNT&#160;&#160;&#160;<a class="el" href="gfx_8h.html#adae91cdd489117e8096acf02575494a6">NAMETABLES_WIDTH</a>*<a class="el" href="gfx_8h.html#a70d0cf65666feda595f510b08e1b4e6a">NAMETABLES_HEIGHT</a></td>
+          <td class="memname">#define NAMETABLE_COUNT&#160;&#160;&#160;<a class="el" href="ppu_8h.html#adae91cdd489117e8096acf02575494a6">NAMETABLES_WIDTH</a>*<a class="el" href="ppu_8h.html#a70d0cf65666feda595f510b08e1b4e6a">NAMETABLES_HEIGHT</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -442,7 +442,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define TOTAL_BACKGROUND_HEIGHT&#160;&#160;&#160;<a class="el" href="gfx_8h.html#a70d0cf65666feda595f510b08e1b4e6a">NAMETABLES_HEIGHT</a>*<a class="el" href="gfx_8h.html#ac232897c074d603bc88042ab76614a79">NAMETABLE_HEIGHT</a></td>
+          <td class="memname">#define TOTAL_BACKGROUND_HEIGHT&#160;&#160;&#160;<a class="el" href="ppu_8h.html#a70d0cf65666feda595f510b08e1b4e6a">NAMETABLES_HEIGHT</a>*<a class="el" href="ppu_8h.html#ac232897c074d603bc88042ab76614a79">NAMETABLE_HEIGHT</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -456,7 +456,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define TOTAL_BACKGROUND_WIDTH&#160;&#160;&#160;<a class="el" href="gfx_8h.html#adae91cdd489117e8096acf02575494a6">NAMETABLES_WIDTH</a>*<a class="el" href="gfx_8h.html#a57ae0799f8fb4987f67b115517ab2bbf">NAMETABLE_WIDTH</a></td>
+          <td class="memname">#define TOTAL_BACKGROUND_WIDTH&#160;&#160;&#160;<a class="el" href="ppu_8h.html#adae91cdd489117e8096acf02575494a6">NAMETABLES_WIDTH</a>*<a class="el" href="ppu_8h.html#a57ae0799f8fb4987f67b115517ab2bbf">NAMETABLE_WIDTH</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -750,7 +750,7 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="gfx_8h.html#a1e6f14124f36ee640441bda9e2f0df1f" title="Sets a full nametable with attributes the old fashioned way.">unes_legacy_set_nametable()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="ppu_8h.html#a1e6f14124f36ee640441bda9e2f0df1f" title="Sets a full nametable with attributes the old fashioned way.">unes_legacy_set_nametable()</a> </dd></dl>
 
 </div>
 </div>
@@ -796,7 +796,7 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="gfx_8h.html#a329e0240914e4fc092ac27176f4d1ade" title="Sets background map the old fashioned way.">unes_legacy_set_map()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="ppu_8h.html#a329e0240914e4fc092ac27176f4d1ade" title="Sets background map the old fashioned way.">unes_legacy_set_map()</a> </dd></dl>
 
 </div>
 </div>
@@ -1070,7 +1070,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void unes_set_scanline_interrupt </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="gfx_8h.html#a5927b6fb8144399446312ea1ff679032">unes_scanline_interrupt</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="ppu_8h.html#a5927b6fb8144399446312ea1ff679032">unes_scanline_interrupt</a>&#160;</td>
           <td class="paramname"><em>irq</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1247,7 +1247,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="gfx_8h.html">gfx.h</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="ppu_8h.html">ppu.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

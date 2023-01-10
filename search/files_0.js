@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gfx_2eh_87',['gfx.h',['../gfx_8h.html',1,'']]]
+  ['ppu_2eh_87',['ppu.h',['../ppu_8h.html',1,'']]]
 ];
