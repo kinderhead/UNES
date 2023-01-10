@@ -86,6 +86,7 @@ $(document).ready(function(){initNavTree('ppu_8h.html',''); initResizable(); });
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -170,6 +171,14 @@ Typedefs</h2></td></tr>
 <tr class="memdesc:a5927b6fb8144399446312ea1ff679032"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function outline for a scanline interrupt function.  <a href="ppu_8h.html#a5927b6fb8144399446312ea1ff679032">More...</a><br /></td></tr>
 <tr class="separator:a5927b6fb8144399446312ea1ff679032"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a71a30c698aa8b3d09ea30e09fe383809"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a71a30c698aa8b3d09ea30e09fe383809">SPRITE_SIZE</a> { <a class="el" href="ppu_8h.html#a71a30c698aa8b3d09ea30e09fe383809a9872474345dec5ada9a4d352ff0b1c9d">SIZE_8x8</a> = 0
+, <a class="el" href="ppu_8h.html#a71a30c698aa8b3d09ea30e09fe383809a4f6110053e1059996c64e23458820f63">SIZE_8x16</a>
+ }</td></tr>
+<tr class="memdesc:a71a30c698aa8b3d09ea30e09fe383809"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structSprite.html" title="Sprite struct.">Sprite</a> size.  <a href="ppu_8h.html#a71a30c698aa8b3d09ea30e09fe383809">More...</a><br /></td></tr>
+<tr class="separator:a71a30c698aa8b3d09ea30e09fe383809"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a8c0464711c0c85a6e01f170c04b1e22d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a8c0464711c0c85a6e01f170c04b1e22d">_UNES_PPU_init</a> ()</td></tr>
@@ -184,6 +193,9 @@ Functions</h2></td></tr>
 <tr class="memitem:acb38fe388181f03cce20b3ffdd985a74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#acb38fe388181f03cce20b3ffdd985a74">unes_ppu_disable</a> ()</td></tr>
 <tr class="memdesc:acb38fe388181f03cce20b3ffdd985a74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable rendering.  <a href="ppu_8h.html#acb38fe388181f03cce20b3ffdd985a74">More...</a><br /></td></tr>
 <tr class="separator:acb38fe388181f03cce20b3ffdd985a74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2487618bc5898b0c991792f5f8c89ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#aa2487618bc5898b0c991792f5f8c89ec">unes_set_sprite_size</a> (<a class="el" href="ppu_8h.html#a71a30c698aa8b3d09ea30e09fe383809">SPRITE_SIZE</a> size)</td></tr>
+<tr class="memdesc:aa2487618bc5898b0c991792f5f8c89ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the sprite size.  <a href="ppu_8h.html#aa2487618bc5898b0c991792f5f8c89ec">More...</a><br /></td></tr>
+<tr class="separator:aa2487618bc5898b0c991792f5f8c89ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73966b2f7289080945cf027bd440516c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a73966b2f7289080945cf027bd440516c">unes_set_scroll</a> (int scrollx, int scrolly)</td></tr>
 <tr class="memdesc:a73966b2f7289080945cf027bd440516c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the screen scroll.  <a href="ppu_8h.html#a73966b2f7289080945cf027bd440516c">More...</a><br /></td></tr>
 <tr class="separator:a73966b2f7289080945cf027bd440516c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -236,7 +248,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a17093043ee1be13176d886800c024a37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render a frame. Will call interrupts.  <a href="ppu_8h.html#a17093043ee1be13176d886800c024a37">More...</a><br /></td></tr>
 <tr class="separator:a17093043ee1be13176d886800c024a37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95a8c3ad35569275ba8f1a0fa476e173"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a95a8c3ad35569275ba8f1a0fa476e173">unesplus_set_background_color</a> (<a class="el" href="structColor.html">Color</a> color)</td></tr>
-<tr class="memdesc:a95a8c3ad35569275ba8f1a0fa476e173"><td class="mdescLeft">&#160;</td><td class="mdescRight">UNESPLUS only functions.  <a href="ppu_8h.html#a95a8c3ad35569275ba8f1a0fa476e173">More...</a><br /></td></tr>
+<tr class="memdesc:a95a8c3ad35569275ba8f1a0fa476e173"><td class="mdescLeft">&#160;</td><td class="mdescRight">UNESPLUS only functions ///.  <a href="ppu_8h.html#a95a8c3ad35569275ba8f1a0fa476e173">More...</a><br /></td></tr>
 <tr class="separator:a95a8c3ad35569275ba8f1a0fa476e173"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -495,6 +507,27 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Function outline for a scanline interrupt function. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a71a30c698aa8b3d09ea30e09fe383809"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71a30c698aa8b3d09ea30e09fe383809">&#9670;&nbsp;</a></span>SPRITE_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="ppu_8h.html#a71a30c698aa8b3d09ea30e09fe383809">SPRITE_SIZE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="structSprite.html" title="Sprite struct.">Sprite</a> size. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a71a30c698aa8b3d09ea30e09fe383809a9872474345dec5ada9a4d352ff0b1c9d"></a>SIZE_8x8&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a71a30c698aa8b3d09ea30e09fe383809a4f6110053e1059996c64e23458820f63"></a>SIZE_8x16&#160;</td><td class="fielddoc"></td></tr>
+</table>
 
 </div>
 </div>
@@ -855,6 +888,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Render a frame. Will call interrupts. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>While drawing back priority sprites, the renderer does not check if the background pixel is palette index 0. Only if it is the same as the universal background color. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>bool Returns true if the execution should continue </dd></dl>
 
 </div>
@@ -1154,6 +1188,32 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="aa2487618bc5898b0c991792f5f8c89ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2487618bc5898b0c991792f5f8c89ec">&#9670;&nbsp;</a></span>unes_set_sprite_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unes_set_sprite_size </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ppu_8h.html#a71a30c698aa8b3d09ea30e09fe383809">SPRITE_SIZE</a>&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the sprite size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>8x8 or 8x16 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a84ae029b79591f0a8f837ae0554e42d9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a84ae029b79591f0a8f837ae0554e42d9">&#9670;&nbsp;</a></span>unes_set_tile_data()</h2>
 
@@ -1208,7 +1268,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>UNESPLUS only functions. </p>
+<p>UNESPLUS only functions ///. </p>
 <p>Sets the universal background color </p><dl class="section remark"><dt>Remarks</dt><dd>Can only be called if using UNESPLUS</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">

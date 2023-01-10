@@ -22,6 +22,6 @@ var apu_8h =
     [ "_UNES_APU_run", "apu_8h.html#a63e61e2c7317a8da0e896af8c614a6b8", null ],
     [ "unes_apu_disable", "apu_8h.html#a243d15f52b5a03f2c671fcf25020df29", null ],
     [ "unes_apu_enable", "apu_8h.html#a51cb3f5da1fa4d065737f4161b9a8dba", null ],
-    [ "unes_set_pulse_data", "apu_8h.html#aca75ee336dee4ad3dd76e87f2aff3c8b", null ],
+    [ "unes_set_pulse_data", "apu_8h.html#ae19ec1501176550a759999aa57925ab4", null ],
     [ "unes_set_triangle_data", "apu_8h.html#a0a91616e75533f11e06e0e086aff82c2", null ]
 ];
