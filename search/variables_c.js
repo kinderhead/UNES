@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['universal_5fbg_5fcolor_142',['universal_bg_color',['../struct__UNES__GFX.html#a16f6a6ad692609813737f7b0740ae3d7',1,'_UNES_GFX']]]
+  ['r_180',['r',['../structColor.html#aecbc1a4121c21990512e7c10544d6ece',1,'Color']]],
+  ['raw_5fscreen_181',['raw_screen',['../struct__UNES__PPU.html#a3de0ee08b79daca2b8e858accf250510',1,'_UNES_PPU']]],
+  ['renderer_182',['renderer',['../struct__UNES__PPU.html#a801ea4faf16f6b38bf8d5059e80e115c',1,'_UNES_PPU']]]
 ];

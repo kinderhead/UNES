@@ -1,0 +1,5 @@
+<map id="_UNES_APU" name="_UNES_APU">
+<area shape="rect" id="node1" title="Internal audio struct." alt="" coords="68,109,167,136"/>
+<area shape="rect" id="node2" href="$structTriangleData.html" title="Triangle channel data." alt="" coords="5,5,109,32"/>
+<area shape="rect" id="node3" href="$structPulseData.html" title="Pulse/square channel data." alt="" coords="133,5,221,32"/>
+</map>

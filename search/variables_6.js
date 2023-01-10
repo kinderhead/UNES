@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nametables_123',['nametables',['../struct__UNES__GFX.html#ab3165f5d102dc172b3f5dfa27ba34f74',1,'_UNES_GFX']]]
+  ['h_5fflip_171',['h_flip',['../structSprite.html#ad4074b7f4b1beac7277495f68daf6b9d',1,'Sprite']]]
 ];

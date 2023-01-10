@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['g_13',['g',['../structColor.html#a23331f00b02491a901873b5085461d99',1,'Color']]]
+  ['enabled_25',['enabled',['../struct__UNES__APU.html#a9e96eabd19e0aae9ce3396d2e3f49663',1,'_UNES_APU']]]
 ];

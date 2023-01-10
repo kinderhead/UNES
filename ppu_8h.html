@@ -96,10 +96,11 @@ $(document).ready(function(){initNavTree('ppu_8h.html',''); initResizable(); });
 <code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ppu.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="ppu_8h__incl.svg" width="371" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="ppu_8h__incl.svg" width="467" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -122,8 +123,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSprite.html">Sprite</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structSprite.html" title="Sprite struct.">Sprite</a> struct.  <a href="structSprite.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__UNES__GFX.html">_UNES_GFX</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal graphics struct.  <a href="struct__UNES__GFX.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__UNES__PPU.html">_UNES_PPU</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal graphics struct.  <a href="struct__UNES__PPU.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__UNES__ATTR.html">_UNES_ATTR</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal struct for attribute tables.  <a href="struct__UNES__ATTR.html#details">More...</a><br /></td></tr>
@@ -171,12 +172,12 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0b88845376417009b68dce4e6d6d5e3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a0b88845376417009b68dce4e6d6d5e3f">_UNES_GFX_init</a> ()</td></tr>
-<tr class="memdesc:a0b88845376417009b68dce4e6d6d5e3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal init function.  <a href="ppu_8h.html#a0b88845376417009b68dce4e6d6d5e3f">More...</a><br /></td></tr>
-<tr class="separator:a0b88845376417009b68dce4e6d6d5e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6422dfe00d5fd7c1a9a9c09929f26dab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a6422dfe00d5fd7c1a9a9c09929f26dab">_UNES_GFX_free</a> ()</td></tr>
-<tr class="memdesc:a6422dfe00d5fd7c1a9a9c09929f26dab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal cleanup function.  <a href="ppu_8h.html#a6422dfe00d5fd7c1a9a9c09929f26dab">More...</a><br /></td></tr>
-<tr class="separator:a6422dfe00d5fd7c1a9a9c09929f26dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c0464711c0c85a6e01f170c04b1e22d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a8c0464711c0c85a6e01f170c04b1e22d">_UNES_PPU_init</a> ()</td></tr>
+<tr class="memdesc:a8c0464711c0c85a6e01f170c04b1e22d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal init function.  <a href="ppu_8h.html#a8c0464711c0c85a6e01f170c04b1e22d">More...</a><br /></td></tr>
+<tr class="separator:a8c0464711c0c85a6e01f170c04b1e22d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a565af92881bb5e4e5ad6c879ee97a5e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a565af92881bb5e4e5ad6c879ee97a5e6">_UNES_PPU_free</a> ()</td></tr>
+<tr class="memdesc:a565af92881bb5e4e5ad6c879ee97a5e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal cleanup function.  <a href="ppu_8h.html#a565af92881bb5e4e5ad6c879ee97a5e6">More...</a><br /></td></tr>
+<tr class="separator:a565af92881bb5e4e5ad6c879ee97a5e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e6b0d38c0964445d1b399e22d6cfe53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a3e6b0d38c0964445d1b399e22d6cfe53">unes_ppu_enable</a> ()</td></tr>
 <tr class="memdesc:a3e6b0d38c0964445d1b399e22d6cfe53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable rendering.  <a href="ppu_8h.html#a3e6b0d38c0964445d1b399e22d6cfe53">More...</a><br /></td></tr>
 <tr class="separator:a3e6b0d38c0964445d1b399e22d6cfe53"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -498,14 +499,14 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a6422dfe00d5fd7c1a9a9c09929f26dab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6422dfe00d5fd7c1a9a9c09929f26dab">&#9670;&nbsp;</a></span>_UNES_GFX_free()</h2>
+<a id="a565af92881bb5e4e5ad6c879ee97a5e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a565af92881bb5e4e5ad6c879ee97a5e6">&#9670;&nbsp;</a></span>_UNES_PPU_free()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void _UNES_GFX_free </td>
+          <td class="memname">void _UNES_PPU_free </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -517,14 +518,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a0b88845376417009b68dce4e6d6d5e3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b88845376417009b68dce4e6d6d5e3f">&#9670;&nbsp;</a></span>_UNES_GFX_init()</h2>
+<a id="a8c0464711c0c85a6e01f170c04b1e22d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c0464711c0c85a6e01f170c04b1e22d">&#9670;&nbsp;</a></span>_UNES_PPU_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void _UNES_GFX_init </td>
+          <td class="memname">void _UNES_PPU_init </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>

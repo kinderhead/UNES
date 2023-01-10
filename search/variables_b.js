@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['tex_136',['tex',['../struct__UNES__GFX.html#a8e081d5cb5d2c21168cec10e1b06ee65',1,'_UNES_GFX']]],
-  ['tile_137',['tile',['../structTile.html#aba39b9ba682916b679d40f355cfdc0be',1,'Tile']]],
-  ['tile_5fdata_138',['tile_data',['../struct__UNES__GFX.html#a07eb2c62139e4e803796839dcf772407',1,'_UNES_GFX']]],
-  ['tile_5fdata_5fsize_139',['tile_data_size',['../struct__UNES__GFX.html#a1579449e32f91ed976b7dc3c18e38680',1,'_UNES_GFX']]],
-  ['top_5fleft_140',['top_left',['../struct__UNES__ATTR.html#a5525e50d57a6a7b69d8a7276d298cb5f',1,'_UNES_ATTR']]],
-  ['top_5fright_141',['top_right',['../struct__UNES__ATTR.html#ac93ca7a17d92c7586ab96e1fc4557643',1,'_UNES_ATTR']]]
+  ['palette_176',['palette',['../structTile.html#a7142710fe03c159252b302cf70e316a5',1,'Tile::palette()'],['../structSprite.html#ab73588adb051d7c9138b615ff4973fff',1,'Sprite::palette()']]],
+  ['palettes_177',['palettes',['../struct__UNES__PPU.html#a6ffef39aafbf516c96b3085835b685f9',1,'_UNES_PPU']]],
+  ['ppu_5fenabled_178',['ppu_enabled',['../struct__UNES__PPU.html#afa9cbed1f85e61d3e0b190c2bd8b5a2d',1,'_UNES_PPU']]],
+  ['priority_179',['priority',['../structSprite.html#aef3ff5bdc1933476147a92f296c7a9f9',1,'Sprite']]]
 ];

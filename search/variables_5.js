@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['is_5funesplus_122',['IS_UNESPLUS',['../unes_8h.html#abdd11bccc62639a3860580fbf5e94cf8',1,'unes.h']]]
+  ['g_170',['g',['../structColor.html#a23331f00b02491a901873b5085461d99',1,'Color']]]
 ];

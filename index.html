@@ -107,7 +107,11 @@ Features</h2>
 </ul>
 </li>
 <li>Interrupts as events</li>
-<li>Sound (hopefully)</li>
+<li>Sound<ul>
+<li>More volume control per channel (8 bits instead of 4)</li>
+<li>Note: in its current state it is possible to play multiple tones in one frame. This may change in the future so don't rely on it</li>
+</ul>
+</li>
 <li>SDL2 backend</li>
 <li>Keyboard input</li>
 <li>Save data</li>
@@ -156,8 +160,12 @@ Contributing</h2>
 <li>[ ] Optimize rendering algorithm</li>
 </ul>
 </li>
-<li>[ ] Audio</li>
-<li>[ ] Controller input </li>
+<li>[ ] Audio<ul>
+<li>[ ] Proper audio engine (if it's unsuitable)</li>
+</ul>
+</li>
+<li>[ ] Controller input</li>
+<li>[ ] Depopulate per translation unit global variables (ppu.c, apu.c) </li>
 </ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->

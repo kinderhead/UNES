@@ -1,5 +1,10 @@
 var searchData=
 [
-  ['fps_5fend_11',['fps_end',['../struct__UNES__GFX.html#aa9ae41a3a41d1d9a4ad7fe4a5834dd01',1,'_UNES_GFX']]],
-  ['fps_5fstart_12',['fps_start',['../struct__UNES__GFX.html#a3cb6341876a977c80aea61b776fbcc28',1,'_UNES_GFX']]]
+  ['default_5fpalette_18',['DEFAULT_PALETTE',['../ppu_8h.html#aaa68f2224cf13507d3ffd22b24d807e9',1,'ppu.h']]],
+  ['device_19',['device',['../struct__UNES__APU.html#a0684a87132d35b59106ebec0e47ebf3e',1,'_UNES_APU']]],
+  ['duty_5f12_5f5_20',['DUTY_12_5',['../apu_8h.html#a49be711d571b811ac6b5bee96046f3d0afcdc195a748f9d09321d5be6178868bd',1,'apu.h']]],
+  ['duty_5f25_21',['DUTY_25',['../apu_8h.html#a49be711d571b811ac6b5bee96046f3d0a0e123e25d250a148b79bf8c25967bfa3',1,'apu.h']]],
+  ['duty_5f50_22',['DUTY_50',['../apu_8h.html#a49be711d571b811ac6b5bee96046f3d0a532f6bbf34a4fd5ea6fe05f72eaad185',1,'apu.h']]],
+  ['duty_5f75_23',['DUTY_75',['../apu_8h.html#a49be711d571b811ac6b5bee96046f3d0a769386228acdce479851e7e88efe6fa9',1,'apu.h']]],
+  ['duty_5fcycle_24',['DUTY_CYCLE',['../apu_8h.html#a49be711d571b811ac6b5bee96046f3d0',1,'apu.h']]]
 ];

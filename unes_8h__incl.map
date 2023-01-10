@@ -1,8 +1,11 @@
 <map id="include/unes.h" name="include/unes.h">
-<area shape="rect" id="node1" title=" " alt="" coords="22,5,138,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="163,5,279,32"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,155,64,181"/>
-<area shape="rect" id="node3" href="$ppu_8h.html" title=" " alt="" coords="96,80,155,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="88,155,163,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="187,155,258,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="283,155,365,181"/>
+<area shape="rect" id="node3" href="$ppu_8h.html" title=" " alt="" coords="281,80,340,107"/>
+<area shape="rect" id="node8" href="$apu_8h.html" title=" " alt="" coords="192,80,251,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="184,155,259,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="283,155,354,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="379,155,461,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="486,155,557,181"/>
+<area shape="rect" id="node9" title=" " alt="" coords="89,155,159,181"/>
 </map>

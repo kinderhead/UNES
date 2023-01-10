@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['b_4',['b',['../structColor.html#a78ede410fb277ade36fbb157f0235d6f',1,'Color']]],
-  ['background_5fcount_5',['BACKGROUND_COUNT',['../ppu_8h.html#a38f8ac4e3ce396dea29562564f2e3cc1',1,'ppu.h']]],
-  ['bottom_5fleft_6',['bottom_left',['../struct__UNES__ATTR.html#a6cfc1809b418ccd401ecee21f2c16fa2',1,'_UNES_ATTR']]],
-  ['bottom_5fright_7',['bottom_right',['../struct__UNES__ATTR.html#a20810936c47031b0ff1611b09f2d7010',1,'_UNES_ATTR']]]
+  ['apu_2eh_8',['apu.h',['../apu_8h.html',1,'']]],
+  ['apu_5fchannels_9',['APU_CHANNELS',['../apu_8h.html#ad34fd11c5f31ddd1b4c6face2888c4dd',1,'apu.h']]],
+  ['audio_5fbuffer_5fsize_10',['AUDIO_BUFFER_SIZE',['../apu_8h.html#a1d48237cb63c5ae67aab6d00cc64afb6',1,'apu.h']]]
 ];

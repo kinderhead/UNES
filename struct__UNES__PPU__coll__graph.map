@@ -1,4 +1,4 @@
-<map id="_UNES_GFX" name="_UNES_GFX">
+<map id="_UNES_PPU" name="_UNES_PPU">
 <area shape="rect" id="node1" title="Internal graphics struct." alt="" coords="63,95,162,121"/>
 <area shape="rect" id="node2" href="$structSprite.html" title="Sprite struct." alt="" coords="5,5,65,32"/>
 <area shape="rect" id="node3" href="$structTile.html" title="Struct representing a background tile." alt="" coords="89,5,136,32"/>
