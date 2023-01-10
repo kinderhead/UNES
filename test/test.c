@@ -14,6 +14,13 @@ int main(int argc, char** argv) {
 
     unes_set_tile_data(tile_data, 8192);
 
+    unes_fill_bg_alt(256 + 0x24, 0);
+
+    unes_set_bg_tile_alt(50, 0, 3, 3);
+    unes_set_bg_tile_alt(51, 0, 4, 3);
+    unes_set_bg_tile_alt(66, 0, 3, 4);
+    unes_set_bg_tile_alt(67, 0, 4, 4);
+
     unes_set_background_color(0x22);
     unes_set_palette(0, (Palette){0x00, 0x29, 0x1A, 0x0F});
     unes_set_palette(1, (Palette){0x00, 0x36, 0x17, 0x0F});

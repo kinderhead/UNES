@@ -3,7 +3,7 @@
 
 #include <SDL.h>
 
-#include "gfx.h"
+#include "ppu.h"
 
 extern bool IS_UNESPLUS;
 

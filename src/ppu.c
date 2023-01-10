@@ -1,4 +1,4 @@
-#include "gfx.h"
+#include "ppu.h"
 #include <stdlib.h>
 
 static _UNES_GFX* graphics;

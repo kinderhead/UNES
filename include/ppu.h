@@ -274,6 +274,18 @@ Tile* unes_get_bg_tile(uint8_t x, uint8_t y);
 void unes_set_bg_tile(Tile tile, uint8_t x, uint8_t y);
 
 /**
+ * @brief Sets a tile at a location
+ * 
+ * @param index Index
+ * @param palette Palette
+ * @param x X
+ * @param y Y
+ */
+static inline void unes_set_bg_tile_alt(uint16_t index, uint8_t palette, uint8_t x, uint8_t y) {
+    unes_set_bg_tile((Tile){index, palette}, x, y);
+}
+
+/**
  * @brief Sets the tile index at a location
  * 
  * @param index Tile index

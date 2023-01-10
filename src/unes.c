@@ -1,5 +1,4 @@
 #include "unes.h"
-#include "gfx.h"
 
 #ifdef UNESPLUS
 bool IS_UNESPLUS = true;
