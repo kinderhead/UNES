@@ -8,7 +8,7 @@ var indexSectionsWithContent =
   5: "pu",
   6: "ad",
   7: "dnst",
-  8: "abcnpstu"
+  8: "bcnpstu"
 };
 
 var indexSectionNames =

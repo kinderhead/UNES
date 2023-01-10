@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['background_5fcount_217',['BACKGROUND_COUNT',['../ppu_8h.html#a38f8ac4e3ce396dea29562564f2e3cc1',1,'ppu.h']]]
+  ['check_5fnull_213',['CHECK_NULL',['../ppu_8h.html#a3326d7de4ec2d0db9e097c086bd53b93',1,'ppu.h']]]
 ];

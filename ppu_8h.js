@@ -40,7 +40,7 @@ var ppu_8h =
     [ "unes_set_palettes", "ppu_8h.html#a6012012ea27a3664f669172931116b54", null ],
     [ "unes_set_scanline_interrupt", "ppu_8h.html#aecb7682d62068660576bce87f8e8c2ff", null ],
     [ "unes_set_scanline_interrupt_counter", "ppu_8h.html#a592682225354f5100efe32e5eeffd2cd", null ],
-    [ "unes_set_scroll", "ppu_8h.html#ade9d395a22517dcccdabc8e8f3e589d6", null ],
+    [ "unes_set_scroll", "ppu_8h.html#a73966b2f7289080945cf027bd440516c", null ],
     [ "unes_set_tile_data", "ppu_8h.html#a84ae029b79591f0a8f837ae0554e42d9", null ],
     [ "unesplus_set_background_color", "ppu_8h.html#a95a8c3ad35569275ba8f1a0fa476e173", null ],
     [ "DEFAULT_PALETTE", "ppu_8h.html#aaa68f2224cf13507d3ffd22b24d807e9", null ]

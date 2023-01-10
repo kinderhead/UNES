@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['total_5fbackground_5fheight_230',['TOTAL_BACKGROUND_HEIGHT',['../ppu_8h.html#adf435b075564f589776b07b6765eac68',1,'ppu.h']]],
-  ['total_5fbackground_5fwidth_231',['TOTAL_BACKGROUND_WIDTH',['../ppu_8h.html#af14f60c6abdc9d93713a50d7c2e0c78e',1,'ppu.h']]]
+  ['unes_5fsquare_5fperiod_226',['UNES_SQUARE_PERIOD',['../apu_8h.html#a04eb2872abbc0f3efceb62834d460874',1,'apu.h']]],
+  ['unes_5ftriangle_5fperiod_227',['UNES_TRIANGLE_PERIOD',['../apu_8h.html#a5267d32782d52425aa8835fc8287b7bc',1,'apu.h']]]
 ];

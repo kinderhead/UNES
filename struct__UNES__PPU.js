@@ -16,6 +16,5 @@ var struct__UNES__PPU =
     [ "tile_data", "struct__UNES__PPU.html#ae2a7c583f55ac41ba1252988d8b52fbb", null ],
     [ "tile_data_size", "struct__UNES__PPU.html#a7ef6b1e585909b5df7f1b1588b46986a", null ],
     [ "universal_bg_color", "struct__UNES__PPU.html#a73b3293b86ec4270f3aad49ab207d23f", null ],
-    [ "whole_screen", "struct__UNES__PPU.html#af8eb7dd50d77000f2fae86cbe2417401", null ],
     [ "window", "struct__UNES__PPU.html#a68472076be286b9b8192d5180ab00500", null ]
 ];

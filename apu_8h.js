@@ -3,8 +3,6 @@ var apu_8h =
     [ "PulseData", "structPulseData.html", "structPulseData" ],
     [ "TriangleData", "structTriangleData.html", "structTriangleData" ],
     [ "_UNES_APU", "struct__UNES__APU.html", "struct__UNES__APU" ],
-    [ "AUDIO_BUFFER_SIZE", "apu_8h.html#a1d48237cb63c5ae67aab6d00cc64afb6", null ],
-    [ "SAMPLE_RATE", "apu_8h.html#a4b76a0c2859cfd819a343a780070ee2b", null ],
     [ "UNES_SQUARE_PERIOD", "apu_8h.html#a04eb2872abbc0f3efceb62834d460874", null ],
     [ "UNES_TRIANGLE_PERIOD", "apu_8h.html#a5267d32782d52425aa8835fc8287b7bc", null ],
     [ "APU_CHANNELS", "apu_8h.html#ad34fd11c5f31ddd1b4c6face2888c4dd", [
