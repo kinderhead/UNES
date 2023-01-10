@@ -4,6 +4,7 @@
 #include <SDL.h>
 
 #include "ppu.h"
+#include "apu.h"
 
 extern bool IS_UNESPLUS;
 

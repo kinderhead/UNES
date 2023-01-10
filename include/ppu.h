@@ -5,6 +5,7 @@
 #include <stddef.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include <string.h>
 
 #ifdef UNESPLUS
 #define SPRITE_COUNT 256
@@ -135,7 +136,7 @@ typedef struct {
 
     uint64_t fps_start;
     uint64_t fps_end;
-} _UNES_GFX;
+} _UNES_PPU;
 
 /**
  * @brief Internal struct for attribute tables
@@ -155,12 +156,12 @@ extern Color DEFAULT_PALETTE[64];
 /**
  * @brief Internal init function
  */
-void _UNES_GFX_init();
+void _UNES_PPU_init();
 
 /**
  * @brief Internal cleanup function
  */
-void _UNES_GFX_free();
+void _UNES_PPU_free();
 
 /**
  * @brief Enable rendering

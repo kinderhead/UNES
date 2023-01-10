@@ -1,43 +1,47 @@
 #include "ppu.h"
 #include <stdlib.h>
 
-static _UNES_GFX* graphics;
+static _UNES_PPU* ppu;
 static SDL_PixelFormat* pixel_format;
 
-void _UNES_GFX_init() {
-    graphics = malloc(sizeof(_UNES_GFX));
-    memset(graphics, 0, sizeof(_UNES_GFX));
-    graphics->tile_data = NULL;
-    graphics->ppu_enabled = false;
-    CHECK_NULL(graphics->window, SDL_CreateWindow("UNES", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH * 4, SCREEN_HEIGHT * 4, SDL_WINDOW_SHOWN | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL));
-    CHECK_NULL(graphics->renderer, SDL_CreateRenderer(graphics->window, -1, SDL_RENDERER_ACCELERATED));
-    CHECK_NULL(graphics->tex, SDL_CreateTexture(graphics->renderer, SDL_PIXELFORMAT_ARGB8888, SDL_TEXTUREACCESS_STREAMING, SCREEN_WIDTH, SCREEN_HEIGHT));
+void _UNES_PPU_init() {
+    SDL_Init(SDL_INIT_EVERYTHING);
+
+    ppu = malloc(sizeof(_UNES_PPU));
+    memset(ppu, 0, sizeof(_UNES_PPU));
+    ppu->tile_data = NULL;
+    ppu->ppu_enabled = false;
+    CHECK_NULL(ppu->window, SDL_CreateWindow("UNES", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH * 4, SCREEN_HEIGHT * 4, SDL_WINDOW_SHOWN | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL));
+    CHECK_NULL(ppu->renderer, SDL_CreateRenderer(ppu->window, -1, SDL_RENDERER_ACCELERATED));
+    CHECK_NULL(ppu->tex, SDL_CreateTexture(ppu->renderer, SDL_PIXELFORMAT_ARGB8888, SDL_TEXTUREACCESS_STREAMING, SCREEN_WIDTH, SCREEN_HEIGHT));
     CHECK_NULL(pixel_format, SDL_AllocFormat(SDL_PIXELFORMAT_ARGB8888));
 
-    SDL_RenderSetLogicalSize(graphics->renderer, SCREEN_WIDTH, SCREEN_HEIGHT);
+    SDL_RenderSetLogicalSize(ppu->renderer, SCREEN_WIDTH, SCREEN_HEIGHT);
     SDL_GL_SetSwapInterval(0);
 
-    graphics->fps_start = SDL_GetPerformanceCounter();
+    ppu->fps_start = SDL_GetPerformanceCounter();
 }
 
-void _UNES_GFX_free()
+void _UNES_PPU_free()
 {
-    SDL_DestroyTexture(graphics->tex);
-    SDL_DestroyRenderer(graphics->renderer);
-    SDL_DestroyWindow(graphics->window);
+    SDL_DestroyTexture(ppu->tex);
+    SDL_DestroyRenderer(ppu->renderer);
+    SDL_DestroyWindow(ppu->window);
     SDL_FreeFormat(pixel_format);
 
-    free(graphics);
+    free(ppu);
+
+    SDL_Quit();
 }
 
 void unes_ppu_enable()
 {
-    graphics->ppu_enabled = true;
+    ppu->ppu_enabled = true;
 }
 
 void unes_ppu_disable()
 {
-    graphics->ppu_enabled = false;
+    ppu->ppu_enabled = false;
 }
 
 inline static uint32_t _unes_get_raw_color(int r, int g, int b) {
@@ -46,7 +50,7 @@ inline static uint32_t _unes_get_raw_color(int r, int g, int b) {
 }
 
 inline static bool _unes_valid_tile(size_t index) {
-    return (index * SIZEOF_TILE) < graphics->tile_data_size;
+    return (index * SIZEOF_TILE) < ppu->tile_data_size;
 }
 
 inline static bool _unes_valid_sprite(uint16_t index) {
@@ -74,9 +78,9 @@ inline static void _unes_render_tile(uint32_t out[8][8], Tile tile) {
             uint8_t index = ((raw_tile[y]>>x)&1) | (((raw_tile[y+8]>>x)&1)<<1);
             Color color;
             if (index == 0) {
-                color = graphics->universal_bg_color;
+                color = ppu->universal_bg_color;
             } else {
-                color = DEFAULT_PALETTE[graphics->palettes[tile.palette][index]];
+                color = DEFAULT_PALETTE[ppu->palettes[tile.palette][index]];
             }
 
             // So it copies nicely into the final buffer
@@ -86,56 +90,56 @@ inline static void _unes_render_tile(uint32_t out[8][8], Tile tile) {
 }
 
 void unes_set_scroll(uint16_t scrollx, uint16_t scrolly) {
-    graphics->scrollx = scrollx % (TOTAL_BACKGROUND_WIDTH*8);
-    graphics->scrolly = scrolly % (TOTAL_BACKGROUND_HEIGHT*8);
+    ppu->scrollx = scrollx % (TOTAL_BACKGROUND_WIDTH*8);
+    ppu->scrolly = scrolly % (TOTAL_BACKGROUND_HEIGHT*8);
 }
 
 void unes_get_scroll(uint16_t* scrollx, uint16_t* scrolly)
 {
-    *scrollx = graphics->scrollx;
-    *scrolly = graphics->scrolly;
+    *scrollx = ppu->scrollx;
+    *scrolly = ppu->scrolly;
 }
 
 void unes_set_tile_data(uint8_t* data, size_t size) {
-    graphics->tile_data = data;
-    graphics->tile_data_size = size;
+    ppu->tile_data = data;
+    ppu->tile_data_size = size;
 }
 
 void unes_set_palettes(uint8_t start, uint8_t* palettes, size_t num) {
     if (num + start >= PALETTE_COUNT) return;
-    memcpy(&graphics->palettes[start], palettes, sizeof(Palette) * num);
+    memcpy(&ppu->palettes[start], palettes, sizeof(Palette) * num);
 }
 
 void unes_set_scanline_interrupt(unes_scanline_interrupt irq) {
-    graphics->scanline_irq = irq;
+    ppu->scanline_irq = irq;
 }
 
 void unes_set_scanline_interrupt_counter(uint8_t counter) {
-    graphics->scanline_irq_counter = counter;
+    ppu->scanline_irq_counter = counter;
 }
 
 uint8_t* unes_get_tile_data(size_t index) {
     if (!_unes_valid_tile(index)) return NULL;
-    return &graphics->tile_data[index * SIZEOF_TILE];
+    return &ppu->tile_data[index * SIZEOF_TILE];
 }
 
 Tile* unes_get_bg_tile(uint8_t x, uint8_t y) {
     if (x >= TOTAL_BACKGROUND_WIDTH || y >= TOTAL_BACKGROUND_HEIGHT) return NULL;
-    return &graphics->nametables[x][y];
+    return &ppu->nametables[x][y];
 }
 
 void unes_set_bg_tile(Tile tile, uint8_t x, uint8_t y) {
-    graphics->nametables[x][y] = tile;
+    ppu->nametables[x][y] = tile;
 }
 
 void unes_set_bg_tile_index(uint16_t index, uint8_t x, uint8_t y)
 {
-    graphics->nametables[x][y].tile = index;
+    ppu->nametables[x][y].tile = index;
 }
 
 void unes_set_bg_tile_palette(uint8_t index, uint8_t x, uint8_t y)
 {
-    graphics->nametables[x][y].palette = index;
+    ppu->nametables[x][y].palette = index;
 }
 
 void unes_fill_bg(Tile tile)
@@ -144,7 +148,7 @@ void unes_fill_bg(Tile tile)
     {
         for (int y = 0; y < TOTAL_BACKGROUND_HEIGHT; y++)
         {
-            graphics->nametables[x][y] = tile;
+            ppu->nametables[x][y] = tile;
         }
     }
 }
@@ -156,7 +160,7 @@ void unes_legacy_set_map(uint8_t *data, size_t size, uint8_t x_offset, uint8_t y
     {
         if (i%row_size == 0) y++;
         if (i >= TOTAL_BACKGROUND_WIDTH || y >= TOTAL_BACKGROUND_HEIGHT) printf("Invalid location %d, %d\n", i, y);
-        graphics->nametables[i][y].tile = data[i];
+        ppu->nametables[i][y].tile = data[i];
     }
 }
 
@@ -178,11 +182,11 @@ void unes_legacy_set_nametable(uint8_t *data, uint8_t x_offset, uint8_t y_offset
         if (x >= TOTAL_BACKGROUND_WIDTH || y >= TOTAL_BACKGROUND_HEIGHT) printf("Invalid location %d, %d\n", x, y);
 
         _UNES_ATTR attr = _unes_parse_attr(attributes[i]);
-        graphics->nametables[x][y].palette = attr.top_left;
-        graphics->nametables[x + 1][y].palette = attr.top_right;
+        ppu->nametables[x][y].palette = attr.top_left;
+        ppu->nametables[x + 1][y].palette = attr.top_right;
         if (y + 1 < TOTAL_BACKGROUND_HEIGHT) {
-            graphics->nametables[x][y + 1].palette = attr.bottom_left;
-            graphics->nametables[x + 1][y + 1].palette = attr.bottom_right;
+            ppu->nametables[x][y + 1].palette = attr.bottom_left;
+            ppu->nametables[x + 1][y + 1].palette = attr.bottom_right;
         }
     }
 }
@@ -190,12 +194,12 @@ void unes_legacy_set_nametable(uint8_t *data, uint8_t x_offset, uint8_t y_offset
 Sprite *unes_get_sprite(uint16_t index)
 {
     if (!_unes_valid_sprite(index)) return NULL;
-    return &graphics->oam[index];
+    return &ppu->oam[index];
 }
 
 void unes_set_background_color(uint8_t index)
 {
-    graphics->universal_bg_color = DEFAULT_PALETTE[index];
+    ppu->universal_bg_color = DEFAULT_PALETTE[index];
 }
 
 bool unes_render()
@@ -203,66 +207,66 @@ bool unes_render()
     // This is painfully unoptimized :(
     // Possibly could add a cache system
 
-    SDL_RenderClear(graphics->renderer);
-    if (graphics->tile_data != NULL && graphics->ppu_enabled) {
-        memset(graphics->raw_screen, 0, sizeof(graphics->raw_screen));
+    SDL_RenderClear(ppu->renderer);
+    if (ppu->tile_data != NULL && ppu->ppu_enabled) {
+        memset(ppu->raw_screen, 0, sizeof(ppu->raw_screen));
 
         for (int y = 0; y < TOTAL_BACKGROUND_HEIGHT*8; y+=8)
         {
             for (int x = 0; x < TOTAL_BACKGROUND_WIDTH*8; x+=8)
             {
                 uint32_t tile[8][8] = {0};
-                _unes_render_tile(tile, graphics->nametables[x/8][y/8]);
+                _unes_render_tile(tile, ppu->nametables[x/8][y/8]);
                 for (int i = 0; i < 8; i++)
                 {
-                    memcpy(&graphics->whole_screen[y+i][x], &tile[i], sizeof(tile[0]));
+                    memcpy(&ppu->whole_screen[y+i][x], &tile[i], sizeof(tile[0]));
                 }
             }
         }
         
         for (int y = 0; y < SCREEN_HEIGHT; y++) {
-            if (graphics->scrollx >= (TOTAL_BACKGROUND_WIDTH*8)-SCREEN_WIDTH && graphics->scrolly >= (TOTAL_BACKGROUND_HEIGHT*8)-SCREEN_HEIGHT) {
+            if (ppu->scrollx >= (TOTAL_BACKGROUND_WIDTH*8)-SCREEN_WIDTH && ppu->scrolly >= (TOTAL_BACKGROUND_HEIGHT*8)-SCREEN_HEIGHT) {
                 
-            } else if (graphics->scrollx >= (TOTAL_BACKGROUND_WIDTH*8)-SCREEN_WIDTH) {
+            } else if (ppu->scrollx >= (TOTAL_BACKGROUND_WIDTH*8)-SCREEN_WIDTH) {
                 
-            } else if (graphics->scrolly >= (TOTAL_BACKGROUND_HEIGHT*8)-SCREEN_HEIGHT) {
+            } else if (ppu->scrolly >= (TOTAL_BACKGROUND_HEIGHT*8)-SCREEN_HEIGHT) {
 
             } else {
-                memcpy(&graphics->raw_screen[y][0], &graphics->whole_screen[y+graphics->scrolly][graphics->scrollx], sizeof(graphics->raw_screen[0]));
+                memcpy(&ppu->raw_screen[y][0], &ppu->whole_screen[y+ppu->scrolly][ppu->scrollx], sizeof(ppu->raw_screen[0]));
             }
-            if (graphics->scanline_irq_counter != 0) {
-                if (graphics->scanline_irq_counter-- == 0) {
-                    (*graphics->scanline_irq)(y);
+            if (ppu->scanline_irq_counter != 0) {
+                if (ppu->scanline_irq_counter-- == 0) {
+                    (*ppu->scanline_irq)(y);
                 }
             }
         }
 
         void* pixels = NULL;
         int pitch = 0;
-        SDL_LockTexture(graphics->tex, NULL, &pixels, &pitch);
+        SDL_LockTexture(ppu->tex, NULL, &pixels, &pitch);
         
         if (pixels == NULL) {
             printf("%s\n", SDL_GetError());
             exit(1);
         }
 
-        memcpy(pixels, graphics->raw_screen, sizeof(graphics->raw_screen));
-        SDL_UnlockTexture(graphics->tex);
+        memcpy(pixels, ppu->raw_screen, sizeof(ppu->raw_screen));
+        SDL_UnlockTexture(ppu->tex);
     }
 
-    SDL_RenderCopy(graphics->renderer, graphics->tex, NULL, NULL);
-    SDL_RenderPresent(graphics->renderer);
+    SDL_RenderCopy(ppu->renderer, ppu->tex, NULL, NULL);
+    SDL_RenderPresent(ppu->renderer);
 
-    graphics->fps_end = SDL_GetPerformanceCounter();
+    ppu->fps_end = SDL_GetPerformanceCounter();
 
-    double elapsed = (graphics->fps_end - graphics->fps_start) / (double) SDL_GetPerformanceFrequency() * 1000;
+    double elapsed = (ppu->fps_end - ppu->fps_start) / (double) SDL_GetPerformanceFrequency() * 1000;
     if (16.66666 - elapsed > 0) {
         SDL_Delay(floor(16.66666 - elapsed));
     } else {
         printf("WARNING: Lagging, FPS: %.2f\n", 1.0/(elapsed/1000));
     }
 
-    graphics->fps_start = SDL_GetPerformanceCounter();
+    ppu->fps_start = SDL_GetPerformanceCounter();
 
     SDL_Event ev;
     while (SDL_PollEvent(&ev) != 0) {
@@ -282,7 +286,7 @@ void unesplus_set_background_color(Color color)
     return;
     #endif
 
-    graphics->universal_bg_color = color;
+    ppu->universal_bg_color = color;
 }
 
 Color DEFAULT_PALETTE[64] = {

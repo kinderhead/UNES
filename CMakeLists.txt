@@ -5,7 +5,7 @@ set(CMAKE_C_STANDARD 11)
 
 option(UNESPLUS "Enable UltraNES+" OFF)
 
-add_library(UNES src/unes.c src/ppu.c)
+add_library(UNES src/unes.c src/ppu.c src/apu.c)
 include_directories(UNES include)
 
 if(UNESPLUS)

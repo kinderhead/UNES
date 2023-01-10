@@ -5,6 +5,7 @@
 int main(int argc, char** argv) {
     unes_init();
     unes_ppu_enable();
+    unes_apu_enable();
     
     uint8_t tile_data[8192];
 
@@ -29,8 +30,10 @@ int main(int argc, char** argv) {
 
     //unes_fill_bg_alt(256 + 0x24, 0);
     
+    float freq = 0;
     while (unes_render()) {
-        
+        unes_set_pulse_data(SQUARE1, freq, 3000, DUTY_50);
+        freq += 1;
     }
 
     unes_finish();

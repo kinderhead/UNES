@@ -18,7 +18,9 @@ Documentation: https://kinderhead.github.io/UNES/
   * Easier to use scrolling and nametable system
   * Combined background and OAM tile data
 * Interrupts as events
-* Sound (hopefully)
+* Sound
+  * More volume control per channel (8 bits instead of 4)
+  * Note: in its current state it is possible to play multiple tones in one frame. This may change in the future so don't rely on it
 * SDL2 backend
 * Keyboard input
 * Save data
@@ -76,4 +78,6 @@ Some things that need to (or should be) done are:
 - [ ] Graphics
   - [ ] Optimize rendering algorithm
 - [ ] Audio
+  - [ ] Proper audio engine (if it's unsuitable)
 - [ ] Controller input
+- [ ] Depopulate per translation unit global variables (ppu.c, apu.c)

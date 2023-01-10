@@ -8,12 +8,12 @@ bool IS_UNESPLUS = false;
 
 void unes_init()
 {
-    SDL_Init(SDL_INIT_EVERYTHING);
-    _UNES_GFX_init();
+    _UNES_PPU_init();
+    _UNES_APU_init();
 }
 
 void unes_finish()
 {
-    _UNES_GFX_free();
-    SDL_Quit();
+    _UNES_PPU_free();
+    _UNES_APU_free();
 }
