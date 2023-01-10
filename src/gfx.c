@@ -6,6 +6,7 @@ static SDL_PixelFormat* pixel_format;
 
 void _UNES_GFX_init() {
     graphics = malloc(sizeof(_UNES_GFX));
+    memset(graphics, 0, sizeof(_UNES_GFX));
     graphics->tile_data = NULL;
     graphics->ppu_enabled = false;
     CHECK_NULL(graphics->window, SDL_CreateWindow("UNES", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH * 4, SCREEN_HEIGHT * 4, SDL_WINDOW_SHOWN | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL));
@@ -68,7 +69,7 @@ inline static void _unes_render_tile(uint32_t out[8][8], Tile tile) {
     {
         for (int x = 7; x >= 0; x--)
         {
-            if (tile.palette >= PALETTE_COUNT) {printf("Invalid palette %d", (int)tile.palette); continue;}
+            if (tile.palette >= PALETTE_COUNT) {printf("Invalid palette %d\n", (int)tile.palette); continue;}
             
             uint8_t index = ((raw_tile[y]>>x)&1) | (((raw_tile[y+8]>>x)&1)<<1);
             Color color;
@@ -154,7 +155,7 @@ void unes_legacy_set_map(uint8_t *data, size_t size, uint8_t x_offset, uint8_t y
     for (int i = 0; i < size; i++)
     {
         if (i%row_size == 0) y++;
-        if (i >= TOTAL_BACKGROUND_WIDTH || y >= TOTAL_BACKGROUND_HEIGHT) printf("Invalid location %d, %d", i, y);
+        if (i >= TOTAL_BACKGROUND_WIDTH || y >= TOTAL_BACKGROUND_HEIGHT) printf("Invalid location %d, %d\n", i, y);
         graphics->nametables[i][y].tile = data[i];
     }
 }
@@ -174,7 +175,7 @@ void unes_legacy_set_nametable(uint8_t *data, uint8_t x_offset, uint8_t y_offset
         } else {
             x += 2;
         }
-        if (x >= TOTAL_BACKGROUND_WIDTH || y >= TOTAL_BACKGROUND_HEIGHT) printf("Invalid location %d, %d", x, y);
+        if (x >= TOTAL_BACKGROUND_WIDTH || y >= TOTAL_BACKGROUND_HEIGHT) printf("Invalid location %d, %d\n", x, y);
 
         _UNES_ATTR attr = _unes_parse_attr(attributes[i]);
         graphics->nametables[x][y].palette = attr.top_left;
@@ -203,7 +204,7 @@ bool unes_render()
     // Possibly could add a cache system
 
     SDL_RenderClear(graphics->renderer);
-    if (graphics->tile_data == NULL || !graphics->ppu_enabled) {
+    if (graphics->tile_data != NULL && graphics->ppu_enabled) {
         memset(graphics->raw_screen, 0, sizeof(graphics->raw_screen));
 
         for (int y = 0; y < TOTAL_BACKGROUND_HEIGHT*8; y+=8)

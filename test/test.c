@@ -20,7 +20,7 @@ int main(int argc, char** argv) {
     unes_set_palette(2, (Palette){0x00, 0x30, 0x21, 0x0F});
     unes_set_palette(3, (Palette){0x00, 0x27, 0x17, 0x0F});
 
-    unes_fill_bg_alt(256 + 0x24, 0);
+    //unes_fill_bg_alt(256 + 0x24, 0);
     
     while (unes_render()) {
         
