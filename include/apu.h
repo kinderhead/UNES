@@ -14,22 +14,22 @@
  * @brief APU channels
  * @note Square and pulse channels are the same
  */
-enum APU_CHANNELS {
+typedef enum {
     SQUARE1 = 0,
     SQUARE2,
     TRIANGLE,
     NOISE
-};
+} APU_CHANNELS;
 
 /**
  * @brief Duty cycle options
  */
-enum DUTY_CYCLE {
+typedef enum {
     DUTY_12_5 = 0,
     DUTY_25,
     DUTY_50,
     DUTY_75
-};
+} DUTY_CYCLE;
 
 /**
  * @brief Pulse/square channel data
@@ -113,7 +113,7 @@ void unes_apu_disable();
  * @param volume Volume
  * @param cycle Duty cycle from DUTY_CYCLE
  */
-void unes_set_pulse_data(int channel, float frequency, uint16_t volume, int cycle);
+void unes_set_pulse_data(APU_CHANNELS channel, float frequency, uint16_t volume, DUTY_CYCLE cycle);
 
 /**
  * @brief Sets the triangle's channel data for the frame

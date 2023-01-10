@@ -15,33 +15,41 @@ int main(int argc, char** argv) {
 
     unes_set_tile_data(tile_data, 8192);
 
-    unes_fill_bg_alt(0, 0);
-
-    unes_set_bg_tile_alt(50, 0, 3, 3);
-    unes_set_bg_tile_alt(51, 0, 4, 3);
-    unes_set_bg_tile_alt(66, 0, 3, 4);
-    unes_set_bg_tile_alt(67, 0, 4, 4);
+    unes_fill_bg_alt(256 + 0x24, 0);
 
     unes_set_background_color(0x22);
     unes_set_palette(0, (Palette){0x00, 0x29, 0x1A, 0x0F});
     unes_set_palette(1, (Palette){0x00, 0x36, 0x17, 0x0F});
     unes_set_palette(2, (Palette){0x00, 0x30, 0x21, 0x0F});
     unes_set_palette(3, (Palette){0x00, 0x27, 0x17, 0x0F});
+    unes_set_palette(4, (Palette){0x00, 0x16, 0x27, 0x18});
+    unes_set_palette(5, (Palette){0x00, 0x1A, 0x30, 0x27});
+    unes_set_palette(6, (Palette){0x00, 0x16, 0x30, 0x27});
+    unes_set_palette(7, (Palette){0x00, 0x0F, 0x36, 0x17});
 
-    //unes_fill_bg_alt(256 + 0x24, 0);
+    Sprite* top_left = unes_get_sprite(1);
+    Sprite* top_right = unes_get_sprite(2);
+    Sprite* bottom_left = unes_get_sprite(3);
+    Sprite* bottom_right = unes_get_sprite(4);
+
+    uint8_t x = 8;
+    uint8_t y = 8;
+
+    top_left->tile = 0x3A;
+    top_right->tile = 0x37;
+    bottom_left->tile = 0x4F;
+    bottom_right->tile = 0x4F;
+    bottom_right->h_flip = true;
     
-    //float freq = 0;
-    int timer = 32;
-    int scroll = 0;
     while (unes_render()) {
-        //unes_set_pulse_data(SQUARE1, freq, 3000, DUTY_12_5);
-        //freq++;
-        timer--;
-        if (timer == 0) {
-            timer = 32;
-            scroll++;
-            unes_set_scroll(0, scroll);
-        }
+        top_left->x = x;
+        top_left->y = y;
+        top_right->x = x+8;
+        top_right->y = y;
+        bottom_left->x = x;
+        bottom_left->y = y+8;
+        bottom_right->x = x+8;
+        bottom_right->y = y+8;
     }
 
     unes_finish();

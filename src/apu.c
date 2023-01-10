@@ -83,7 +83,7 @@ void unes_apu_disable()
     apu->enabled = false;
 }
 
-void unes_set_pulse_data(int channel, float frequency, uint16_t volume, int cycle)
+void unes_set_pulse_data(APU_CHANNELS channel, float frequency, uint16_t volume, DUTY_CYCLE cycle)
 {
     if (channel == SQUARE1) {
         apu->square1 = (PulseData){frequency, volume, cycle};

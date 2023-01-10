@@ -16,6 +16,13 @@ void _UNES_PPU_init() {
     CHECK_NULL(ppu->tex, SDL_CreateTexture(ppu->renderer, SDL_PIXELFORMAT_ARGB8888, SDL_TEXTUREACCESS_STREAMING, SCREEN_WIDTH, SCREEN_HEIGHT));
     CHECK_NULL(pixel_format, SDL_AllocFormat(SDL_PIXELFORMAT_ARGB8888));
 
+    // Hide sprites
+    for (int i = 0; i < SPRITE_COUNT; i++)
+    {
+        ppu->oam[i].x=255;
+        ppu->oam[i].y=255;
+    }
+
     SDL_RenderSetLogicalSize(ppu->renderer, SCREEN_WIDTH, SCREEN_HEIGHT);
     SDL_GL_SetSwapInterval(0);
 
@@ -42,6 +49,11 @@ void unes_ppu_enable()
 void unes_ppu_disable()
 {
     ppu->ppu_enabled = false;
+}
+
+void unes_set_sprite_size(SPRITE_SIZE size)
+{
+    ppu->sprite_size = size;
 }
 
 inline static uint32_t _unes_get_raw_color(int r, int g, int b) {
@@ -205,8 +217,6 @@ void unes_set_background_color(uint8_t index)
 
 bool unes_render()
 {
-    // Possibly could add a cache system
-
     SDL_RenderClear(ppu->renderer);
     if (ppu->tile_data != NULL && ppu->ppu_enabled) {
         memset(ppu->raw_screen, 0, sizeof(ppu->raw_screen));
@@ -230,6 +240,11 @@ bool unes_render()
                     (*ppu->scanline_irq)(y);
                 }
             }
+        }
+
+        for (int i = SPRITE_COUNT-1; i >= 0; i--)
+        {
+            
         }
 
         void* pixels = NULL;

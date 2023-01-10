@@ -13,10 +13,11 @@ Documentation: https://kinderhead.github.io/UNES/
 * Pure ANSI C11 library
   * At least that's what is defined in CMake, but some C90+ features (inline) don't work properly
   * Bring your own program
-* Simple but less limited graphics api
+* Simple, but less limited graphics
   * No sprite limit per scanline
   * Easier to use scrolling and nametable system
   * Combined background and OAM tile data
+  * More accurate sprite placement
 * Interrupts as events
 * Sound
   * More volume control per channel (8 bits instead of 4)
@@ -76,7 +77,8 @@ There are now examples under `/examples`.
 
 Some things that need to (or should be) done are:
 - [ ] Graphics
-  - [ ] Optimize rendering algorithm
+  - [x] Optimize rendering algorithm
+  - [ ] Sprites
 - [ ] Audio
   - [ ] Proper audio engine (if it's unsuitable)
 - [ ] Controller input

@@ -86,6 +86,12 @@ typedef struct {
     uint8_t palette;
 
     /**
+     * @brief Tile to use
+     * @note If 8x16 mode is selected, the next tile is the bottom half
+     */
+    uint16_t tile;
+
+    /**
      * @brief Controls whether the sprite is infront of or behind the background
      * @details If true, the sprite is behind the background. If false, the sprite is infront of the background
      */
@@ -101,6 +107,14 @@ typedef struct {
      */
     bool v_flip;
 } Sprite;
+
+/**
+ * @brief Sprite size
+ */
+typedef enum {
+    SIZE_8x8 = 0,
+    SIZE_8x16
+} SPRITE_SIZE;
 
 /**
  * @brief Function outline for a scanline interrupt function
@@ -125,6 +139,7 @@ typedef struct {
 
     Tile nametables[TOTAL_BACKGROUND_WIDTH][TOTAL_BACKGROUND_HEIGHT];
     Sprite oam[SPRITE_COUNT];
+    SPRITE_SIZE sprite_size;
 
     uint8_t* tile_data;
     size_t tile_data_size;
@@ -172,6 +187,13 @@ void unes_ppu_enable();
  * @brief Disable rendering
  */
 void unes_ppu_disable();
+
+/**
+ * @brief Sets the sprite size
+ * 
+ * @param size 8x8 or 8x16
+ */
+void unes_set_sprite_size(SPRITE_SIZE size);
 
 /**
  * @brief Sets the screen scroll.
@@ -376,12 +398,12 @@ void unes_set_background_color(uint8_t index);
 
 /**
  * @brief Render a frame. Will call interrupts
- * 
+ * @remark While drawing back priority sprites, the renderer does not check if the background pixel is palette index 0. Only if it is the same as the universal background color.
  * @return bool Returns true if the execution should continue
  */
 bool unes_render();
 
-/// UNESPLUS only functions
+/// UNESPLUS only functions ///
 
 /**
  * @brief Sets the universal background color
