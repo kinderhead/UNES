@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <unes.h>
 
-int main(int argc, char** argv) {
+int main(int argc, const char** argv) {
     unes_init();
     unes_ppu_enable();
     unes_apu_enable();

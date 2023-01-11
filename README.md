@@ -19,6 +19,7 @@ Documentation: https://kinderhead.github.io/UNES/
   * Combined background and OAM tile data
   * More accurate sprite placement
   * Enable/disable sprites
+  * Unintentional screen wrap
 * Interrupts as events
 * Sound
   * More volume control per channel (8 bits instead of 4)
@@ -35,7 +36,7 @@ Then create a starting program:
 ``` c
 #include <unes.h>
 
-int main(int argc, char** argv) {
+int main(int argc, const char** argv) {
     unes_init();
     unes_ppu_enable();
 
@@ -97,6 +98,7 @@ Some things that need to (or should be) done are:
   - [x] Sprites
     - [ ] Back priority sprites
     - [ ] 8x16
+    - [ ] Clean sprite renderer
 - [ ] Audio
   - [ ] Make it sound like an NES
   - [ ] Channels
