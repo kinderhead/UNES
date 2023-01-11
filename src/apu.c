@@ -32,7 +32,7 @@ void _UNES_APU_free()
 void _UNES_APU_run(void* userdata, uint8_t* stream, int len)
 {
     if (apu->enabled) {
-        uint duty = 0;
+        unsigned int duty = 0;
 
         // Pulse 1
         float samples_per_period = (1/apu->square1.freq) / (1/apu->spec.freq);
