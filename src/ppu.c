@@ -298,6 +298,11 @@ void unes_set_scanline_interrupt_counter(uint8_t counter) {
     ppu->scanline_irq_counter = counter;
 }
 
+void unes_set_sprite0_handler(unes_sprite0_hit hit)
+{
+    ppu->sprite0_hit = hit;
+}
+
 uint8_t* unes_get_tile_data(size_t index) {
     if (!_unes_valid_tile(index)) return NULL;
     return &ppu->tile_data[index * SIZEOF_TILE];

@@ -279,6 +279,13 @@ void unes_set_scanline_interrupt(unes_scanline_interrupt irq);
 void unes_set_scanline_interrupt_counter(uint8_t counter);
 
 /**
+ * @brief Calls the function when the first non transparent pixel of sprite 0 is rendered
+ * 
+ * @param hit Callback function
+ */
+void unes_set_sprite0_handler(unes_sprite0_hit hit);
+
+/**
  * @brief Returns a pointer to the specified tile's data
  * 
  * The pointer is a reference to the tile in memory, so it can be

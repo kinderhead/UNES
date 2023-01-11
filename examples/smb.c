@@ -1,5 +1,9 @@
 #include <unes.h>
 
+void sprite0(uint8_t scanline) {
+
+}
+
 int main(int argc, const char** argv) {
     unes_init();
 
@@ -19,6 +23,8 @@ int main(int argc, const char** argv) {
     unes_set_palette(5, (Palette){0x00, 0x1A, 0x30, 0x27});
     unes_set_palette(6, (Palette){0x00, 0x16, 0x30, 0x27});
     unes_set_palette(7, (Palette){0x00, 0x0F, 0x36, 0x17});
+
+    unes_set_sprite0_handler(sprite0);
 
     while (unes_render()) {
         
