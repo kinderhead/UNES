@@ -80,7 +80,7 @@ They can be modified by calling `unes_set_keybind`.
 
 ## Tutorial
 
-A tutorial is being worked on. It can be viewed on the documentation soon.
+See the wiki.
 
 ## Examples
 
