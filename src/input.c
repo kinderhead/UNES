@@ -59,6 +59,6 @@ void unes_set_keybind(Buttons button, SDL_KeyCode key)
 
 bool unes_is_pressed(Buttons button)
 {
-    if (button >= _Buttons_SIZE) return;
+    if (button >= _Buttons_SIZE) return false;
     return input->buttons[button];
 }
