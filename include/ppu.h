@@ -128,6 +128,11 @@ typedef enum {
 typedef void (*unes_scanline_interrupt)(uint8_t scanline);
 
 /**
+ * @brief Function outline for a sprite 0 hit funtion
+ */
+typedef void (*unes_sprite0_hit)(uint8_t scanline);
+
+/**
  * @brief Internal graphics struct
  */
 typedef struct {
@@ -153,6 +158,7 @@ typedef struct {
 
     Palette palettes[PALETTE_COUNT*2];
 
+    unes_sprite0_hit sprite0_hit;
     unes_scanline_interrupt scanline_irq;
     uint8_t scanline_irq_counter;
 

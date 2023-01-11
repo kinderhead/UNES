@@ -251,6 +251,20 @@ inline static void _unes_render_sprite_to_raw_screen(const Sprite sprite) {
     }
 }
 
+inline static uint8_t _unes_sprite0_scanline() {
+    uint8_t* raw_tile = unes_get_tile_data(ppu->oam[0].tile);
+    for (int x = 0; x < 8; x++)
+    {
+        for (int y = 0; y < 8; y++)
+        {
+            uint8_t index = ((raw_tile[y]>>x)&1) | (((raw_tile[y+8]>>x)&1)<<1);
+            if (index != 0) {
+                return ppu->oam[0].y + y;
+            }
+        }
+    }
+}
+
 void unes_set_scroll(int scrollx, int scrolly) {
     ppu->scrollx = scrollx % (TOTAL_BACKGROUND_WIDTH*8);
     ppu->scrolly = scrolly % (TOTAL_BACKGROUND_HEIGHT*8);
@@ -375,6 +389,7 @@ bool unes_render()
     if (ppu->tile_data != NULL && ppu->ppu_enabled) {
         memset(ppu->raw_screen, 0, sizeof(ppu->raw_screen));
         
+        uint8_t sprite0 = _unes_sprite0_scanline();
         uint32_t row[SCREEN_WIDTH+8];
         uint32_t interim_tile[8];
         for (int y = 0; y < SCREEN_HEIGHT; y++) {
@@ -387,13 +402,18 @@ bool unes_render()
                 _unes_render_row(&interim_tile[0], tile.tile, ppu->palettes[tile.palette], (y + ppu->scrolly) % 8, _unes_get_raw_color(ppu->universal_bg_color.r, ppu->universal_bg_color.g, ppu->universal_bg_color.b));
                 memcpy(&row[i*8], interim_tile, sizeof(interim_tile));
             }
-
+            // Basically H-blank here
             memcpy(&ppu->raw_screen[y], &row[ppu->scrollx%8], SCREEN_WIDTH*sizeof(uint32_t));
 
             if (ppu->scanline_irq_counter != 0) {
-                if (ppu->scanline_irq_counter-- == 0) {
+                ppu->scanline_irq_counter--;
+                if (ppu->scanline_irq_counter == 0) {
                     (*ppu->scanline_irq)(y);
                 }
+            }
+
+            if (y == sprite0 && ppu->sprite0_hit != NULL) {
+                (*ppu->sprite0_hit)(y);
             }
         }
 
