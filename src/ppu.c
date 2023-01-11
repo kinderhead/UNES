@@ -263,6 +263,7 @@ inline static uint8_t _unes_sprite0_scanline() {
             }
         }
     }
+    return 0;
 }
 
 void unes_set_scroll(int scrollx, int scrolly) {
