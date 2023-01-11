@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <unes.h>
 
 int main(int argc, const char** argv) {
@@ -9,7 +8,7 @@ int main(int argc, const char** argv) {
     uint8_t tile_data[8192];
 
     FILE* file = fopen("smb.chr", "rb");
-    fread(&tile_data[0], sizeof(uint8_t), 8192, file);
+    fread(&tile_data[0], 1, 8192, file);
     fclose(file);
 
     unes_set_tile_data(tile_data, 8192);
