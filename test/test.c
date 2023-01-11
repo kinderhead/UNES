@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 #include <unes.h>
 
 int main(int argc, char** argv) {
@@ -36,9 +35,13 @@ int main(int argc, char** argv) {
     uint8_t y = 8;
 
     top_left->tile = 0x3A;
+    top_left->enabled = true;
     top_right->tile = 0x37;
+    top_right->enabled = true;
     bottom_left->tile = 0x4F;
+    bottom_left->enabled = true;
     bottom_right->tile = 0x4F;
+    bottom_right->enabled = true;
     bottom_right->h_flip = true;
     
     while (unes_render()) {

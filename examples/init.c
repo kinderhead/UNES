@@ -13,4 +13,5 @@ int main(int argc, char** argv) {
     }
 
     unes_finish();
+    return 0;
 }

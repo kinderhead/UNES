@@ -18,6 +18,7 @@ Documentation: https://kinderhead.github.io/UNES/
   * Easier to use scrolling and nametable system
   * Combined background and OAM tile data
   * More accurate sprite placement
+  * Enable/disable sprites
 * Interrupts as events
 * Sound
   * More volume control per channel (8 bits instead of 4)
@@ -50,6 +51,8 @@ int main(int argc, char** argv) {
 }
 ```
 Tile data can be imported from popular programs like YY-CHR or from a rom.
+
+If for some reason you have issues with `SDL_Main`, then put `#undef SDL_Main` at the top of your file.
 
 ## UltraNES+
 

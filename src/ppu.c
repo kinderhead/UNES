@@ -19,8 +19,7 @@ void _UNES_PPU_init() {
     // Hide sprites
     for (int i = 0; i < SPRITE_COUNT; i++)
     {
-        ppu->oam[i].x=255;
-        ppu->oam[i].y=255;
+        ppu->oam[i].enabled = false;
     }
 
     SDL_RenderSetLogicalSize(ppu->renderer, SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -79,22 +78,159 @@ inline static _UNES_ATTR _unes_parse_attr(uint8_t attr) {
     return ret;
 }
 
-inline static void _unes_render_row(uint32_t* out, Tile tile, uint8_t row) {
-    uint8_t* raw_tile = unes_get_tile_data(tile.tile);
+inline static void _unes_render_row(uint32_t* out, uint16_t index, Palette palette, uint8_t row, uint32_t bg_color) {
+    uint8_t* raw_tile = unes_get_tile_data(index);
     for (int x = 7; x >= 0; x--)
-    {
-        if (tile.palette >= PALETTE_COUNT) {printf("Invalid palette %d\n", (int)tile.palette); continue;}
-        
+    {        
         uint8_t index = ((raw_tile[row]>>x)&1) | (((raw_tile[row+8]>>x)&1)<<1);
-        Color color;
+        uint32_t raw_color = 0;
         if (index == 0) {
-            color = ppu->universal_bg_color;
+            raw_color = bg_color;
         } else {
-            color = DEFAULT_PALETTE[ppu->palettes[tile.palette][index]];
+            Color color = DEFAULT_PALETTE[palette[index]];
+            raw_color = _unes_get_raw_color(color.r, color.g, color.b);
         }
 
         // So it copies nicely into the final buffer
-        out[7-x] = _unes_get_raw_color(color.r, color.g, color.b);
+        out[7-x] = raw_color;
+    }
+}
+
+inline static void _unes_render_sprite(uint32_t out[8][8], Sprite sprite) {
+    for (int y = 0; y < 8; y++)
+    {
+        _unes_render_row(&out[y][0], sprite.tile, ppu->palettes[sprite.palette+PALETTE_COUNT], y, 0);
+    }
+}
+
+void unes_get_bounding_box(uint16_t tile, uint8_t* l, uint8_t* r, uint8_t* u, uint8_t* d) {
+    uint8_t* data = unes_get_tile_data(tile);
+    
+    uint8_t bound_l = 0;
+    uint8_t bound_r = 7;
+    uint8_t bound_u = 0;
+    uint8_t bound_d = 7;
+
+    for (int i = 0; i < 8; i++)
+    {
+        uint8_t index = ((data[i]>>bound_l)&1) | (((data[i+8]>>bound_l)&1)<<1);
+        if (index != 0) {
+            break;
+        }
+        bound_l++;
+    }
+
+    for (int i = 7; i >= 0; i--)
+    {
+        uint8_t index = ((data[i]>>bound_r)&1) | (((data[i+8]>>bound_r)&1)<<1);
+        if (index != 0) {
+            break;
+        }
+        bound_r--;
+    }
+    
+    for (int i = 0; i < 8; i++)
+    {
+        uint8_t index = ((data[bound_u]>>i)&1) | (((data[bound_u+8]>>i)&1)<<1);
+        if (index != 0) {
+            break;
+        }
+        bound_u++;
+    }
+
+    for (int i = 7; i >= 0; i--)
+    {
+        uint8_t index = ((data[bound_d]>>i)&1) | (((data[bound_d+8]>>i)&1)<<1);
+        if (index != 0) {
+            break;
+        }
+        bound_d--;
+    }
+
+    *l = bound_l;
+    *r = bound_r;
+    *u = bound_u;
+    *d = bound_d;
+}
+
+inline static int _unes_h_flip(uint16_t tile) {
+    uint8_t bound_l = 0;
+    uint8_t bound_r = 0;
+    uint8_t bound_u = 0;
+    uint8_t bound_d = 0;
+    unes_get_bounding_box(tile, &bound_l, &bound_r, &bound_u, &bound_d);
+    return (int)bound_l - (7-(int)bound_u);
+}
+
+inline static int _unes_v_flip(uint16_t tile) {
+    uint8_t bound_l = 0;
+    uint8_t bound_r = 0;
+    uint8_t bound_u = 0;
+    uint8_t bound_d = 0;
+    unes_get_bounding_box(tile, &bound_l, &bound_r, &bound_u, &bound_d);
+    return (int)bound_u - (7-(int)bound_d);
+}
+
+inline static void _unes_render_sprite_to_raw_screen(const Sprite sprite) {
+    uint32_t data[8][8];
+    _unes_render_sprite(data, sprite);
+
+    // TODO: Clean this up
+    if (sprite.v_flip) {
+        int y = 0;
+        int vcoef = 0; //_unes_v_flip(sprite.tile);
+        for (int i = 7; i >= 0; i--)
+        {
+            if (sprite.h_flip) {
+                int x = 0;
+                int hcoef = 0; //_unes_h_flip(sprite.tile);
+                for (int e = 7; e >= 0; e--)
+                {
+                    if (y+sprite.y+vcoef < SCREEN_HEIGHT && x+sprite.x+hcoef < SCREEN_WIDTH) {
+                        uint32_t pixel = data[i][e];
+                        if (pixel == 0) {x++; continue;}
+                        ppu->raw_screen[y+sprite.y+vcoef][x+sprite.x+hcoef] = pixel;
+                    }
+                    x++;
+                }
+            } else {
+                for (int x = 0; x < 8; x++)
+                {
+                    if (y+sprite.y+vcoef < SCREEN_HEIGHT && x+sprite.x < SCREEN_WIDTH) {
+                        uint32_t pixel = data[i][x];
+                        if (pixel == 0) continue;
+                        ppu->raw_screen[y+sprite.y+vcoef][x+sprite.x] = pixel;
+                    }
+                }
+            }
+            y++;
+        }
+    } else {
+        for (int y = 7; y >= 0; y--)
+        {
+            if (sprite.h_flip) {
+                int x = 0;
+                for (int e = 7; e >= 0; e--)
+                {
+                    int hcoef = 0; //_unes_h_flip(sprite.tile);
+                    if (y+sprite.y < SCREEN_HEIGHT && x+sprite.x+hcoef < SCREEN_WIDTH) {
+                        uint32_t pixel = data[y][e];
+                        if (pixel == 0) {x++; continue;}
+                        ppu->raw_screen[y+sprite.y][x+sprite.x+hcoef] = pixel;
+                    }
+                    x++;
+                }
+            } else {
+                for (int x = 0; x < 8; x++)
+                {
+                    if (y+sprite.y < SCREEN_HEIGHT && x+sprite.x < SCREEN_WIDTH) {
+                        uint32_t pixel = data[y][x];
+                        if (pixel == 0) continue;
+                        ppu->raw_screen[y+sprite.y][x+sprite.x] = pixel;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -119,7 +255,7 @@ void unes_set_tile_data(uint8_t* data, size_t size) {
 }
 
 void unes_set_palettes(uint8_t start, uint8_t* palettes, size_t num) {
-    if (num + start >= PALETTE_COUNT) return;
+    if (num + start >= PALETTE_COUNT*2) return;
     memcpy(&ppu->palettes[start], palettes, sizeof(Palette) * num);
 }
 
@@ -229,7 +365,9 @@ bool unes_render()
             // The actuall PPU gets 33 tiles per row
             for (int i = 0; i < 33; i++)
             {
-                _unes_render_row(&interim_tile[0], ppu->nametables[(i + (ppu->scrollx/8))%TOTAL_BACKGROUND_WIDTH][((y + ppu->scrolly)/8)%TOTAL_BACKGROUND_HEIGHT], (y + ppu->scrolly) % 8);
+                Tile tile = ppu->nametables[(i + (ppu->scrollx/8))%TOTAL_BACKGROUND_WIDTH][((y + ppu->scrolly)/8)%TOTAL_BACKGROUND_HEIGHT];
+                if (tile.palette >= PALETTE_COUNT/2) {printf("Invalid palette %d\n", (int)tile.palette); continue;}
+                _unes_render_row(&interim_tile[0], tile.tile, ppu->palettes[tile.palette], (y + ppu->scrolly) % 8, _unes_get_raw_color(ppu->universal_bg_color.r, ppu->universal_bg_color.g, ppu->universal_bg_color.b));
                 memcpy(&row[i*8], interim_tile, sizeof(interim_tile));
             }
 
@@ -242,9 +380,12 @@ bool unes_render()
             }
         }
 
-        for (int i = SPRITE_COUNT-1; i >= 0; i--)
+        for (int s = SPRITE_COUNT-1; s >= 0; s--)
         {
-            
+            Sprite sprite = ppu->oam[s];
+            if (sprite.enabled) {
+                _unes_render_sprite_to_raw_screen(sprite);
+            }
         }
 
         void* pixels = NULL;

@@ -71,6 +71,12 @@ typedef struct {
  */
 typedef struct {
     /**
+     * @brief This is not on the original console. It is just an optimization and ease of use component
+     * 
+     */
+    bool enabled;
+
+    /**
      * @brief X position
      */
     uint8_t x;
@@ -382,12 +388,24 @@ void unes_legacy_set_nametable(uint8_t* data, uint8_t x_offset, uint8_t y_offset
 
 /**
  * @brief Gets the address of a sprite
- * @details The pointer can be reused. It should not be modified during rendering.
+ * @details The pointer can be reused. It should not be modified during rendering
  * 
  * @param index Sprite index
  * @return Sprite* Sprite pointer, or NULL if the index is invalid
  */
 Sprite* unes_get_sprite(uint16_t index);
+
+/**
+ * @brief Gets the distance to the edge of the tile on all sides. It's used by the renderer, but I thought it would be useful
+ * @warning This function does not work correctly and it might be needed
+ * @deprecated
+ * @param tile Tile index
+ * @param l Out: Distance from left edge to leftmost pixel
+ * @param r Out: Distance from left edge to rightmost pixel
+ * @param u Out: Distance from upper edge to highest pixel
+ * @param d Out: Distance from upper edge to lowest pixel
+ */
+void unes_get_bounding_box(uint16_t tile, uint8_t* l, uint8_t* r, uint8_t* u, uint8_t* d);
 
 /**
  * @brief Sets the universal background color, or #3F00/#3F10 on original hardware
