@@ -66,23 +66,46 @@ Some changes are:
 
 If the library is compiled with `UNESPLUS`, then `UNESPLUS` is highly recommended to be defined in the final program by the user. Until a reasonable way to check this during runtime is implemented, you may get undefined behaviors.
 
+## Controls
+
+The default controls are:
+* A: Z
+* B: X
+* Select: S
+* Start: Enter
+* D-Pad: Arrow keys
+
+They can be modified by calling `unes_set_keybind`.
+
 ## Tutorial
 
 A tutorial is being worked on. It can be viewed on the documentation soon.
 
 ## Examples
 
-To compile the evolving example (under `/test`), you need the CHR ROM from Super Mario Bros. One way is to legally dump your cart and put the dump into the repo folder. Rename it to `smb.nes` and run `smb_extractor.py`. Actual examples will be added once more features are complete.
+To compile the evolving example (under `/test`), you need the CHR ROM from Super Mario Bros. The recommended way is to legally dump your own cart and put the dump into the repo folder. Rename it to `smb.nes` and run `smb_extractor.py`. Actual examples will be added once more features are complete.
 
 There are now examples under `/examples`.
 
 ## Contributing
 
+To build, just use CMake. Set `UNESPLUS` to `ON` while configuring to enable UltraNES+. If for some reason CMake doesn't work, then copy `/include` and `/src` into an existing project or create a new one. It only needs to link to SDL2. No extra options per file are needed.
+
 Some things that need to (or should be) done are:
-- [ ] Graphics
+- [x] Graphics
   - [x] Optimize rendering algorithm
-  - [ ] Sprites
+  - [x] Sprites
+    - [ ] Back priority sprites
+    - [ ] 8x16
 - [ ] Audio
-  - [ ] Proper audio engine (if it's unsuitable)
-- [ ] Controller input
-- [ ] Depopulate per translation unit global variables (ppu.c, apu.c)
+  - [ ] Make it sound like an NES
+  - [ ] Channels
+    - [x] Square 1
+    - [ ] Square 2
+    - [ ] Triangle
+    - [ ] Noise
+- [x] Controller input
+  - [ ] "Famicom keyboard" support
+  - [ ] More unique controllers
+  - [ ] Gamepad support
+- [ ] Depopulate per translation unit global variables (ppu.c, apu.c, input.c)

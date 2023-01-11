@@ -5,6 +5,7 @@
 
 #include "ppu.h"
 #include "apu.h"
+#include "input.h"
 
 extern bool IS_UNESPLUS;
 

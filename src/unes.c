@@ -10,10 +10,12 @@ void unes_init()
 {
     _UNES_PPU_init();
     _UNES_APU_init();
+    _UNES_INPUT_init();
 }
 
 void unes_finish()
 {
     _UNES_PPU_free();
     _UNES_APU_free();
+    _UNES_INPUT_free();
 }

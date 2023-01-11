@@ -43,8 +43,18 @@ int main(int argc, char** argv) {
     bottom_right->tile = 0x4F;
     bottom_right->enabled = true;
     bottom_right->h_flip = true;
+
+    unes_set_bg_tile_alt(256 + 0x45, 1, 1, 1);
+    unes_set_bg_tile_alt(256 + 0x45, 1, 2, 1);
+    unes_set_bg_tile_alt(256 + 0x47, 1, 1, 2);
+    unes_set_bg_tile_alt(256 + 0x47, 1, 2, 2);
     
     while (unes_render()) {
+        if (unes_is_pressed(BUTTONS_DOWN)) y += 8;
+        if (unes_is_pressed(BUTTONS_UP)) y -= 8;
+        if (unes_is_pressed(BUTTONS_RIGHT)) x += 8;
+        if (unes_is_pressed(BUTTONS_LEFT)) x -= 8;
+
         top_left->x = x;
         top_left->y = y;
         top_right->x = x+8;

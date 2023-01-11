@@ -1,4 +1,5 @@
 #include "ppu.h"
+#include "input.h"
 #include <stdlib.h>
 
 static _UNES_PPU* ppu;
@@ -309,7 +310,8 @@ void unes_legacy_set_map(uint8_t *data, size_t size, uint8_t x_offset, uint8_t y
     {
         if (i%row_size == 0) y++;
         if (i >= TOTAL_BACKGROUND_WIDTH || y >= TOTAL_BACKGROUND_HEIGHT) printf("Invalid location %d, %d\n", i, y);
-        ppu->nametables[i][y].tile = data[i];
+        // Add 256 because tiles use the second block of 256 tiles in the NES
+        ppu->nametables[i][y].tile = data[i]+256;
     }
 }
 
@@ -420,6 +422,9 @@ bool unes_render()
         switch (ev.type) {
             case SDL_QUIT:
                 return false;
+            default:
+                _unes_input_update(ev);
+                break;
         }
     }
 
