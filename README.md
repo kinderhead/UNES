@@ -96,7 +96,7 @@ Some things that need to (or should be) done are:
 - [x] Graphics
   - [x] Optimize rendering algorithm
   - [x] Sprites
-    - [ ] Back priority sprites
+    - [x] Back priority sprites
     - [ ] 8x16
     - [ ] Clean sprite renderer
 - [ ] Audio

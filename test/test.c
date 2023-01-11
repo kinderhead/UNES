@@ -44,6 +44,11 @@ int main(int argc, const char** argv) {
     bottom_right->enabled = true;
     bottom_right->h_flip = true;
 
+    top_left->priority = true;
+    top_right->priority = true;
+    bottom_left->priority = true;
+    bottom_right->priority = true;
+
     unes_set_bg_tile_alt(256 + 0x45, 1, 1, 1);
     unes_set_bg_tile_alt(256 + 0x45, 1, 2, 1);
     unes_set_bg_tile_alt(256 + 0x47, 1, 1, 2);

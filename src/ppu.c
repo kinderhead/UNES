@@ -2,6 +2,8 @@
 #include "input.h"
 #include <stdlib.h>
 
+#define RAW_BG_COLOR _unes_get_raw_color(ppu->universal_bg_color.r, ppu->universal_bg_color.g, ppu->universal_bg_color.b)
+
 static _UNES_PPU* ppu;
 static SDL_PixelFormat* pixel_format;
 
@@ -184,23 +186,30 @@ inline static void _unes_render_sprite_to_raw_screen(const Sprite sprite) {
         {
             if (sprite.h_flip) {
                 int x = 0;
-                int hcoef = 0; //_unes_h_flip(sprite.tile);
                 for (int e = 7; e >= 0; e--)
                 {
-                    if (y+sprite.y+vcoef < SCREEN_HEIGHT && x+sprite.x+hcoef < SCREEN_WIDTH) {
+                    if (y+sprite.y < SCREEN_HEIGHT && x+sprite.x < SCREEN_WIDTH) {
                         uint32_t pixel = data[i][e];
                         if (pixel == 0) {x++; continue;}
-                        ppu->raw_screen[y+sprite.y+vcoef][x+sprite.x+hcoef] = pixel;
+                        if (sprite.priority && ppu->temp_raw_screen[y+sprite.y][x+sprite.x] != RAW_BG_COLOR) {
+                            ppu->raw_screen[y+sprite.y][x+sprite.x] = ppu->temp_raw_screen[y+sprite.y][x+sprite.x];
+                        } else {
+                            ppu->raw_screen[y+sprite.y][x+sprite.x] = pixel;
+                        }
                     }
                     x++;
                 }
             } else {
                 for (int x = 0; x < 8; x++)
                 {
-                    if (y+sprite.y+vcoef < SCREEN_HEIGHT && x+sprite.x < SCREEN_WIDTH) {
+                    if (y+sprite.y < SCREEN_HEIGHT && x+sprite.x < SCREEN_WIDTH) {
                         uint32_t pixel = data[i][x];
                         if (pixel == 0) continue;
-                        ppu->raw_screen[y+sprite.y+vcoef][x+sprite.x] = pixel;
+                        if (sprite.priority && ppu->temp_raw_screen[y+sprite.y][x+sprite.x] != RAW_BG_COLOR) {
+                            ppu->raw_screen[y+sprite.y][x+sprite.x] = ppu->temp_raw_screen[y+sprite.y][x+sprite.x];
+                        } else {
+                            ppu->raw_screen[y+sprite.y][x+sprite.x] = pixel;
+                        }
                     }
                 }
             }
@@ -213,11 +222,14 @@ inline static void _unes_render_sprite_to_raw_screen(const Sprite sprite) {
                 int x = 0;
                 for (int e = 7; e >= 0; e--)
                 {
-                    int hcoef = 0; //_unes_h_flip(sprite.tile);
-                    if (y+sprite.y < SCREEN_HEIGHT && x+sprite.x+hcoef < SCREEN_WIDTH) {
+                    if (y+sprite.y < SCREEN_HEIGHT && x+sprite.x < SCREEN_WIDTH) {
                         uint32_t pixel = data[y][e];
                         if (pixel == 0) {x++; continue;}
-                        ppu->raw_screen[y+sprite.y][x+sprite.x+hcoef] = pixel;
+                        if (sprite.priority && ppu->temp_raw_screen[y+sprite.y][x+sprite.x] != RAW_BG_COLOR) {
+                            ppu->raw_screen[y+sprite.y][x+sprite.x] = ppu->temp_raw_screen[y+sprite.y][x+sprite.x];
+                        } else {
+                            ppu->raw_screen[y+sprite.y][x+sprite.x] = pixel;
+                        }
                     }
                     x++;
                 }
@@ -227,7 +239,11 @@ inline static void _unes_render_sprite_to_raw_screen(const Sprite sprite) {
                     if (y+sprite.y < SCREEN_HEIGHT && x+sprite.x < SCREEN_WIDTH) {
                         uint32_t pixel = data[y][x];
                         if (pixel == 0) continue;
-                        ppu->raw_screen[y+sprite.y][x+sprite.x] = pixel;
+                        if (sprite.priority && ppu->temp_raw_screen[y+sprite.y][x+sprite.x] != RAW_BG_COLOR) {
+                            ppu->raw_screen[y+sprite.y][x+sprite.x] = ppu->temp_raw_screen[y+sprite.y][x+sprite.x];
+                        } else {
+                            ppu->raw_screen[y+sprite.y][x+sprite.x] = pixel;
+                        }
                     }
                 }
             }
@@ -364,8 +380,7 @@ bool unes_render()
         for (int y = 0; y < SCREEN_HEIGHT; y++) {
             memset(row, 0, SCREEN_WIDTH+8);
 
-            // The actuall PPU gets 33 tiles per row
-            for (int i = 0; i < 33; i++)
+            for (int i = 0; i < NAMETABLE_WIDTH+1; i++)
             {
                 Tile tile = ppu->nametables[(i + (ppu->scrollx/8))%TOTAL_BACKGROUND_WIDTH][((y + ppu->scrolly)/8)%TOTAL_BACKGROUND_HEIGHT];
                 if (tile.palette >= PALETTE_COUNT/2) {printf("Invalid palette %d\n", (int)tile.palette); continue;}
@@ -381,6 +396,8 @@ bool unes_render()
                 }
             }
         }
+
+        memcpy(ppu->temp_raw_screen, ppu->raw_screen, sizeof(ppu->raw_screen));
 
         for (int s = SPRITE_COUNT-1; s >= 0; s--)
         {
@@ -414,6 +431,7 @@ bool unes_render()
     } else {
         printf("WARNING: Lagging, FPS: %.2f\n", 1.0/(elapsed/1000));
     }
+    // printf("FPS: %.2f\n", 1.0/(elapsed/1000));
 
     ppu->fps_start = SDL_GetPerformanceCounter();
 

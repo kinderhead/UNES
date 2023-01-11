@@ -138,6 +138,7 @@ typedef struct {
     bool ppu_enabled;
 
     uint32_t raw_screen[SCREEN_HEIGHT][SCREEN_WIDTH];
+    uint32_t temp_raw_screen[SCREEN_HEIGHT][SCREEN_WIDTH];
     Color universal_bg_color;
     
     uint16_t scrollx;
