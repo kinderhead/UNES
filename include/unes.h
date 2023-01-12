@@ -1,6 +1,10 @@
 #ifndef __UNES_H__
 #define __UNES_H__
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <SDL.h>
 
 #include "ppu.h"
@@ -20,5 +24,9 @@ void unes_init();
  * @remark Must be called before exit
  */
 void unes_finish();
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // __UNES_H__
