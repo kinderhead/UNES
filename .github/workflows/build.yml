@@ -54,5 +54,10 @@ jobs:
     - name: Upload
       uses: actions/upload-artifact@v3
       with:
-        name: Includes
+        name: includes
         path: include/
+    - name: Bindings
+      uses: actions/upload-artifact@v3
+      with:
+        name: cpp-includes
+        path: bindings/cpp/include/
