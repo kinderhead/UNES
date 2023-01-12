@@ -428,7 +428,17 @@ bool unes_render()
         for (int s = SPRITE_COUNT-1; s >= 0; s--)
         {
             Sprite sprite = ppu->oam[s];
+            Sprite other = sprite;
+            other.tile++;
+            other.y += 8;
             if (sprite.enabled) {
+                if (ppu->sprite_size == SIZE_8x16 && sprite.tile + 1 < ppu->tile_data_size) {
+                    if (sprite.v_flip) {
+                        other.y -= 8;
+                        sprite.y += 8;
+                    }
+                    _unes_render_sprite_to_raw_screen(other);
+                }
                 _unes_render_sprite_to_raw_screen(sprite);
             }
         }

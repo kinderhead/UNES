@@ -93,21 +93,27 @@ There are now examples under `/examples`.
 To build, just use CMake. Set `UNESPLUS` to `ON` while configuring to enable UltraNES+. If for some reason CMake doesn't work, then copy `/include` and `/src` into an existing project or create a new one. It only needs to link to SDL2. No extra options per file are needed.
 
 Some things that need to (or should be) done are:
+- [ ] Testing
+  - [ ] UltraNES+ tests
+  - [ ] Port an NES game
 - [x] Graphics
-  - [x] Optimize rendering algorithm
   - [x] Sprites
     - [x] Back priority sprites
-    - [ ] 8x16
+    - [ ] 8x16 sprites
     - [ ] Clean sprite renderer
 - [ ] Audio
-  - [ ] Make it sound like an NES
+  - [ ] Make it actually sound like an NES
   - [ ] Channels
     - [x] Square 1
     - [ ] Square 2
     - [ ] Triangle
     - [ ] Noise
+    - [ ] DCM
 - [x] Controller input
   - [ ] "Famicom keyboard" support
-  - [ ] More unique controllers
+    - [ ] More unique controllers
   - [ ] Gamepad support
 - [ ] Depopulate per translation unit global variables (ppu.c, apu.c, input.c)
+- [ ] Add wrappers and bindings to other languages
+  - [ ] OOP C++ wrapper
+  - [ ] Python (why not)
