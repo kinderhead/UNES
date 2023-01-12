@@ -72,7 +72,6 @@ typedef struct {
 typedef struct {
     /**
      * @brief This is not on the original console. It is just an optimization and ease of use component
-     * 
      */
     bool enabled;
 
@@ -274,7 +273,7 @@ void unes_set_scanline_interrupt(unes_scanline_interrupt irq);
  * 16th scanline and beyond can be modified. The counter can be
  * set again to interrupt again later in the same frame.
  * 
- * @param counter 
+ * @param counter Counter
  */
 void unes_set_scanline_interrupt_counter(uint8_t counter);
 
