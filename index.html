@@ -105,6 +105,8 @@ Features</h2>
 <li>Easier to use scrolling and nametable system</li>
 <li>Combined background and OAM tile data</li>
 <li>More accurate sprite placement</li>
+<li>Enable/disable sprites</li>
+<li>Unintentional screen wrap</li>
 </ul>
 </li>
 <li>Interrupts as events</li>
@@ -122,7 +124,7 @@ Getting Started</h2>
 <p>First, download or compile the library. The newest updates can be found in Github Actions.</p>
 <p>Then create a starting program: </p><div class="fragment"><div class="line">#include &lt;unes.h&gt;</div>
 <div class="line"> </div>
-<div class="line">int main(int argc, char** argv) {</div>
+<div class="line">int main(int argc, const char** argv) {</div>
 <div class="line">    unes_init();</div>
 <div class="line">    unes_ppu_enable();</div>
 <div class="line"> </div>
@@ -137,6 +139,7 @@ Getting Started</h2>
 <div class="line">    unes_finish();</div>
 <div class="line">}</div>
 </div><!-- fragment --><p> <a class="el" href="structTile.html" title="Struct representing a background tile.">Tile</a> data can be imported from popular programs like YY-CHR or from a rom.</p>
+<p>If for some reason you have issues with <code>SDL_Main</code>, then put <code>#undef SDL_Main</code> at the top of your file.</p>
 <h2><a class="anchor" id="autotoc_md3"></a>
 UltraNES+</h2>
 <p>If <code>UNESPLUS</code> is defined during library compilation, the normal specs are increased.</p>
@@ -148,26 +151,65 @@ UltraNES+</h2>
 </ul>
 <p>If the library is compiled with <code>UNESPLUS</code>, then <code>UNESPLUS</code> is highly recommended to be defined in the final program by the user. Until a reasonable way to check this during runtime is implemented, you may get undefined behaviors.</p>
 <h2><a class="anchor" id="autotoc_md4"></a>
-Tutorial</h2>
-<p>A tutorial is being worked on. It can be viewed on the documentation soon.</p>
+Controls</h2>
+<p>The default controls are:</p><ul>
+<li>A: Z</li>
+<li>B: X</li>
+<li>Select: S</li>
+<li>Start: Enter</li>
+<li>D-Pad: Arrow keys</li>
+</ul>
+<p>They can be modified by calling <code>unes_set_keybind</code>.</p>
 <h2><a class="anchor" id="autotoc_md5"></a>
-Examples</h2>
-<p>To compile the evolving example (under <code>/test</code>), you need the CHR ROM from Super Mario Bros. One way is to legally dump your cart and put the dump into the repo folder. Rename it to <code>smb.nes</code> and run <code>smb_extractor.py</code>. Actual examples will be added once more features are complete.</p>
-<p>There are now examples under <code>/examples</code>.</p>
+Tutorial</h2>
+<p>See the wiki.</p>
 <h2><a class="anchor" id="autotoc_md6"></a>
+Examples</h2>
+<p>To compile the evolving example (under <code>/test</code>), you need the CHR ROM from Super Mario Bros. The recommended way is to legally dump your own cart and put the dump into the repo folder. Rename it to <code>smb.nes</code> and run <code>smb_extractor.py</code>. Actual examples will be added once more features are complete.</p>
+<p>There are now examples under <code>/examples</code>.</p>
+<h2><a class="anchor" id="autotoc_md7"></a>
 Contributing</h2>
+<p>To build, just use CMake. Set <code>UNESPLUS</code> to <code>ON</code> while configuring to enable UltraNES+. If for some reason CMake doesn't work, then copy <code>/include</code> and <code>/src</code> into an existing project or create a new one. It only needs to link to SDL2. No extra options per file are needed.</p>
 <p>Some things that need to (or should be) done are:</p><ul>
-<li>[ ] Graphics<ul>
-<li>[x] Optimize rendering algorithm</li>
-<li>[ ] Sprites</li>
+<li>[ ] Testing<ul>
+<li>[ ] UltraNES+ tests</li>
+<li>[ ] Port an NES game</li>
+</ul>
+</li>
+<li>[x] Graphics<ul>
+<li>[x] Sprites<ul>
+<li>[x] Back priority sprites</li>
+<li>[ ] 8x16 sprites</li>
+<li>[ ] Clean sprite renderer</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>[ ] Audio<ul>
-<li>[ ] Proper audio engine (if it's unsuitable)</li>
+<li>[ ] Make it actually sound like an NES</li>
+<li>[ ] Channels<ul>
+<li>[x] Square 1</li>
+<li>[ ] Square 2</li>
+<li>[ ] Triangle</li>
+<li>[ ] Noise</li>
+<li>[ ] DCM</li>
 </ul>
 </li>
-<li>[ ] Controller input</li>
-<li>[ ] Depopulate per translation unit global variables (ppu.c, apu.c) </li>
+</ul>
+</li>
+<li>[x] Controller input<ul>
+<li>[ ] "Famicom keyboard" support<ul>
+<li>[ ] More unique controllers</li>
+</ul>
+</li>
+<li>[ ] Gamepad support</li>
+</ul>
+</li>
+<li>[ ] Depopulate per translation unit global variables (ppu.c, apu.c, input.c)</li>
+<li>[ ] Add wrappers and bindings to other languages<ul>
+<li>[ ] OOP C++ wrapper </li>
+</ul>
+</li>
 </ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->

@@ -21,6 +21,7 @@ var ppu_8h =
     [ "TOTAL_BACKGROUND_WIDTH", "ppu_8h.html#af14f60c6abdc9d93713a50d7c2e0c78e", null ],
     [ "Palette", "ppu_8h.html#a0d34324a4251eb5f46f509dc95da154c", null ],
     [ "unes_scanline_interrupt", "ppu_8h.html#a5927b6fb8144399446312ea1ff679032", null ],
+    [ "unes_sprite0_hit", "ppu_8h.html#a647262a6665f8a8a277afabe06d8ee52", null ],
     [ "SPRITE_SIZE", "ppu_8h.html#a71a30c698aa8b3d09ea30e09fe383809", [
       [ "SIZE_8x8", "ppu_8h.html#a71a30c698aa8b3d09ea30e09fe383809a9872474345dec5ada9a4d352ff0b1c9d", null ],
       [ "SIZE_8x16", "ppu_8h.html#a71a30c698aa8b3d09ea30e09fe383809a4f6110053e1059996c64e23458820f63", null ]
@@ -29,6 +30,7 @@ var ppu_8h =
     [ "_UNES_PPU_init", "ppu_8h.html#a8c0464711c0c85a6e01f170c04b1e22d", null ],
     [ "unes_fill_bg", "ppu_8h.html#aad278beb30e55a8441a104813aba2c22", null ],
     [ "unes_get_bg_tile", "ppu_8h.html#ae482b7eed90a9cc4d8f84bd53d1d1afc", null ],
+    [ "unes_get_bounding_box", "ppu_8h.html#a1e940de9d40cde79ffeeadb4abc24a29", null ],
     [ "unes_get_scroll", "ppu_8h.html#a1aa8c337f05f646bbf0c4973d4cdd4ee", null ],
     [ "unes_get_sprite", "ppu_8h.html#a6e1fd7e6777b3f137010184d043dd7ce", null ],
     [ "unes_get_tile_data", "ppu_8h.html#a8ed5b2c13d3eadaf45c1aed5949a8bee", null ],
@@ -45,6 +47,7 @@ var ppu_8h =
     [ "unes_set_scanline_interrupt", "ppu_8h.html#aecb7682d62068660576bce87f8e8c2ff", null ],
     [ "unes_set_scanline_interrupt_counter", "ppu_8h.html#a592682225354f5100efe32e5eeffd2cd", null ],
     [ "unes_set_scroll", "ppu_8h.html#a73966b2f7289080945cf027bd440516c", null ],
+    [ "unes_set_sprite0_handler", "ppu_8h.html#a8bb06c544356857672b26b5df40be4e5", null ],
     [ "unes_set_sprite_size", "ppu_8h.html#aa2487618bc5898b0c991792f5f8c89ec", null ],
     [ "unes_set_tile_data", "ppu_8h.html#a84ae029b79591f0a8f837ae0554e42d9", null ],
     [ "unesplus_set_background_color", "ppu_8h.html#a95a8c3ad35569275ba8f1a0fa476e173", null ],

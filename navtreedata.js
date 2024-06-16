@@ -29,15 +29,26 @@ var NAVTREE =
       [ "Features", "index.html#autotoc_md1", null ],
       [ "Getting Started", "index.html#autotoc_md2", null ],
       [ "UltraNES+", "index.html#autotoc_md3", null ],
-      [ "Tutorial", "index.html#autotoc_md4", null ],
-      [ "Examples", "index.html#autotoc_md5", null ],
-      [ "Contributing", "index.html#autotoc_md6", null ]
+      [ "Controls", "index.html#autotoc_md4", null ],
+      [ "Tutorial", "index.html#autotoc_md5", null ],
+      [ "Examples", "index.html#autotoc_md6", null ],
+      [ "Contributing", "index.html#autotoc_md7", null ]
+    ] ],
+    [ "Deprecated List", "deprecated.html", null ],
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Typedefs", "namespacemembers_type.html", null ]
+      ] ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
+        [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
@@ -58,7 +69,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"annotated.html",
+"unes_8hpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

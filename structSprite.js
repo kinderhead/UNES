@@ -1,5 +1,6 @@
 var structSprite =
 [
+    [ "enabled", "structSprite.html#a8befe765354d0ff4ab22a6a541c46c2f", null ],
     [ "h_flip", "structSprite.html#ad4074b7f4b1beac7277495f68daf6b9d", null ],
     [ "palette", "structSprite.html#ab73588adb051d7c9138b615ff4973fff", null ],
     [ "priority", "structSprite.html#aef3ff5bdc1933476147a92f296c7a9f9", null ],

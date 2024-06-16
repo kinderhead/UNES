@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sprite_5fsize_211',['SPRITE_SIZE',['../ppu_8h.html#a71a30c698aa8b3d09ea30e09fe383809',1,'ppu.h']]]
+  ['duty_5fcycle_294',['DUTY_CYCLE',['../apu_8h.html#a49be711d571b811ac6b5bee96046f3d0',1,'apu.h']]]
 ];

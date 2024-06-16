@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['size_5f8x16_217',['SIZE_8x16',['../ppu_8h.html#a71a30c698aa8b3d09ea30e09fe383809a4f6110053e1059996c64e23458820f63',1,'ppu.h']]],
-  ['size_5f8x8_218',['SIZE_8x8',['../ppu_8h.html#a71a30c698aa8b3d09ea30e09fe383809a9872474345dec5ada9a4d352ff0b1c9d',1,'ppu.h']]],
-  ['square1_219',['SQUARE1',['../apu_8h.html#ad34fd11c5f31ddd1b4c6face2888c4dda2214ef45e49190657680947fed68af77',1,'apu.h']]],
-  ['square2_220',['SQUARE2',['../apu_8h.html#ad34fd11c5f31ddd1b4c6face2888c4dda63e345059076bc9675b343a9a615e0c1',1,'apu.h']]]
+  ['duty_5f12_5f5_305',['DUTY_12_5',['../apu_8h.html#a49be711d571b811ac6b5bee96046f3d0afcdc195a748f9d09321d5be6178868bd',1,'apu.h']]],
+  ['duty_5f25_306',['DUTY_25',['../apu_8h.html#a49be711d571b811ac6b5bee96046f3d0a0e123e25d250a148b79bf8c25967bfa3',1,'apu.h']]],
+  ['duty_5f50_307',['DUTY_50',['../apu_8h.html#a49be711d571b811ac6b5bee96046f3d0a532f6bbf34a4fd5ea6fe05f72eaad185',1,'apu.h']]],
+  ['duty_5f75_308',['DUTY_75',['../apu_8h.html#a49be711d571b811ac6b5bee96046f3d0a769386228acdce479851e7e88efe6fa9',1,'apu.h']]]
 ];

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['palette_179',['palette',['../structTile.html#a7142710fe03c159252b302cf70e316a5',1,'Tile::palette()'],['../structSprite.html#ab73588adb051d7c9138b615ff4973fff',1,'Sprite::palette()']]],
-  ['palettes_180',['palettes',['../struct__UNES__PPU.html#a6ffef39aafbf516c96b3085835b685f9',1,'_UNES_PPU']]],
-  ['ppu_5fenabled_181',['ppu_enabled',['../struct__UNES__PPU.html#afa9cbed1f85e61d3e0b190c2bd8b5a2d',1,'_UNES_PPU']]],
-  ['priority_182',['priority',['../structSprite.html#aef3ff5bdc1933476147a92f296c7a9f9',1,'Sprite']]]
+  ['palette_256',['palette',['../structunes_1_1ppu_1_1Tile.html#a7e32f1380e0c1b5351737aa84c37b0bd',1,'unes::ppu::Tile::palette()'],['../structunes_1_1ppu_1_1Sprite.html#a67c15976998222d74d8f7031a5deb549',1,'unes::ppu::Sprite::palette()'],['../structTile.html#a7142710fe03c159252b302cf70e316a5',1,'Tile::palette()'],['../structSprite.html#ab73588adb051d7c9138b615ff4973fff',1,'Sprite::palette()']]],
+  ['palettes_257',['palettes',['../struct__UNES__PPU.html#a6ffef39aafbf516c96b3085835b685f9',1,'_UNES_PPU']]],
+  ['ppu_5fenabled_258',['ppu_enabled',['../struct__UNES__PPU.html#afa9cbed1f85e61d3e0b190c2bd8b5a2d',1,'_UNES_PPU']]],
+  ['priority_259',['priority',['../structunes_1_1ppu_1_1Sprite.html#a7a7d9cee995073588a39de0f1c1274ad',1,'unes::ppu::Sprite::priority()'],['../structSprite.html#aef3ff5bdc1933476147a92f296c7a9f9',1,'Sprite::priority()']]]
 ];

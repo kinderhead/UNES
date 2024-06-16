@@ -107,7 +107,7 @@ Include dependency graph for ppu.h:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="ppu_8h__dep__incl.svg" width="127" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="ppu_8h__dep__incl.svg" width="223" height="291"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -170,6 +170,9 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a5927b6fb8144399446312ea1ff679032"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a5927b6fb8144399446312ea1ff679032">unes_scanline_interrupt</a>) (uint8_t scanline)</td></tr>
 <tr class="memdesc:a5927b6fb8144399446312ea1ff679032"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function outline for a scanline interrupt function.  <a href="ppu_8h.html#a5927b6fb8144399446312ea1ff679032">More...</a><br /></td></tr>
 <tr class="separator:a5927b6fb8144399446312ea1ff679032"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a647262a6665f8a8a277afabe06d8ee52"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a647262a6665f8a8a277afabe06d8ee52">unes_sprite0_hit</a>) (uint8_t scanline)</td></tr>
+<tr class="memdesc:a647262a6665f8a8a277afabe06d8ee52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function outline for a sprite 0 hit funtion.  <a href="ppu_8h.html#a647262a6665f8a8a277afabe06d8ee52">More...</a><br /></td></tr>
+<tr class="separator:a647262a6665f8a8a277afabe06d8ee52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -214,6 +217,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a592682225354f5100efe32e5eeffd2cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a592682225354f5100efe32e5eeffd2cd">unes_set_scanline_interrupt_counter</a> (uint8_t counter)</td></tr>
 <tr class="memdesc:a592682225354f5100efe32e5eeffd2cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the scanline interrupt counter.  <a href="ppu_8h.html#a592682225354f5100efe32e5eeffd2cd">More...</a><br /></td></tr>
 <tr class="separator:a592682225354f5100efe32e5eeffd2cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bb06c544356857672b26b5df40be4e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a8bb06c544356857672b26b5df40be4e5">unes_set_sprite0_handler</a> (<a class="el" href="ppu_8h.html#a647262a6665f8a8a277afabe06d8ee52">unes_sprite0_hit</a> hit)</td></tr>
+<tr class="memdesc:a8bb06c544356857672b26b5df40be4e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the function when the first non transparent pixel of sprite 0 is rendered.  <a href="ppu_8h.html#a8bb06c544356857672b26b5df40be4e5">More...</a><br /></td></tr>
+<tr class="separator:a8bb06c544356857672b26b5df40be4e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ed5b2c13d3eadaf45c1aed5949a8bee"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a8ed5b2c13d3eadaf45c1aed5949a8bee">unes_get_tile_data</a> (size_t index)</td></tr>
 <tr class="memdesc:a8ed5b2c13d3eadaf45c1aed5949a8bee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the specified tile's data.  <a href="ppu_8h.html#a8ed5b2c13d3eadaf45c1aed5949a8bee">More...</a><br /></td></tr>
 <tr class="separator:a8ed5b2c13d3eadaf45c1aed5949a8bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -241,6 +247,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a6e1fd7e6777b3f137010184d043dd7ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structSprite.html">Sprite</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a6e1fd7e6777b3f137010184d043dd7ce">unes_get_sprite</a> (uint16_t index)</td></tr>
 <tr class="memdesc:a6e1fd7e6777b3f137010184d043dd7ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the address of a sprite.  <a href="ppu_8h.html#a6e1fd7e6777b3f137010184d043dd7ce">More...</a><br /></td></tr>
 <tr class="separator:a6e1fd7e6777b3f137010184d043dd7ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e940de9d40cde79ffeeadb4abc24a29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a1e940de9d40cde79ffeeadb4abc24a29">unes_get_bounding_box</a> (uint16_t tile, uint8_t *l, uint8_t *r, uint8_t *u, uint8_t *d)</td></tr>
+<tr class="memdesc:a1e940de9d40cde79ffeeadb4abc24a29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the distance to the edge of the tile on all sides. It's used by the renderer, but I thought it would be useful.  <a href="ppu_8h.html#a1e940de9d40cde79ffeeadb4abc24a29">More...</a><br /></td></tr>
+<tr class="separator:a1e940de9d40cde79ffeeadb4abc24a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04041c987e4a98286d7abd329821e199"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ppu_8h.html#a04041c987e4a98286d7abd329821e199">unes_set_background_color</a> (uint8_t index)</td></tr>
 <tr class="memdesc:a04041c987e4a98286d7abd329821e199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the universal background color, or #3F00/#3F10 on original hardware.  <a href="ppu_8h.html#a04041c987e4a98286d7abd329821e199">More...</a><br /></td></tr>
 <tr class="separator:a04041c987e4a98286d7abd329821e199"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -510,6 +519,22 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a647262a6665f8a8a277afabe06d8ee52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a647262a6665f8a8a277afabe06d8ee52">&#9670;&nbsp;</a></span>unes_sprite0_hit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* unes_sprite0_hit) (uint8_t scanline)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function outline for a sprite 0 hit funtion. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a71a30c698aa8b3d09ea30e09fe383809"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a71a30c698aa8b3d09ea30e09fe383809">&#9670;&nbsp;</a></span>SPRITE_SIZE</h2>
@@ -634,6 +659,66 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a1e940de9d40cde79ffeeadb4abc24a29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e940de9d40cde79ffeeadb4abc24a29">&#9670;&nbsp;</a></span>unes_get_bounding_box()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unes_get_bounding_box </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>tile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the distance to the edge of the tile on all sides. It's used by the renderer, but I thought it would be useful. </p>
+<dl class="section warning"><dt>Warning</dt><dd>This function does not work correctly and it might be needed </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd></dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tile</td><td><a class="el" href="structTile.html" title="Struct representing a background tile.">Tile</a> index </td></tr>
+    <tr><td class="paramname">l</td><td>Out: Distance from left edge to leftmost pixel </td></tr>
+    <tr><td class="paramname">r</td><td>Out: Distance from left edge to rightmost pixel </td></tr>
+    <tr><td class="paramname">u</td><td>Out: Distance from upper edge to highest pixel </td></tr>
+    <tr><td class="paramname">d</td><td>Out: Distance from upper edge to lowest pixel </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a1aa8c337f05f646bbf0c4973d4cdd4ee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1aa8c337f05f646bbf0c4973d4cdd4ee">&#9670;&nbsp;</a></span>unes_get_scroll()</h2>
 
@@ -689,7 +774,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the address of a sprite. </p>
-<p>The pointer can be reused. It should not be modified during rendering.</p>
+<p>The pointer can be reused. It should not be modified during rendering</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td><a class="el" href="structSprite.html" title="Sprite struct.">Sprite</a> index </td></tr>
@@ -1143,7 +1228,7 @@ Variables</h2></td></tr>
 <p>It counts down at the end of rendering one scanline. If it hits zero, the interrupt is called and the next scanline is affected. For example, if the counter is set to 15, then the interrupt is called before rendering the 16th scanline. The 16th scanline and beyond can be modified. The counter can be set again to interrupt again later in the same frame.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">counter</td><td></td></tr>
+    <tr><td class="paramname">counter</td><td>Counter </td></tr>
   </table>
   </dd>
 </dl>
@@ -1182,6 +1267,32 @@ Variables</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">scrollx</td><td>X position </td></tr>
     <tr><td class="paramname">scrolly</td><td>Y position </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8bb06c544356857672b26b5df40be4e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bb06c544356857672b26b5df40be4e5">&#9670;&nbsp;</a></span>unes_set_sprite0_handler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unes_set_sprite0_handler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ppu_8h.html#a647262a6665f8a8a277afabe06d8ee52">unes_sprite0_hit</a>&#160;</td>
+          <td class="paramname"><em>hit</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calls the function when the first non transparent pixel of sprite 0 is rendered. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hit</td><td>Callback function </td></tr>
   </table>
   </dd>
 </dl>
