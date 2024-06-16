@@ -116,4 +116,3 @@ Some things that need to (or should be) done are:
 - [ ] Depopulate per translation unit global variables (ppu.c, apu.c, input.c)
 - [ ] Add wrappers and bindings to other languages
   - [ ] OOP C++ wrapper
-  - [ ] Python (why not)
